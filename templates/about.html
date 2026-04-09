@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>About Us | Jecyani Properties - Trusted Real Estate Agency</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Jecyani Properties | Luxury Real Estate & Investment</title>
+    <meta name="title" content="Jecyani Properties | Own Land. Build Wealth. Secure Your Future.">
+    <meta name="description" content="Jecyani Properties helps Nigerians buy, sell, and invest in prime real estate across Aba, Umuahia, Abuja, Asaba, and Enugu. Flexible payment plans available.">
+    <meta name="keywords" content="real estate Nigeria, buy land in Aba, property investment Abuja, Jecyani Properties, land for sale Umuahia, affordable plots Asaba, gated estates Enugu">
+    <meta name="author" content="Jecyani Properties">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/">
+    <meta property="og:title" content="Jecyani Properties | Luxury Real Estate & Investment">
+    <meta property="og:description" content="Own land in Nigeria's fastest-growing locations. Flexible payment plans starting at just 30% deposit.">
+    <meta property="og:image" content="https://yourdomain.com/static/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourdomain.com/">
+    <meta property="twitter:title" content="Jecyani Properties | Luxury Real Estate & Investment">
+    <meta property="twitter:description" content="Own land in Nigeria's fastest-growing locations. Flexible payment plans starting at just 30% deposit.">
+    <meta property="twitter:image" content="https://yourdomain.com/static/og-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourdomain.com/about">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark);
+            color: #e5e5e5;
+            scroll-behavior: smooth;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        :root {
+            --primary: #FFD700;
+            --primary-dark: #e6c200;
+            --dark: #0a0a0a;
+            --gray: #1a1a1a;
+            --light-gray: #2a2a2a;
+            --card-bg: #111111;
+            --shadow-md: 0 20px 35px -12px rgba(0,0,0,0.5);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Animations */
+        @keyframes gentleFloat {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes shimmerText {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .gentle-float {
+            animation: gentleFloat 4s ease-in-out infinite;
+        }
+
+        .shimmer-text {
+            background: linear-gradient(120deg, #fff 20%, var(--primary) 40%, #fff 60%);
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent !important;
+            animation: shimmerText 3s linear infinite;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: var(--card-bg);
+            border-radius: 32px;
+            max-width: 500px;
+            width: 90%;
+            padding: 32px;
+            border: 1px solid var(--primary);
+            position: relative;
+        }
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #aaa;
+            transition: 0.2s;
+        }
+        .modal-close:hover {
+            color: var(--primary);
+        }
+        .modal h3 {
+            color: white;
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+        }
+        .modal-sub {
+            color: #aaa;
+            margin-bottom: 24px;
+            font-size: 0.9rem;
+        }
+        .modal-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .modal-btn {
+            flex: 1;
+            padding: 14px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .modal-btn-call {
+            background: transparent;
+            border: 1.5px solid var(--primary);
+            color: var(--primary);
+        }
+        .modal-btn-call:hover {
+            background: var(--primary);
+            color: var(--dark);
+        }
+        .modal-btn-wa {
+            background: #25D366;
+            border: none;
+            color: white;
+        }
+        .modal-btn-wa:hover {
+            background: #128C7E;
+        }
+        .property-name-display {
+            background: var(--gray);
+            padding: 12px;
+            border-radius: 16px;
+            margin: 16px 0;
+            color: var(--primary);
+            font-weight: 500;
+            text-align: center;
+        }
+
+        /* Announcement Bar */
+        .announcement-bar {
+            background-color: var(--primary);
+            color: var(--dark);
+            font-size: 0.85rem;
+            padding: 10px 0;
+            text-align: center;
+            font-weight: 600;
+            z-index: 1001;
+        }
+        .announcement-bar span {
+            background-color: var(--dark);
+            color: var(--primary);
+            padding: 2px 10px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 32px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-placeholder {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+        .logo-placeholder:hover {
+            transform: scale(1.08) rotate(3deg);
+        }
+        .logo h1 {
+            font-size: 1.7rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #fff 30%, var(--primary) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .logo-img {
+            display: block;
+        }
+
+        @media (max-width: 900px) {
+            .logo-img {
+                height: 35px;
+            }
+        }
+
+        /* Desktop Navigation */
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #f0f0f0;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hamburger Button */
+        .hamburger {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: white;
+            background: none;
+            border: none;
+            transition: 0.3s;
+        }
+        .hamburger:hover {
+            color: var(--primary);
+        }
+
+        /* Mobile Menu */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 75%;
+            max-width: 320px;
+            height: 100vh;
+            background: var(--card-bg);
+            border-left: 2px solid var(--primary);
+            z-index: 1500;
+            transition: right 0.3s ease;
+            padding: 80px 30px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .mobile-nav.active {
+            right: 0;
+        }
+        .mobile-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--light-gray);
+            transition: 0.2s;
+        }
+        .mobile-nav a:hover {
+            color: var(--primary);
+            padding-left: 10px;
+        }
+        .mobile-nav .btn-primary {
+            text-align: center;
+            margin-top: 20px;
+            display: block;
+        }
+        .close-menu {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: white;
+        }
+        .close-menu:hover {
+            color: var(--primary);
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1400;
+            display: none;
+        }
+        .overlay.active {
+            display: block;
+        }
+
+        .btn-outline-light {
+            border: 1.5px solid var(--primary);
+            background: transparent;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--primary);
+            display: inline-block;
+        }
+        .btn-outline-light:hover {
+            background: var(--primary);
+            color: var(--dark);
+            transform: translateY(-2px);
+        }
+        .btn-primary {
+            background: var(--primary);
+            border: none;
+            padding: 10px 28px;
+            border-radius: 40px;
+            font-weight: 700;
+            color: var(--dark);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--gray) 100%);
+            padding: 60px 0 50px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 16px;
+        }
+        .page-header .breadcrumb {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        .page-header .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Mission Vision Section */
+        .mission-vision {
+            padding: 80px 0;
+            background: var(--dark);
+        }
+        .mv-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        .mv-card {
+            background: var(--card-bg);
+            border-radius: 28px;
+            padding: 40px 32px;
+            border: 1px solid var(--light-gray);
+            transition: all 0.3s ease;
+        }
+        .mv-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary);
+        }
+        .mv-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .mv-card h3 {
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 16px;
+        }
+        .mv-card p {
+            color: #b0b0b0;
+            line-height: 1.6;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 60px 0;
+            background: var(--gray);
+        }
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .story-content h2 {
+            font-size: 2.2rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+        .story-content p {
+            color: #b0b0b0;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .story-image img {
+            width: 100%;
+            border-radius: 28px;
+            border: 1px solid var(--light-gray);
+            transition: all 0.3s;
+        }
+        .story-image img:hover {
+            transform: scale(1.01);
+            border-color: var(--primary);
+        }
+        .signature {
+            margin-top: 24px;
+            font-family: 'Georgia', serif;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        /* Services Section */
+        .services-about {
+            padding: 80px 0;
+            background: var(--dark);
+        }
+        .section-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .section-sub {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+        .services-grid-about {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 28px;
+        }
+        .service-card-about {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 28px 20px;
+            text-align: center;
+            border: 1px solid var(--light-gray);
+            transition: all 0.3s ease;
+        }
+        .service-card-about:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary);
+        }
+        .service-card-about i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+        .service-card-about h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        /* Office Locations */
+        .offices {
+            padding: 80px 0;
+            background: var(--gray);
+        }
+        .office-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        .office-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 32px;
+            border: 1px solid var(--light-gray);
+            transition: all 0.3s;
+        }
+        .office-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        .office-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+        .office-card h4 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+        }
+        .office-card p {
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+        .office-card .small-text {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        /* Social Connect */
+        .social-connect {
+            padding: 60px 0;
+            background: var(--dark);
+            text-align: center;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        .social-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--card-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary);
+            border: 1px solid var(--light-gray);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .social-icon:hover {
+            transform: translateY(-8px) scale(1.1);
+            background: var(--primary);
+            color: var(--dark);
+            border-color: var(--primary);
+        }
+        .youtube-sub {
+            background: linear-gradient(135deg, #FF0000, #cc0000);
+            display: inline-block;
+            padding: 12px 32px;
+            border-radius: 50px;
+            color: white;
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        .youtube-sub:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(255,0,0,0.3);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 70px 0;
+            background: var(--gray);
+            text-align: center;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        /* Footer */
+        .footer {
+            background: #050505;
+            color: #b0b0b0;
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--light-gray);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 40px;
+        }
+        .footer a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        .footer a:hover {
+            color: var(--primary);
+            transform: translateX(4px);
+        }
+        .copyright {
+            border-top: 1px solid var(--light-gray);
+            margin-top: 50px;
+            padding-top: 30px;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 900px) {
+            .mv-grid, .story-grid, .office-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .container {
+                padding: 0 20px;
+            }
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .desktop-book-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Announcement bar -->
+<div class="announcement-bar">
+    <span>🏆 TRUSTED SINCE 2022</span> Helping Nigerians own land & build wealth 📍 Properties in Aba, Umuahia, Abuja, Asaba, Enugu
+</div>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <img src="/static/logo.jpeg" alt = "Jecyani Properties Logo" style = "height: 50px; width: auto;">
+            <h1>JECYANI <span style="color:#FFD700;">PROPERTIES</span></h1>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about" style="color: var(--primary);">About</a>
+            <a href="/properties">Properties</a>
+            <a href="/services">Services</a>
+            <a href="/investments">Investment</a>
+            <a href="/#contact-section">Contact</a>
+        </div>
+
+        <!-- Desktop Book Inspection Button -->
+        <a href="#" class="btn-primary desktop-book-btn" data-property="Jecyani Properties - About Page">📞 Book Inspection</a>
+
+        <!-- Hamburger Menu Button (Mobile) -->
+        <button class="hamburger" id="hamburgerBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Navigation Menu -->
+<div class="overlay" id="mobileOverlay"></div>
+<div class="mobile-nav" id="mobileNav">
+    <div class="close-menu" id="closeMenuBtn">&times;</div>
+    <a href="/">🏠 Home</a>
+    <a href="/about" style="color: var(--primary);">📖 About</a>
+    <a href="/properties">🏘️ Properties</a>
+    <a href="/services">🛠️ Services</a>
+    <a href="/investments">📈 Investment</a>
+    <a href="/#contact-section">📞 Contact</a>
+    <a href="#" class="btn-primary mobile-book-btn" style="text-align: center;" data-property="Jecyani Properties - About Page">📞 Book Inspection</a>
+</div>
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <div class="breadcrumb"><a href="/">Home</a> / About Us</div>
+        <h1 data-aos="fade-up">About <span class="shimmer-text">Jecyani Properties</span></h1>
+        <p data-aos="fade-up" data-aos-delay="100" style="font-size: 1.1rem; color: #aaa; max-width: 600px;">Trusted real estate agency helping Nigerians own land, build wealth, and secure their future with confidence.</p>
+    </div>
+</section>
+
+<!-- Mission & Vision -->
+<section class="mission-vision">
+    <div class="container mv-grid">
+        <div class="mv-card" data-aos="fade-right">
+            <i class="fas fa-bullseye"></i>
+            <h3>Our Mission</h3>
+            <p>To empower individuals and families across Nigeria with trusted real estate opportunities, transparent guidance, and flexible investment solutions that turn the dream of land ownership into reality.</p>
+        </div>
+        <div class="mv-card" data-aos="fade-left">
+            <i class="fas fa-eye"></i>
+            <h3>Our Vision</h3>
+            <p>To become Nigeria's most trusted real estate partner — known for integrity, long-term value, and helping thousands of families build generational wealth through strategic property ownership.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Our Story / Founder Message -->
+<section class="story-section">
+    <div class="container story-grid">
+        <div class="story-content" data-aos="fade-right">
+            <h2>From Vision to <span class="shimmer-text">Reality</span></h2>
+            <p>Jecyani Properties was founded with a simple but powerful belief: <strong>real estate should be built on trust, clarity, and long-term value.</strong> In a market where buyers often face uncertainty, we set out to create a different experience — one where every client feels informed, confident, and supported.</p>
+            <p>Today, we've helped hundreds of Nigerians secure prime properties across Abia, Abuja, Asaba, Enugu, and beyond. From first-time landowners to seasoned investors, our clients trust us because we deliver what we promise: <strong>strategic locations, flexible payments, and genuine guidance.</strong></p>
+            <div class="signature">— Jane Nwakanma, Founder & CEO</div>
+        </div>
+        <div class="story-image" data-aos="fade-left">
+            <img src="/static/ceo-img2.png" alt="Team meeting" class="gentle-float">
+        </div>
+    </div>
+</section>
+
+<!-- Our Services (Complete List) -->
+<section class="services-about">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">What We Do</h2>
+        <div class="section-sub" data-aos="fade-up" data-aos-delay="100">End-to-end real estate solutions for buyers, sellers, and investors</div>
+        <div class="services-grid-about">
+            <div class="service-card-about" data-aos="zoom-in" data-aos-delay="0"><i class="fas fa-home"></i><h4>Buying of Properties</h4></div>
+            <div class="service-card-about" data-aos="zoom-in" data-aos-delay="50"><i class="fas fa-chart-line"></i><h4>Selling of Properties</h4></div>
+            <div class="service-card-about" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-building"></i><h4>Property Management</h4></div>
+            <div class="service-card-about" data-aos="zoom-in" data-aos-delay="150"><i class="fas fa-tools"></i><h4>Facility Management</h4></div>
+            <div class="service-card-about" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-calculator"></i><h4>Property Valuation</h4></div>
+            <div class="service-card-about" data-aos="zoom-in" data-aos-delay="250"><i class="fas fa-hand-holding-usd"></i><h4>Buy Back Investment</h4></div>
+            <div class="service-card-about" data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-handshake"></i><h4>Agency Services</h4></div>
+            <div class="service-card-about" data-aos="zoom-in" data-aos-delay="350"><i class="fas fa-drafting-compass"></i><h4>Property Construction</h4></div>
+            <div class="service-card-about" data-aos="zoom-in" data-aos-delay="400"><i class="fas fa-chalkboard-user"></i><h4>Investment Consultancy</h4></div>
+        </div>
+    </div>
+</section>
+
+<!-- Office Locations -->
+<section class="offices">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Our Offices</h2>
+        <div class="section-sub" data-aos="fade-up" data-aos-delay="100">Visit us at any of our locations across Nigeria</div>
+        <div class="office-grid">
+            <div class="office-card" data-aos="flip-left" data-aos-delay="0">
+                <i class="fas fa-map-marker-alt"></i>
+                <h4>Head Office</h4>
+                <p>1st Floor, 31 G.U. Ake Road,</p>
+                <p>Eliouz, Port Harcourt</p>
+                <p class="small-text">Rivers State, Nigeria</p>
+            </div>
+            <div class="office-card" data-aos="flip-left" data-aos-delay="100">
+                <i class="fas fa-map-marker-alt"></i>
+                <h4>Umuahia Office</h4>
+                <p>2nd Floor, Unity Bank Building,</p>
+                <p>Club Road by Okpara Square, Umuahia</p>
+                <p class="small-text">Abia State, Nigeria</p>
+            </div>
+            <div class="office-card" data-aos="flip-left" data-aos-delay="200">
+                <i class="fas fa-map-marker-alt"></i>
+                <h4>Property Location</h4>
+                <p>GGCG+638, Ikot Ekpene - Umuahia Rd,</p>
+                <p>Umuahia 440236, Abia</p>
+                <p class="small-text">Abia State, Nigeria</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Connect With Us / Social Media -->
+<section class="social-connect">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Connect With Us</h2>
+        <div class="section-sub" data-aos="fade-up" data-aos-delay="100">Follow us on social media for property updates, insights, and investment opportunities</div>
+
+        <div class="social-icons" data-aos="zoom-in" data-aos-delay="150">
+            <a href="https://www.youtube.com/@jecyanimult-resourcesltd" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.linkedin.com/in/jane-nwakanma-2a178820a" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://instagram.com/jecyani_properties" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/jane.nwangoro.7" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/2348160087513" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="200">
+            <a href="https://www.youtube.com/@jecyanimult-resourcesltd" target="_blank" class="youtube-sub">
+                <i class="fab fa-youtube"></i> Subscribe on YouTube
+            </a>
+        </div>
+
+        <div style="margin-top: 40px;" data-aos="fade-up" data-aos-delay="250">
+            <p style="color: #aaa;">📧 <strong>Email:</strong> jayny57@gmail.com | 📞 <strong>Phone/WhatsApp:</strong> 08160087513</p>
+            <p style="color: #aaa; margin-top: 10px;">🌐 <strong>Property Listings:</strong> <a href="https://nigeriapropertycentre.com/feeds/property/178599" target="_blank" style="color: var(--primary);">View on Nigeria Property Centre</a></p>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Stats -->
+<section style="padding: 60px 0; background: var(--gray);">
+    <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center;">
+            <div data-aos="zoom-in"><div style="font-size: 2.5rem; font-weight: 800; color: var(--primary);">2022</div><div style="color: #aaa;">Founded</div></div>
+            <div data-aos="zoom-in" data-aos-delay="100"><div style="font-size: 2.5rem; font-weight: 800; color: var(--primary);">8+</div><div style="color: #aaa;">Premium Estates</div></div>
+            <div data-aos="zoom-in" data-aos-delay="200"><div style="font-size: 2.5rem; font-weight: 800; color: var(--primary);">500+</div><div style="color: #aaa;">Happy Clients</div></div>
+            <div data-aos="zoom-in" data-aos-delay="300"><div style="font-size: 2.5rem; font-weight: 800; color: var(--primary);">6+</div><div style="color: #aaa;">Cities Covered</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container" data-aos="zoom-in">
+        <h2 style="font-size: 2rem; color: white;">Ready to Own Your Piece of Nigeria?</h2>
+        <p style="margin: 20px auto; max-width: 600px; color: #ccc;">Whether you're buying your first plot or expanding your portfolio
+            , we're here to guide you every step of the way.</p>
+        <div class="btn-group" style="display: flex; gap: 16px; justify-content: center; margin-top: 20px;">
+            <a href="#" class="btn-primary book-inspect-btn" data-property="Jecyani Properties - Contact">📞 Contact Us Today</a>
+            <a href="/properties" class="btn-outline-light">View Available Properties</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container footer-grid">
+        <div>
+            <div class="logo" style="margin-bottom: 12px;">
+                <img src="/static/logo.jpeg" alt = "Jecyani Properties Logo" style="width: auto; height: 40px;"></img>
+                <h3 style="color: white; margin-top: 8px;">JECYANI PROPERTIES</h3>
+            </div>
+            <p>Nigeria's trusted real estate agency helping buyers, sellers, and investors navigate the property market with confidence.</p>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
+            <a href="/">Home</a><br>
+            <a href="/about">About Us</a><br>
+            <a href="/properties">Properties</a><br>
+            <a href="/services">Services</a><br>
+            <a href="#">Contact</a>
+        </div>
+        <div>
+            <h4>Our Services</h4>
+            <a href="#">Buying Properties</a><br>
+            <a href="#">Selling Properties</a><br>
+            <a href="#">Property Management</a><br>
+            <a href="#">Investment Consultancy</a><br>
+            <a href="#">Property Valuation</a>
+        </div>
+        <div>
+            <h4>Contact Info</h4>
+            <p><i class="fas fa-phone"></i> 08160087513</p>
+            <p><i class="fab fa-whatsapp"></i> 08160087513</p>
+            <p><i class="fas fa-envelope"></i> jayny57@gmail.com</p>
+            <p><i class="fas fa-map-pin"></i> GGCG+638, Ikot Ekpene - Umuahia Rd, Abia</p>
+        </div>
+    </div>
+    <div class="copyright container">
+        © 2026 Jecyani Properties — All rights reserved. | Built with <i class="fas fa-heart" style="color: var(--primary);"></i> for Nigerian landowners
+    </div>
+</footer>
+
+<!-- Modal -->
+<div id="inspectionModal" class="modal">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <h3>📞 Book an Inspection</h3>
+        <div class="modal-sub">Choose how you'd like to connect with us</div>
+        <div id="modalPropertyName" class="property-name-display"></div>
+        <div class="modal-buttons">
+            <a href="#" id="callNowBtn" class="modal-btn modal-btn-call"><i class="fas fa-phone-alt"></i> Call Now</a>
+            <a href="#" id="whatsappBtn" class="modal-btn modal-btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
+        </div>
+        <p style="text-align: center; margin-top: 20px; font-size: 0.75rem; color: #666;">Clicking will open your phone dialer or WhatsApp</p>
+    </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100,
+        easing: 'ease-out-quad'
+    });
+
+    // ============================================
+    // HAMBURGER MENU (MOBILE)
+    // ============================================
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+
+    function openMobileMenu() {
+        mobileNav.classList.add('active');
+        mobileOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+        mobileNav.classList.remove('active');
+        mobileOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    if (hamburgerBtn) {
+        hamburgerBtn.addEventListener('click', openMobileMenu);
+    }
+    if (closeMenuBtn) {
+        closeMenuBtn.addEventListener('click', closeMobileMenu);
+    }
+    if (mobileOverlay) {
+        mobileOverlay.addEventListener('click', closeMobileMenu);
+    }
+
+    // ============================================
+    // MODAL FOR BOOK INSPECTION ONLY (Fixed)
+    // ============================================
+    const modal = document.getElementById('inspectionModal');
+    const modalPropertyName = document.getElementById('modalPropertyName');
+    const callNowBtn = document.getElementById('callNowBtn');
+    const whatsappBtn = document.getElementById('whatsappBtn');
+    const closeModal = document.querySelector('.modal-close');
+
+    const PHONE_NUMBER = '2348160087513';
+    const PHONE_DISPLAY = '08160087513';
+    let currentProperty = 'Jecyani Properties';
+
+    function openModal(propertyName) {
+        currentProperty = propertyName || 'Jecyani Properties';
+        modalPropertyName.innerHTML = `<i class="fas fa-home"></i> ${currentProperty}`;
+        modal.style.display = 'flex';
+
+        const message = `Hello Jecyani Properties,%0A%0AI'm interested in booking an inspection for:%0A📍 ${encodeURIComponent(currentProperty)}%0A%0APlease let me know available dates. Thank you!`;
+        whatsappBtn.href = `https://wa.me/${PHONE_NUMBER}?text=${message}`;
+        callNowBtn.href = `tel:${PHONE_DISPLAY}`;
+    }
+
+    function closeModalFunc() {
+        modal.style.display = 'none';
+    }
+
+    // ONLY target specific buttons that should open the modal
+    const bookInspectionSelectors = [
+        '.btn-primary.book-inspect-btn',
+        '.btn-outline-light.book-inspect-btn',
+        '.btn-inspect',
+        '.secure-plot-btn',
+        '.talk-advisor-btn',
+        '.desktop-book-btn',
+        '.mobile-book-btn',
+        '.btn-primary[data-property]',
+        '.btn-outline-light[data-property]'
+    ];
+
+    // Also catch buttons with text "Book Inspection" or "Secure This Plot" or "Talk to Advisor"
+    document.querySelectorAll('.btn-primary, .btn-outline-light, .btn-small').forEach(btn => {
+        const text = btn.innerText.toLowerCase();
+        if (text.includes('book inspection') ||
+            text.includes('secure this plot') ||
+            text.includes('talk to an advisor') ||
+            text.includes('contact us today') ||
+            btn.classList.contains('book-inspect-btn') ||
+            btn.classList.contains('secure-plot-btn') ||
+            btn.classList.contains('talk-advisor-btn')) {
+
+            // Remove old listener and add new one
+            const newBtn = btn.cloneNode(true);
+            btn.parentNode.replaceChild(newBtn, btn);
+
+            newBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                let property = this.getAttribute('data-property');
+                if (!property) {
+                    const parentCard = this.closest('.property-card, .opportunity-card, .estate-grid, .featured');
+                    if (parentCard) {
+                        const titleElem = parentCard.querySelector('.property-title, .opportunity-header h3, .estate-grid h3');
+                        if (titleElem) property = titleElem.innerText.trim();
+                    }
+                }
+                if (!property) property = 'Jecyani Properties';
+                openModal(property);
+            });
+        }
+    });
+
+    // Also handle navbar button specifically
+    const navBookBtn = document.querySelector('.navbar .btn-primary:not(.mobile-book-btn)');
+    if (navBookBtn && !navBookBtn.hasAttribute('data-no-modal')) {
+        const newNavBtn = navBookBtn.cloneNode(true);
+        navBookBtn.parentNode.replaceChild(newNavBtn, navBookBtn);
+        newNavBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            openModal('Jecyani Properties - General Inquiry');
+        });
+    }
+
+    if (closeModal) {
+        closeModal.addEventListener('click', closeModalFunc);
+    }
+    window.addEventListener('click', function(e) {
+        if (e.target === modal) closeModalFunc();
+    });
+
+    if (closeModal) {
+        closeModal.addEventListener('click', closeModalFunc);
+    }
+    window.addEventListener('click', function(e) {
+        if (e.target === modal) closeModalFunc();
+    });
+</script>
+</body>
+</html>
