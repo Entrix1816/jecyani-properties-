@@ -180,7 +180,7 @@
             text-align: center;
         }
 
-        /* Announcement Bar */
+        /* Announcement Bar with Marquee Animation */
         .announcement-bar {
             background-color: var(--primary);
             color: var(--dark);
@@ -189,7 +189,17 @@
             text-align: center;
             font-weight: 600;
             z-index: 1001;
+            position: relative;
+            overflow: hidden;
         }
+
+        .announcement-marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marqueeScroll 25s linear infinite;
+            padding-right: 50px;
+        }
+
         .announcement-bar span {
             background-color: var(--dark);
             color: var(--primary);
@@ -198,6 +208,36 @@
             font-size: 0.7rem;
             font-weight: 700;
             margin-right: 8px;
+            display: inline-block;
+        }
+
+        .announcement-bar i {
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        @keyframes marqueeScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .announcement-bar {
+                padding: 10px 0;
+                font-size: 0.75rem;
+            }
+            .announcement-marquee {
+                animation: marqueeScroll 20s linear infinite;
+            }
+            .announcement-bar span {
+                font-size: 0.65rem;
+                padding: 2px 8px;
+                margin-right: 6px;
+            }
+            .announcement-bar i {
+                font-size: 0.7rem;
+            }
         }
 
         /* Navbar */
@@ -774,9 +814,23 @@
 </head>
 <body>
 
-<!-- Announcement bar -->
+<!-- Announcement bar with Marquee Animation -->
 <div class="announcement-bar">
-    <span>📈 INVESTMENT ALERT</span> Start with just 30% deposit | Flexible payment plans | High ROI locations
+    <div class="announcement-marquee">
+        <span>📈 INVESTMENT ALERT</span>
+        Start with just 30% deposit &nbsp;|&nbsp;
+        💳 Flexible payment plans &nbsp;|&nbsp;
+        📍 High ROI locations &nbsp;|&nbsp;
+        🏆 Secure your future today
+        <i class="fas fa-arrow-right"></i>
+        &nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp;
+        <span>📈 INVESTMENT ALERT</span>
+        Start with just 30% deposit &nbsp;|&nbsp;
+        💳 Flexible payment plans &nbsp;|&nbsp;
+        📍 High ROI locations &nbsp;|&nbsp;
+        🏆 Secure your future today
+        <i class="fas fa-arrow-right"></i>
+    </div>
 </div>
 
 <!-- Navbar -->

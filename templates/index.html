@@ -609,7 +609,7 @@
             transform: translateY(-2px);
         }
 
-        /* Hero - MODIFIED: Full background image cover with centered text */
+        /* Hero - Full background image cover with centered text */
         .hero {
             position: relative;
             min-height: 90vh;
@@ -682,7 +682,6 @@
             color: var(--primary);
             margin-right: 8px;
         }
-        /* Hide the old hero-image div since we use bg image */
         .hero-image {
             display: none;
         }
@@ -759,7 +758,8 @@
             width: 100%;
             border-radius: 28px;
             box-shadow: var(--shadow-md);
-            height: 420px;
+            height: auto;
+            max-height: 420px;
             object-fit: cover;
             transition: all 0.4s ease;
         }
@@ -863,22 +863,24 @@
             .stats-grid { grid-template-columns: 1fr 1fr; }
             .section-title { font-size: 1.8rem; }
             .price-amount-dynamic { font-size: 2.4rem; }
+            .estate-img img { max-height: 320px; }
         }
 
-        /* Video Carousel Section - Fixed Responsive */
+        /* Video Carousel Section - FIXED: Proper centering and sizing */
         .video-carousel-section {
             background: var(--gray);
             padding: 80px 0;
         }
         .video-carousel-wrapper {
             position: relative;
-            margin: 40px 0 30px;
-            overflow: hidden;
+            margin: 40px auto 30px;
+            max-width: 1000px;
         }
         .video-carousel-container {
             position: relative;
             overflow: hidden;
             border-radius: 24px;
+            background: #000;
         }
         .video-carousel-track {
             display: flex;
@@ -887,7 +889,6 @@
         .video-slide {
             min-width: 100%;
             flex-shrink: 0;
-            padding: 0 10px;
         }
         .video-card {
             background: var(--card-bg);
@@ -895,7 +896,7 @@
             overflow: hidden;
             border: 1px solid var(--light-gray);
             transition: all 0.3s ease;
-            max-width: 100%;
+            width: 100%;
         }
         .video-card:hover {
             transform: translateY(-5px);
@@ -908,24 +909,34 @@
             cursor: pointer;
             overflow: hidden;
             width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .video-element {
+        .video-thumbnail {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        .video-player {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: contain;
-            background-color: #000;
-        }
-        /* Video controls - ensure volume is visible */
-        .video-element::-webkit-media-controls {
+            background: #000;
             z-index: 10;
+            display: none;
         }
-        .video-element::-webkit-media-controls-volume-slider {
-            display: flex !important;
-        }
-        .video-element::-webkit-media-controls-mute-button {
-            display: flex !important;
-        }
-        .video-cover-overlay {
+        .video-play-overlay {
             position: absolute;
             top: 0;
             left: 0;
@@ -937,11 +948,9 @@
             justify-content: center;
             transition: all 0.3s ease;
             cursor: pointer;
+            z-index: 5;
         }
-        .video-cover-overlay:hover {
-            background: rgba(0,0,0,0.6);
-        }
-        .play-button {
+        .play-button-large {
             width: 70px;
             height: 70px;
             background: var(--primary);
@@ -953,19 +962,11 @@
             font-size: 1.8rem;
             transition: all 0.3s ease;
             cursor: pointer;
+            z-index: 6;
         }
-        .play-button:hover {
+        .play-button-large:hover {
             transform: scale(1.1);
             background: var(--primary-dark);
-        }
-        .video-loading {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: var(--primary);
-            font-size: 2rem;
-            z-index: 10;
         }
         .video-caption {
             padding: 20px;
@@ -1053,13 +1054,30 @@
         .youtube-link i {
             font-size: 1.3rem;
         }
+        .video-stats {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        .stat-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--gray);
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
 
         /* Mobile Specific Fixes for Video Carousel */
         @media (max-width: 768px) {
             .video-carousel-section {
                 padding: 60px 0;
             }
-            .play-button {
+            .play-button-large {
                 width: 50px;
                 height: 50px;
                 font-size: 1.3rem;
@@ -1081,36 +1099,19 @@
             .video-caption p {
                 font-size: 0.75rem;
             }
-            .video-slide {
-                padding: 0 5px;
-            }
             .video-carousel-container {
                 border-radius: 16px;
             }
-        }
-
-        /* Desktop Size Control - Limit max width */
-        @media (min-width: 1200px) {
-            .video-carousel-wrapper {
-                max-width: 1100px;
-                margin: 40px auto 30px;
-            }
-            .video-card {
-                max-width: 100%;
-            }
-        }
-        /* Limit video carousel width on large screens */
-        @media (min-width: 1400px) {
-            .video-carousel-wrapper {
-                max-width: 1000px;
-                margin-left: auto;
-                margin-right: auto;
+            .video-preview {
+                aspect-ratio: 16 / 9;
             }
         }
 
         @media (max-width: 480px) {
-            .video-preview {
-                aspect-ratio: 4 / 3;  /* Taller videos on mobile */
+            .play-button-large {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
             }
             .carousel-nav-btn {
                 width: 30px;
@@ -1121,7 +1122,6 @@
                 padding: 12px;
             }
         }
-
 
         /* Services */
         .services-grid {
@@ -1236,27 +1236,6 @@
             border: 1px solid var(--light-gray);
         }
 
-        /* Media */
-        .media-grid {
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap: 28px;
-            margin: 40px 0;
-        }
-        .media-card {
-            border-radius: 24px;
-            overflow: hidden;
-            background: var(--gray);
-            position: relative;
-            cursor: pointer;
-            border: 1px solid var(--light-gray);
-        }
-        .media-card img {
-            width: 100%;
-            aspect-ratio: 16/9;
-            object-fit: cover;
-        }
-
         /* Final CTA */
         .final-cta {
             background: var(--gray);
@@ -1296,107 +1275,6 @@
             border-color: var(--primary);
         }
 
-        /* Video Stats Badges */
-        .video-stats {
-            display: flex;
-            gap: 15px;
-            margin-top: 10px;
-            flex-wrap: wrap;
-        }
-        .stat-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: var(--gray);
-            padding: 5px 12px;
-            border-radius: 30px;
-            font-size: 0.75rem;
-            color: var(--primary);
-            font-weight: 500;
-        }
-        .stat-badge i {
-            font-size: 0.7rem;
-            color: var(--primary);
-        }
-
-        /* Video Caption */
-        .video-caption {
-            padding: 20px;
-        }
-        .video-caption h4 {
-            color: white;
-            font-size: 1.2rem;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        @media (max-width: 768px) {
-            .video-stats {
-                gap: 10px;
-            }
-            .stat-badge {
-                padding: 4px 10px;
-                font-size: 0.7rem;
-            }
-            .video-caption {
-                padding: 15px;
-            }
-            .video-caption h4 {
-                font-size: 1rem;
-            }
-        }
-        .video-thumbnail {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-            display: block;
-        }
-
-        .video-player {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            background: #000;
-            z-index: 10;
-            display: none;
-        }
-
-        .play-button-large {
-            width: 70px;
-            height: 70px;
-            background: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--dark);
-            font-size: 1.8rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        .play-button-large:hover {
-            transform: scale(1.1);
-            background: var(--primary-dark);
-        }
-        .video-play-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            z-index: 5;
-        }
-
         /* Footer */
         .footer {
             background: #050505;
@@ -1427,7 +1305,7 @@
             font-size: 0.8rem;
         }
 
-        /* Mobile Responsive - Keeping all original styles but improving mobile experience */
+        /* Mobile Responsive */
         @media (max-width: 900px) {
             .hero-grid, .estate-grid, .split-section, .ceo-grid, .contact-grid {
                 grid-template-columns: 1fr;
@@ -1453,9 +1331,6 @@
             .hero h1 {
                 font-size: 2.5rem;
             }
-            .hero-image img {
-                height: 320px;
-            }
             .section-title {
                 font-size: 1.8rem;
             }
@@ -1473,13 +1348,6 @@
                 height: 35px;
                 font-size: 1rem;
             }
-            .hero p {
-                max-width: 100%;
-            }
-            .trust-strip {
-                flex-wrap: wrap;
-                gap: 12px;
-            }
             .btn-group {
                 gap: 12px;
             }
@@ -1490,15 +1358,8 @@
             .stat-card .number {
                 font-size: 1.8rem;
             }
-            .stat-card .label {
-                font-size: 0.8rem;
-            }
-            .price-amount {
-                font-size: 1.5rem;
-            }
         }
 
-        /* Extra small devices */
         @media (max-width: 480px) {
             .container {
                 padding: 0 16px;
@@ -1527,16 +1388,6 @@
             }
             .section-title {
                 font-size: 1.6rem;
-            }
-            .price-card {
-                padding: 15px;
-            }
-            .price-amount {
-                font-size: 1.3rem;
-            }
-            .feature-list span {
-                font-size: 0.7rem;
-                padding: 4px 10px;
             }
             .service-card {
                 padding: 24px 18px;
@@ -1658,7 +1509,7 @@
 </div>
 
 <main>
-    <!-- Hero Section - MODIFIED: Full background image with centered text -->
+    <!-- Hero Section -->
     <div class="hero">
         <div class="container" data-aos="fade-up" data-aos-duration="800">
             <div class="hero-badge">Trusted Real Estate & Investment Solutions</div>
@@ -1686,7 +1537,7 @@
         </div>
     </div>
 
-    <!-- Featured Estate: Juniper - MODIFIED: Tabs with auto-rotate -->
+    <!-- Featured Estate: Juniper -->
     <div class="featured">
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Featured Investment Opportunity</h2>
@@ -1726,7 +1577,7 @@
         </div>
     </div>
 
-    <!-- Video Carousel Section -->
+    <!-- Video Carousel Section - FIXED -->
     <div class="video-carousel-section">
         <div class="container">
             <h2 class="section-title">Past Projects & Land Acquisitions</h2>
@@ -1736,214 +1587,122 @@
 
             <div class="video-carousel-wrapper">
                 <div class="video-carousel-container">
-
-                    <!-- TRACK -->
                     <div class="video-carousel-track" id="videoTrack">
-
-                        <!-- SLIDE 1 -->
                         <div class="video-slide">
                             <div class="video-card">
                                 <div class="video-preview">
-
                                     <img src="/static/land.jpeg" class="video-thumbnail" alt="Juniper Estate">
-
                                     <div class="video-play-overlay">
-                                        <div class="play-button-large">
-                                            <i class="fas fa-play"></i>
-                                        </div>
+                                        <div class="play-button-large"><i class="fas fa-play"></i></div>
                                     </div>
-
                                     <video class="video-player" preload="metadata" playsinline controls>
                                         <source src="static/video/vid1.mp4" type="video/mp4">
                                     </video>
-
                                 </div>
-
                                 <div class="video-caption">
                                     <h4>Juniper Estate Phase 2</h4>
-                                    <div class="video-stats">
-                                        <span class="stat-badge">Plots Sold: 48</span>
-                                        <span class="stat-badge">90% Occupied</span>
-                                    </div>
+                                    <div class="video-stats"><span class="stat-badge">Plots Sold: 48</span><span class="stat-badge">90% Occupied</span></div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- SLIDE 2 -->
                         <div class="video-slide">
                             <div class="video-card">
                                 <div class="video-preview">
-
                                     <img src="/static/land7.jpeg" class="video-thumbnail" alt="Oakwood City">
-
                                     <div class="video-play-overlay">
-                                        <div class="play-button-large">
-                                            <i class="fas fa-play"></i>
-                                        </div>
+                                        <div class="play-button-large"><i class="fas fa-play"></i></div>
                                     </div>
-
                                     <video class="video-player" preload="metadata" playsinline controls>
                                         <source src="static/video/vid2.mp4" type="video/mp4">
                                     </video>
-
                                 </div>
-
                                 <div class="video-caption">
                                     <h4>Oakwood City Estate</h4>
-                                    <div class="video-stats">
-                                        <span class="stat-badge">Plots Sold: 62</span>
-                                        <span class="stat-badge">35 Units Built</span>
-                                    </div>
+                                    <div class="video-stats"><span class="stat-badge">Plots Sold: 62</span><span class="stat-badge">35 Units Built</span></div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- SLIDE 3 -->
                         <div class="video-slide">
                             <div class="video-card">
                                 <div class="video-preview">
-
                                     <img src="/static/land2.jpeg" class="video-thumbnail" alt="Ivy Supreme">
-
                                     <div class="video-play-overlay">
-                                        <div class="play-button-large">
-                                            <i class="fas fa-play"></i>
-                                        </div>
+                                        <div class="play-button-large"><i class="fas fa-play"></i></div>
                                     </div>
-
                                     <video class="video-player" preload="metadata" playsinline controls>
                                         <source src="static/video/vid3.mp4" type="video/mp4">
                                     </video>
-
                                 </div>
-
                                 <div class="video-caption">
                                     <h4>Ivy Supreme Extension</h4>
-                                    <div class="video-stats">
-                                        <span class="stat-badge">Plots Sold: 35</span>
-                                        <span class="stat-badge">Launching Soon</span>
-                                    </div>
+                                    <div class="video-stats"><span class="stat-badge">Plots Sold: 35</span><span class="stat-badge">Launching Soon</span></div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- SLIDE 4 -->
                         <div class="video-slide">
                             <div class="video-card">
                                 <div class="video-preview">
-
                                     <img src="/static/land8.jpeg" class="video-thumbnail" alt="Gold Town">
-
                                     <div class="video-play-overlay">
-                                        <div class="play-button-large">
-                                            <i class="fas fa-play"></i>
-                                        </div>
+                                        <div class="play-button-large"><i class="fas fa-play"></i></div>
                                     </div>
-
                                     <video class="video-player" preload="metadata" playsinline controls>
                                         <source src="static/video/vid4.mp4" type="video/mp4">
                                     </video>
-
                                 </div>
-
                                 <div class="video-caption">
                                     <h4>Gold Town Estate</h4>
-                                    <div class="video-stats">
-                                        <span class="stat-badge">Plots Sold: 52</span>
-                                        <span class="stat-badge">100% Sold Out</span>
-                                    </div>
+                                    <div class="video-stats"><span class="stat-badge">Plots Sold: 52</span><span class="stat-badge">100% Sold Out</span></div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- SLIDE 5 -->
                         <div class="video-slide">
                             <div class="video-card">
                                 <div class="video-preview">
-
                                     <img src="/static/land4.jpeg" class="video-thumbnail" alt="Crystal City">
-
                                     <div class="video-play-overlay">
-                                        <div class="play-button-large">
-                                            <i class="fas fa-play"></i>
-                                        </div>
+                                        <div class="play-button-large"><i class="fas fa-play"></i></div>
                                     </div>
-
                                     <video class="video-player" preload="metadata" playsinline controls>
                                         <source src="static/video/vid5.mp4" type="video/mp4">
                                     </video>
-
                                 </div>
-
                                 <div class="video-caption">
                                     <h4>Crystal City Asaba</h4>
-                                    <div class="video-stats">
-                                        <span class="stat-badge">Plots Sold: 28</span>
-                                        <span class="stat-badge">Waterfront Plots</span>
-                                    </div>
+                                    <div class="video-stats"><span class="stat-badge">Plots Sold: 28</span><span class="stat-badge">Waterfront Plots</span></div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- SLIDE 6 -->
                         <div class="video-slide">
                             <div class="video-card">
                                 <div class="video-preview">
-
                                     <img src="/static/land3.jpeg" class="video-thumbnail" alt="Cedar City">
-
                                     <div class="video-play-overlay">
-                                        <div class="play-button-large">
-                                            <i class="fas fa-play"></i>
-                                        </div>
+                                        <div class="play-button-large"><i class="fas fa-play"></i></div>
                                     </div>
-
                                     <video class="video-player" preload="metadata" playsinline controls>
                                         <source src="static/video/vid6.mp4" type="video/mp4">
                                     </video>
-
                                 </div>
-
                                 <div class="video-caption">
                                     <h4>Cedar City Enugu</h4>
-                                    <div class="video-stats">
-                                        <span class="stat-badge">Plots Sold: 41</span>
-                                        <span class="stat-badge">Hillside Development</span>
-                                    </div>
+                                    <div class="video-stats"><span class="stat-badge">Plots Sold: 41</span><span class="stat-badge">Hillside Development</span></div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
-                    <!-- NAV BUTTONS -->
-                    <button class="carousel-nav-btn prev-btn" id="videoPrevBtn">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-
-                    <button class="carousel-nav-btn next-btn" id="videoNextBtn">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-
+                    <button class="carousel-nav-btn prev-btn" id="videoPrevBtn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-nav-btn next-btn" id="videoNextBtn"><i class="fas fa-chevron-right"></i></button>
                 </div>
-
-                <!-- DOTS -->
                 <div class="video-carousel-dots" id="videoCarouselDots"></div>
             </div>
-
-            <!-- YOUTUBE LINK -->
             <div class="youtube-link-wrapper">
                 <a href="https://www.youtube.com/@jecyanimult-resourcesltd" target="_blank" class="youtube-link">
                     <i class="fab fa-youtube"></i> Watch More on YouTube →
                 </a>
             </div>
-
         </div>
     </div>
-
-
-
-
 
     <!-- Services Section -->
     <div class="container" style="padding: 80px 0;">
@@ -1982,8 +1741,6 @@
     <div class="testimonials">
         <div class="container"><h2 class="section-title" data-aos="fade-up">What Our Clients Say</h2><div class="testimonial-grid"><div class="testimonial-card" data-aos="zoom-in" data-aos-delay="0"><i class="fas fa-quote-left" style="font-size:1.6rem;"></i><p style="margin:15px 0;">Seamless process and excellent guidance. Jecyani made my first land purchase stress-free.</p><h4>— Chidi O.</h4><span>Investor</span></div><div class="testimonial-card" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-quote-left" style="font-size:1.6rem;"></i><p style="margin:15px 0;">Professional team, transparent documentation. Highly recommend Juniper Estate.</p><h4>— Ngozi A.</h4><span>Property Buyer</span></div><div class="testimonial-card" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-quote-left" style="font-size:1.6rem;"></i><p style="margin:15px 0;">Their property management services are top-tier. My rental income has never been better.</p><h4>— Emeka K.</h4><span>Landlord</span></div></div></div>
     </div>
-
-
 
     <!-- Final CTA Banner -->
     <div class="final-cta">
@@ -2027,46 +1784,20 @@
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100,
-        easing: 'ease-out-quad'
-    });
+    AOS.init({ duration: 800, once: true, offset: 100, easing: 'ease-out-quad' });
 
-    // ============================================
-    // HAMBURGER MENU (MOBILE)
-    // ============================================
+    // Hamburger Menu
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const mobileNav = document.getElementById('mobileNav');
     const mobileOverlay = document.getElementById('mobileOverlay');
     const closeMenuBtn = document.getElementById('closeMenuBtn');
+    function openMobileMenu() { mobileNav.classList.add('active'); mobileOverlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function closeMobileMenu() { mobileNav.classList.remove('active'); mobileOverlay.classList.remove('active'); document.body.style.overflow = ''; }
+    if (hamburgerBtn) hamburgerBtn.addEventListener('click', openMobileMenu);
+    if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMobileMenu);
+    if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
 
-    function openMobileMenu() {
-        mobileNav.classList.add('active');
-        mobileOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeMobileMenu() {
-        mobileNav.classList.remove('active');
-        mobileOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-
-    if (hamburgerBtn) {
-        hamburgerBtn.addEventListener('click', openMobileMenu);
-    }
-    if (closeMenuBtn) {
-        closeMenuBtn.addEventListener('click', closeMobileMenu);
-    }
-    if (mobileOverlay) {
-        mobileOverlay.addEventListener('click', closeMobileMenu);
-    }
-
-    // ============================================
-    // FLYER CAROUSEL MODAL (Original)
-    // ============================================
+    // Flyer Carousel
     const flyerModal = document.getElementById('flyerModal');
     const announcementBar = document.getElementById('announcementBar');
     const closeFlyerBtn = document.getElementById('closeFlyerBtn');
@@ -2075,94 +1806,33 @@
     const flyerDotsContainer = document.getElementById('flyerCarouselDots');
     const flyerPrevBtn = document.getElementById('flyerPrevBtn');
     const flyerNextBtn = document.getElementById('flyerNextBtn');
-    let flyerCurrentIndex = 0;
-    let flyerAutoSlideInterval;
-
-    // Create dots for flyer
+    let flyerCurrentIndex = 0, flyerAutoSlideInterval;
     for (let i = 0; i < flyerTotalSlides; i++) {
         const dot = document.createElement('div');
         dot.classList.add('flyer-dot');
         if (i === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => {
-            flyerCurrentIndex = i;
-            updateFlyerCarousel();
-            resetFlyerAutoSlide();
-        });
+        dot.addEventListener('click', () => { flyerCurrentIndex = i; updateFlyerCarousel(); resetFlyerAutoSlide(); });
         flyerDotsContainer.appendChild(dot);
     }
-
-    function updateFlyerCarousel() {
-        flyerSlides.style.transform = `translateX(-${flyerCurrentIndex * 100}%)`;
-        document.querySelectorAll('.flyer-dot').forEach((dot, i) => {
-            dot.classList.toggle('active', i === flyerCurrentIndex);
-        });
-    }
-
-    function nextFlyerSlide() {
-        flyerCurrentIndex = (flyerCurrentIndex + 1) % flyerTotalSlides;
-        updateFlyerCarousel();
-        resetFlyerAutoSlide();
-    }
-
-    function prevFlyerSlide() {
-        flyerCurrentIndex = (flyerCurrentIndex - 1 + flyerTotalSlides) % flyerTotalSlides;
-        updateFlyerCarousel();
-        resetFlyerAutoSlide();
-    }
-
-    function resetFlyerAutoSlide() {
-        clearInterval(flyerAutoSlideInterval);
-        flyerAutoSlideInterval = setInterval(nextFlyerSlide, 5000);
-    }
-
-    if (announcementBar) {
-        announcementBar.addEventListener('click', () => {
-            flyerModal.style.display = 'flex';
-            resetFlyerAutoSlide();
-        });
-    }
-
-    if (closeFlyerBtn) {
-        closeFlyerBtn.addEventListener('click', () => {
-            flyerModal.style.display = 'none';
-            clearInterval(flyerAutoSlideInterval);
-        });
-    }
-    if (flyerModal) {
-        flyerModal.addEventListener('click', (e) => {
-            if (e.target === flyerModal) {
-                flyerModal.style.display = 'none';
-                clearInterval(flyerAutoSlideInterval);
-            }
-        });
-    }
-
+    function updateFlyerCarousel() { flyerSlides.style.transform = `translateX(-${flyerCurrentIndex * 100}%)`; document.querySelectorAll('.flyer-dot').forEach((dot, i) => dot.classList.toggle('active', i === flyerCurrentIndex)); }
+    function nextFlyerSlide() { flyerCurrentIndex = (flyerCurrentIndex + 1) % flyerTotalSlides; updateFlyerCarousel(); resetFlyerAutoSlide(); }
+    function prevFlyerSlide() { flyerCurrentIndex = (flyerCurrentIndex - 1 + flyerTotalSlides) % flyerTotalSlides; updateFlyerCarousel(); resetFlyerAutoSlide(); }
+    function resetFlyerAutoSlide() { clearInterval(flyerAutoSlideInterval); flyerAutoSlideInterval = setInterval(nextFlyerSlide, 5000); }
+    if (announcementBar) announcementBar.addEventListener('click', () => { flyerModal.style.display = 'flex'; resetFlyerAutoSlide(); });
+    if (closeFlyerBtn) closeFlyerBtn.addEventListener('click', () => { flyerModal.style.display = 'none'; clearInterval(flyerAutoSlideInterval); });
+    if (flyerModal) flyerModal.addEventListener('click', (e) => { if (e.target === flyerModal) { flyerModal.style.display = 'none'; clearInterval(flyerAutoSlideInterval); } });
     if (flyerPrevBtn) flyerPrevBtn.addEventListener('click', prevFlyerSlide);
     if (flyerNextBtn) flyerNextBtn.addEventListener('click', nextFlyerSlide);
-    updateFlyerCarousel();
-    resetFlyerAutoSlide();
+    updateFlyerCarousel(); resetFlyerAutoSlide();
 
-    // ============================================
-    // VIDEO CAROUSEL - FIXED VERSION
-    // ============================================
-
+    // Video Carousel - Fixed centering and auto-rotate stops on play
     const videoTrack = document.getElementById('videoTrack');
     const videoSlides = document.querySelectorAll('.video-slide');
     const videoPrevBtn = document.getElementById('videoPrevBtn');
     const videoNextBtn = document.getElementById('videoNextBtn');
     const videoDotsContainer = document.getElementById('videoCarouselDots');
-
-    let videoCurrentIndex = 0;
-    let videoAutoRotateInterval;
-    let isVideoPlaying = false;
-    let currentPlayingVideo = null;
-    let currentPlayingCard = null;
-
+    let videoCurrentIndex = 0, videoAutoRotateInterval, isVideoPlaying = false, currentPlayingVideo = null, currentPlayingCard = null;
     const videoSlideCount = videoSlides.length;
-
-    // ============================================
-    // DOTS
-    // ============================================
 
     function createVideoDots() {
         if (!videoDotsContainer) return;
@@ -2171,151 +1841,56 @@
             const dot = document.createElement('div');
             dot.classList.add('video-dot');
             if (i === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => {
-                if (isVideoPlaying) {
-                    // If video is playing, stop it first
-                    stopCurrentVideo();
-                }
-                goToVideoSlide(i);
-                resetVideoAutoRotate();
-            });
+            dot.addEventListener('click', () => { if (isVideoPlaying) stopCurrentVideo(); goToVideoSlide(i); resetVideoAutoRotate(); });
             videoDotsContainer.appendChild(dot);
         }
     }
-
-    function updateVideoDots() {
-        const dots = document.querySelectorAll('.video-dot');
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === videoCurrentIndex);
-        });
-    }
-
-    // ============================================
-    // SLIDE CONTROL
-    // ============================================
-
-    function goToVideoSlide(index) {
-        if (isVideoPlaying) return;
-        if (index < 0) index = videoSlideCount - 1;
-        if (index >= videoSlideCount) index = 0;
-        videoCurrentIndex = index;
-        videoTrack.style.transform = `translateX(-${index * 100}%)`;
-        updateVideoDots();
-    }
-
-    function nextVideoSlide() {
-        if (isVideoPlaying) return;
-        goToVideoSlide(videoCurrentIndex + 1);
-    }
-
-    function prevVideoSlide() {
-        if (isVideoPlaying) return;
-        goToVideoSlide(videoCurrentIndex - 1);
-    }
-
-    // ============================================
-    // AUTO ROTATE
-    // ============================================
-
-    function startVideoAutoRotate() {
-        stopVideoAutoRotate();
-        if (!isVideoPlaying) {
-            videoAutoRotateInterval = setInterval(() => {
-                if (!isVideoPlaying) {
-                    nextVideoSlide();
-                }
-            }, 5000);
-        }
-    }
-
-    function stopVideoAutoRotate() {
-        if (videoAutoRotateInterval) {
-            clearInterval(videoAutoRotateInterval);
-            videoAutoRotateInterval = null;
-        }
-    }
-
-    function resetVideoAutoRotate() {
-        stopVideoAutoRotate();
-        startVideoAutoRotate();
-    }
-
-    // ============================================
-    // VIDEO CONTROL - FIXED
-    // ============================================
-
+    function updateVideoDots() { document.querySelectorAll('.video-dot').forEach((dot, i) => dot.classList.toggle('active', i === videoCurrentIndex)); }
+    function goToVideoSlide(index) { if (isVideoPlaying) return; videoCurrentIndex = (index + videoSlideCount) % videoSlideCount; videoTrack.style.transform = `translateX(-${videoCurrentIndex * 100}%)`; updateVideoDots(); }
+    function nextVideoSlide() { if (!isVideoPlaying) goToVideoSlide(videoCurrentIndex + 1); }
+    function prevVideoSlide() { if (!isVideoPlaying) goToVideoSlide(videoCurrentIndex - 1); }
+    function startVideoAutoRotate() { stopVideoAutoRotate(); if (!isVideoPlaying) videoAutoRotateInterval = setInterval(() => { if (!isVideoPlaying) nextVideoSlide(); }, 5000); }
+    function stopVideoAutoRotate() { if (videoAutoRotateInterval) { clearInterval(videoAutoRotateInterval); videoAutoRotateInterval = null; } }
+    function resetVideoAutoRotate() { stopVideoAutoRotate(); startVideoAutoRotate(); }
     function stopCurrentVideo() {
         if (!currentPlayingVideo) return;
-
         currentPlayingVideo.pause();
         currentPlayingVideo.currentTime = 0;
         currentPlayingVideo.style.display = 'none';
-
         if (currentPlayingCard) {
-            const thumbnail = currentPlayingCard.querySelector('.video-thumbnail');
+            const thumb = currentPlayingCard.querySelector('.video-thumbnail');
             const overlay = currentPlayingCard.querySelector('.video-play-overlay');
-            if (thumbnail) thumbnail.style.display = 'block';
+            if (thumb) thumb.style.display = 'block';
             if (overlay) overlay.style.display = 'flex';
         }
-
-        currentPlayingVideo = null;
-        currentPlayingCard = null;
-        isVideoPlaying = false;
-
-        // Restart auto-rotate after video stops
+        currentPlayingVideo = null; currentPlayingCard = null; isVideoPlaying = false;
         startVideoAutoRotate();
     }
-
-    // ============================================
-    // SETUP VIDEO PLAYERS - FIXED
-    // ============================================
-
     function setupVideoPlayers() {
         document.querySelectorAll('.video-card').forEach(card => {
             const preview = card.querySelector('.video-preview');
             const thumbnail = card.querySelector('.video-thumbnail');
             const overlay = card.querySelector('.video-play-overlay');
             const video = card.querySelector('.video-player');
-            const playButton = card.querySelector('.play-button-large');
-
+            const playBtn = card.querySelector('.play-button-large');
             if (!video || !preview) return;
-
-            // Initial state
             video.style.display = 'none';
             if (thumbnail) thumbnail.style.display = 'block';
             if (overlay) overlay.style.display = 'flex';
             video.controls = true;
-
             function playVideo(e) {
                 e.stopPropagation();
-
-                // If another video is playing, stop it first
-                if (isVideoPlaying) {
-                    stopCurrentVideo();
-                    // Small delay to allow cleanup
-                    setTimeout(() => {
-                        playThisVideo();
-                    }, 50);
-                } else {
-                    playThisVideo();
-                }
-
+                if (isVideoPlaying) { stopCurrentVideo(); setTimeout(() => playThisVideo(), 50); } else { playThisVideo(); }
                 function playThisVideo() {
-                    // Hide thumbnail and overlay
                     if (thumbnail) thumbnail.style.display = 'none';
                     if (overlay) overlay.style.display = 'none';
-
-                    // Show and play video
                     video.style.display = 'block';
                     video.currentTime = 0;
-
                     video.play().then(() => {
                         isVideoPlaying = true;
                         currentPlayingVideo = video;
                         currentPlayingCard = card;
                         stopVideoAutoRotate();
-
-                        // When video ends, restore thumbnail
                         video.onended = () => {
                             video.style.display = 'none';
                             if (thumbnail) thumbnail.style.display = 'block';
@@ -2325,8 +1900,6 @@
                             currentPlayingCard = null;
                             startVideoAutoRotate();
                         };
-
-                        // If user pauses manually
                         video.onpause = () => {
                             if (video.ended) return;
                             video.style.display = 'none';
@@ -2337,276 +1910,85 @@
                             currentPlayingCard = null;
                             startVideoAutoRotate();
                         };
-
-                    }).catch(err => {
-                        console.log('Play error:', err);
-                        video.style.display = 'none';
-                        if (thumbnail) thumbnail.style.display = 'block';
-                        if (overlay) overlay.style.display = 'flex';
-                        isVideoPlaying = false;
-                    });
+                    }).catch(err => { console.log('Play error:', err); video.style.display = 'none'; if (thumbnail) thumbnail.style.display = 'block'; if (overlay) overlay.style.display = 'flex'; isVideoPlaying = false; });
                 }
             }
-
-            // Add click listeners
             preview.addEventListener('click', playVideo);
-            if (playButton) {
-                playButton.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    playVideo(e);
-                });
-            }
+            if (playBtn) playBtn.addEventListener('click', (e) => { e.stopPropagation(); playVideo(e); });
         });
     }
+    if (videoPrevBtn) { const newBtn = videoPrevBtn.cloneNode(true); videoPrevBtn.parentNode.replaceChild(newBtn, videoPrevBtn); newBtn.addEventListener('click', (e) => { e.stopPropagation(); if (!isVideoPlaying) { prevVideoSlide(); resetVideoAutoRotate(); } }); }
+    if (videoNextBtn) { const newBtn = videoNextBtn.cloneNode(true); videoNextBtn.parentNode.replaceChild(newBtn, videoNextBtn); newBtn.addEventListener('click', (e) => { e.stopPropagation(); if (!isVideoPlaying) { nextVideoSlide(); resetVideoAutoRotate(); } }); }
+    const container = document.querySelector('.video-carousel-container');
+    if (container) { container.addEventListener('mouseenter', () => { if (!isVideoPlaying) stopVideoAutoRotate(); }); container.addEventListener('mouseleave', () => { if (!isVideoPlaying) startVideoAutoRotate(); }); }
+    createVideoDots(); setupVideoPlayers(); startVideoAutoRotate();
 
-    // ============================================
-    // NAV BUTTONS - FIXED
-    // ============================================
-
-    if (videoPrevBtn) {
-        // Remove old listeners and add new ones
-        const newPrevBtn = videoPrevBtn.cloneNode(true);
-        videoPrevBtn.parentNode.replaceChild(newPrevBtn, videoPrevBtn);
-        newPrevBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            if (!isVideoPlaying) {
-                prevVideoSlide();
-                resetVideoAutoRotate();
-            }
-        });
-    }
-
-    if (videoNextBtn) {
-        const newNextBtn = videoNextBtn.cloneNode(true);
-        videoNextBtn.parentNode.replaceChild(newNextBtn, videoNextBtn);
-        newNextBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            if (!isVideoPlaying) {
-                nextVideoSlide();
-                resetVideoAutoRotate();
-            }
-        });
-    }
-
-    // ============================================
-    // HOVER PAUSE
-    // ============================================
-
-    const videoCarouselContainer = document.querySelector('.video-carousel-container');
-    if (videoCarouselContainer) {
-        videoCarouselContainer.addEventListener('mouseenter', () => {
-            if (!isVideoPlaying) stopVideoAutoRotate();
-        });
-        videoCarouselContainer.addEventListener('mouseleave', () => {
-            if (!isVideoPlaying) startVideoAutoRotate();
-        });
-    }
-
-    // ============================================
-    // INIT
-    // ============================================
-
-    createVideoDots();
-    setupVideoPlayers();
-    startVideoAutoRotate();
-
-    // ============================================
-    // BOOKING MODAL (Call/WhatsApp)
-    // ============================================
+    // Booking Modal
     const bookingModal = document.getElementById('bookingModal');
     const bookingPropertyDisplay = document.getElementById('bookingPropertyName');
     const callNowBtn = document.getElementById('callNowBtn');
     const whatsappBtn = document.getElementById('whatsappBtn');
     const closeBookingModal = document.querySelector('.booking-modal-close');
-
     const PHONE_NUMBER = '2348160087513';
     const PHONE_DISPLAY = '08160087513';
     let currentProperty = 'Jecyani Properties';
-
     function openBookingModal(propertyName) {
         currentProperty = propertyName || 'Jecyani Properties';
-        if (bookingPropertyDisplay) {
-            bookingPropertyDisplay.innerHTML = `<i class="fas fa-home"></i> ${currentProperty}`;
-        }
-        if (bookingModal) {
-            bookingModal.style.display = 'flex';
-        }
-
+        if (bookingPropertyDisplay) bookingPropertyDisplay.innerHTML = `<i class="fas fa-home"></i> ${currentProperty}`;
+        if (bookingModal) bookingModal.style.display = 'flex';
         const message = `Hello Jecyani Properties,%0A%0AI'm interested in booking an inspection for:%0A📍 ${encodeURIComponent(currentProperty)}%0A%0APlease let me know available dates. Thank you!`;
         if (whatsappBtn) whatsappBtn.href = `https://wa.me/${PHONE_NUMBER}?text=${message}`;
         if (callNowBtn) callNowBtn.href = `tel:${PHONE_DISPLAY}`;
     }
-
-    function closeBookingModalFunc() {
-        if (bookingModal) bookingModal.style.display = 'none';
-    }
-
-    if (closeBookingModal) {
-        closeBookingModal.addEventListener('click', closeBookingModalFunc);
-    }
-    if (bookingModal) {
-        bookingModal.addEventListener('click', (e) => {
-            if (e.target === bookingModal) closeBookingModalFunc();
-        });
-    }
-
-    const bookingButtons = document.querySelectorAll('.book-inspect-btn, .secure-plot-btn, .talk-advisor-btn, .desktop-book-btn, .mobile-book-btn, .flyer-book-btn');
-    bookingButtons.forEach(btn => {
+    function closeBookingModalFunc() { if (bookingModal) bookingModal.style.display = 'none'; }
+    if (closeBookingModal) closeBookingModal.addEventListener('click', closeBookingModalFunc);
+    if (bookingModal) bookingModal.addEventListener('click', (e) => { if (e.target === bookingModal) closeBookingModalFunc(); });
+    document.querySelectorAll('.book-inspect-btn, .secure-plot-btn, .talk-advisor-btn, .desktop-book-btn, .mobile-book-btn, .flyer-book-btn').forEach(btn => {
         const newBtn = btn.cloneNode(true);
         btn.parentNode.replaceChild(newBtn, btn);
-        newBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            let property = this.getAttribute('data-property');
-            if (!property) {
-                const parentCard = this.closest('.estate-grid, .featured');
-                if (parentCard) {
-                    const titleElem = parentCard.querySelector('.price-card');
-                    if (titleElem) property = 'Juniper Estate, Aba Phase 2';
-                }
-            }
-            if (!property) property = 'Jecyani Properties';
-            openBookingModal(property);
-        });
+        newBtn.addEventListener('click', function(e) { e.preventDefault(); let prop = this.getAttribute('data-property'); if (!prop) prop = 'Jecyani Properties'; openBookingModal(prop); });
     });
 
-    // ============================================
-    // CONTACT FORM SUBMISSION
-    // ============================================
+    // Contact Form
     const sendEnquiryBtn = document.getElementById('sendEnquiryBtn');
-
     if (sendEnquiryBtn) {
         sendEnquiryBtn.addEventListener('click', async function(e) {
             e.preventDefault();
-
             const name = document.getElementById('contactName')?.value;
             const phone = document.getElementById('contactPhone')?.value;
             const email = document.getElementById('contactEmail')?.value;
             const service = document.getElementById('contactService')?.value;
             const message = document.getElementById('contactMessage')?.value;
-
-            if (!name || !email || !message) {
-                alert('Please fill in all required fields (Name, Email, and Message)');
-                return;
-            }
-
+            if (!name || !email || !message) { alert('Please fill in all required fields (Name, Email, and Message)'); return; }
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                alert('Please enter a valid email address');
-                return;
-            }
-
+            if (!emailRegex.test(email)) { alert('Please enter a valid email address'); return; }
             const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
             const originalText = sendEnquiryBtn.innerText;
-            sendEnquiryBtn.innerText = 'Sending...';
-            sendEnquiryBtn.disabled = true;
-
+            sendEnquiryBtn.innerText = 'Sending...'; sendEnquiryBtn.disabled = true;
             try {
-                const response = await fetch('/send-message', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRFToken': csrfToken
-                    },
-                    body: JSON.stringify({
-                        name: name,
-                        email: email,
-                        phone: phone || '',
-                        service: service || 'General Inquiry',
-                        message: message
-                    })
-                });
-
+                const response = await fetch('/send-message', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrfToken }, body: JSON.stringify({ name, email, phone: phone || '', service: service || 'General Inquiry', message }) });
                 const result = await response.json();
-
-                if (result.status === 'success') {
-                    alert(result.message);
-                    const inputs = document.querySelectorAll('#contactForm input, #contactForm select, #contactForm textarea');
-                    inputs.forEach(field => {
-                        if (field.tagName === 'SELECT') {
-                            field.selectedIndex = 0;
-                        } else {
-                            field.value = '';
-                        }
-                    });
-                } else {
-                    alert(result.message || 'Something went wrong. Please try again.');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('Network error. Please check your connection or call us directly at 08160087513');
-            } finally {
-                sendEnquiryBtn.innerText = originalText;
-                sendEnquiryBtn.disabled = false;
-            }
+                if (result.status === 'success') { alert(result.message); document.querySelectorAll('#contactForm input, #contactForm select, #contactForm textarea').forEach(f => { if (f.tagName === 'SELECT') f.selectedIndex = 0; else f.value = ''; }); }
+                else alert(result.message || 'Something went wrong. Please try again.');
+            } catch (error) { console.error('Error:', error); alert('Network error. Please check your connection or call us directly at 08160087513'); }
+            finally { sendEnquiryBtn.innerText = originalText; sendEnquiryBtn.disabled = false; }
         });
     }
 
-    // ============================================
-    // FEATURED INVESTMENT AUTO-ROTATING TABS
-    // ============================================
+    // Featured Investment Tabs Auto-rotate
     const tabBtns = document.querySelectorAll('.tab-btn');
     const dynamicPrice = document.getElementById('dynamicPrice');
     const saveBadge = document.getElementById('saveBadge');
     const bestBadge = document.getElementById('bestValueBadge');
     const monthlyTextEl = document.getElementById('monthlyText');
-
-    const planData = {
-        '3months': { price: '₦3.5M', save: '✨ Save ₦1M vs 12-month plan', best: '🔥 BEST VALUE', monthly: 'One-time payment / Full ownership' },
-        '6months': { price: '₦4M', save: '💰 Save ₦500k vs 12-month plan', best: '⭐ MOST POPULAR', monthly: '~₦667k/month • 0% interest' },
-        '12months': { price: '₦4.5M', save: '📆 Lowest monthly commitment', best: '🕒 Extended Plan', monthly: '~₦375k/month • Flexible terms' }
-    };
-
-    let currentPlanIndex = 0;
+    const planData = { '3months': { price: '₦3.5M', save: '✨ Save ₦1M vs 12-month plan', best: '🔥 BEST VALUE', monthly: 'One-time payment / Full ownership' }, '6months': { price: '₦4M', save: '💰 Save ₦500k vs 12-month plan', best: '⭐ MOST POPULAR', monthly: '~₦667k/month • 0% interest' }, '12months': { price: '₦4.5M', save: '📆 Lowest monthly commitment', best: '🕒 Extended Plan', monthly: '~₦375k/month • Flexible terms' } };
+    let currentPlanIndex = 0, tabAutoRotateInterval;
     const planKeys = ['3months', '6months', '12months'];
-    let tabAutoRotateInterval;
-
-    function activatePlan(planId) {
-        const data = planData[planId];
-        if (data) {
-            dynamicPrice.innerText = data.price;
-            saveBadge.innerText = data.save;
-            bestBadge.innerText = data.best;
-            monthlyTextEl.innerText = data.monthly;
-        }
-        tabBtns.forEach(btn => {
-            if (btn.getAttribute('data-plan') === planId) {
-                btn.classList.add('active');
-                btn.style.background = 'var(--primary)';
-                btn.style.color = 'var(--dark)';
-                btn.style.boxShadow = '0 4px 12px rgba(255,215,0,0.3)';
-            } else {
-                btn.classList.remove('active');
-                btn.style.background = 'transparent';
-                btn.style.color = '#ccc';
-                btn.style.boxShadow = 'none';
-            }
-        });
-    }
-
-    function rotateToNextPlan() {
-        currentPlanIndex = (currentPlanIndex + 1) % planKeys.length;
-        activatePlan(planKeys[currentPlanIndex]);
-    }
-
-    function startTabAutoRotate() {
-        if (tabAutoRotateInterval) clearInterval(tabAutoRotateInterval);
-        tabAutoRotateInterval = setInterval(rotateToNextPlan, 4000);
-    }
-
-    function stopTabAutoRotate() {
-        if (tabAutoRotateInterval) clearInterval(tabAutoRotateInterval);
-    }
-
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            stopTabAutoRotate();
-            const plan = btn.getAttribute('data-plan');
-            currentPlanIndex = planKeys.indexOf(plan);
-            activatePlan(plan);
-            startTabAutoRotate();
-        });
-    });
-
+    function activatePlan(planId) { const data = planData[planId]; if (data) { dynamicPrice.innerText = data.price; saveBadge.innerText = data.save; bestBadge.innerText = data.best; monthlyTextEl.innerText = data.monthly; } tabBtns.forEach(btn => { if (btn.getAttribute('data-plan') === planId) { btn.classList.add('active'); btn.style.background = 'var(--primary)'; btn.style.color = 'var(--dark)'; btn.style.boxShadow = '0 4px 12px rgba(255,215,0,0.3)'; } else { btn.classList.remove('active'); btn.style.background = 'transparent'; btn.style.color = '#ccc'; btn.style.boxShadow = 'none'; } }); }
+    function rotateToNextPlan() { currentPlanIndex = (currentPlanIndex + 1) % planKeys.length; activatePlan(planKeys[currentPlanIndex]); }
+    function startTabAutoRotate() { if (tabAutoRotateInterval) clearInterval(tabAutoRotateInterval); tabAutoRotateInterval = setInterval(rotateToNextPlan, 4000); }
+    function stopTabAutoRotate() { if (tabAutoRotateInterval) clearInterval(tabAutoRotateInterval); }
+    tabBtns.forEach(btn => { btn.addEventListener('click', (e) => { stopTabAutoRotate(); const plan = btn.getAttribute('data-plan'); currentPlanIndex = planKeys.indexOf(plan); activatePlan(plan); startTabAutoRotate(); }); });
     startTabAutoRotate();
 </script>
 </body>

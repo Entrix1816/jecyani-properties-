@@ -180,7 +180,7 @@
             text-align: center;
         }
 
-        /* Announcement Bar */
+        /* Announcement Bar with Marquee Animation */
         .announcement-bar {
             background-color: var(--primary);
             color: var(--dark);
@@ -189,7 +189,17 @@
             text-align: center;
             font-weight: 600;
             z-index: 1001;
+            position: relative;
+            overflow: hidden;
         }
+
+        .announcement-marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marqueeScroll 25s linear infinite;
+            padding-right: 50px;
+        }
+
         .announcement-bar span {
             background-color: var(--dark);
             color: var(--primary);
@@ -198,6 +208,36 @@
             font-size: 0.7rem;
             font-weight: 700;
             margin-right: 8px;
+            display: inline-block;
+        }
+
+        .announcement-bar i {
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        @keyframes marqueeScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .announcement-bar {
+                padding: 10px 0;
+                font-size: 0.75rem;
+            }
+            .announcement-marquee {
+                animation: marqueeScroll 20s linear infinite;
+            }
+            .announcement-bar span {
+                font-size: 0.65rem;
+                padding: 2px 8px;
+                margin-right: 6px;
+            }
+            .announcement-bar i {
+                font-size: 0.7rem;
+            }
         }
 
         /* Navbar */
@@ -865,9 +905,22 @@
 </head>
 <body>
 
-<!-- Announcement bar -->
+<!-- Announcement bar with Marquee Animation -->
 <div class="announcement-bar">
-    <span>🏆 TRUSTED SINCE 2022</span> Helping Nigerians own land & build wealth 📍 Properties in Aba, Umuahia, Abuja, Asaba, Enugu
+    <div class="announcement-marquee">
+        <span>🏆 TRUSTED SINCE 2022</span>
+        Helping Nigerians own land & build wealth &nbsp;|&nbsp;
+        📍 Prime locations across Nigeria &nbsp;|&nbsp;
+        💳 Flexible payment plans &nbsp;|&nbsp;
+        🏡 Your dream land awaits
+        &nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp;
+        <span>🏆 TRUSTED SINCE 2022</span>
+        Helping Nigerians own land & build wealth &nbsp;|&nbsp;
+        📍 Prime locations across Nigeria &nbsp;|&nbsp;
+        💳 Flexible payment plans &nbsp;|&nbsp;
+        🏡 Your dream land awaits
+
+    </div>
 </div>
 
 <!-- Navbar -->
@@ -894,12 +947,12 @@
 <div class="overlay" id="mobileOverlay"></div>
 <div class="mobile-nav" id="mobileNav">
     <div class="close-menu" id="closeMenuBtn">&times;</div>
-    <a href="/">🏠 Home</a>
-    <a href="/about" style="color: var(--primary);">📖 About</a>
-    <a href="/properties">🏘️ Properties</a>
-    <a href="/services">🛠️ Services</a>
-    <a href="/investments">📈 Investment</a>
-    <a href="/#contact-section">📞 Contact</a>
+    <a href="/">Home</a>
+    <a href="/about" style="color: var(--primary);">About</a>
+    <a href="/properties"> Properties</a>
+    <a href="/services"> Services</a>
+    <a href="/investments"> Investment</a>
+    <a href="/#contact-section">Contact</a>
     <a href="#" class="btn-primary mobile-book-btn" style="text-align: center;" data-property="Jecyani Properties - About Page">📞 Book Inspection</a>
 </div>
 
@@ -934,7 +987,7 @@
         <div class="story-content" data-aos="fade-right">
             <h2>From Vision to <span class="shimmer-text">Reality</span></h2>
             <p>Jecyani Properties was founded with a simple but powerful belief: <strong>real estate should be built on trust, clarity, and long-term value.</strong> In a market where buyers often face uncertainty, we set out to create a different experience — one where every client feels informed, confident, and supported.</p>
-            <p>Today, we've helped hundreds of Nigerians secure prime properties across Abia, Abuja, Asaba, Enugu, and beyond. From first-time landowners to seasoned investors, our clients trust us because we deliver what we promise: <strong>strategic locations, flexible payments, and genuine guidance.</strong></p>
+            <p>Today, Nigerians secure prime properties across Abia, Abuja, Asaba, Enugu, and beyond. From first-time landowners to seasoned investors, our clients trust us because we deliver what we promise: <strong>strategic locations, flexible payments, and genuine guidance.</strong></p>
             <div class="signature">— Jane Nwakanma, Founder & CEO</div>
         </div>
         <div class="story-image" data-aos="fade-left">
