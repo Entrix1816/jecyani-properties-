@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "timestamp": "2026-04-09T12:33:31.133998",
+    "name": "Favour Olabisi",
+    "email": "favoursubarashi@gmail.com",
+    "phone": "08103462021",
+    "service": "Buying Property",
+    "message": "i want to book a day to meet",
+    "error": "[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1035)",
+    "retry_count": 0,
+    "status": "success",
+    "resolved_at": "2026-04-09T12:35:50.733700"
+  }
+]
