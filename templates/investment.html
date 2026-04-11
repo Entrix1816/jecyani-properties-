@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Investment | Jecyani Properties - Smart Real Estate Investment in Nigeria</title>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Jecyani Properties | Luxury Real Estate & Investment</title>
     <meta name="title" content="Jecyani Properties | Own Land. Build Wealth. Secure Your Future.">
     <meta name="description" content="Jecyani Properties helps Nigerians buy, sell, and invest in prime real estate across Aba, Umuahia, Abuja, Asaba, and Enugu. Flexible payment plans available.">
     <meta name="keywords" content="real estate Nigeria, buy land in Aba, property investment Abuja, Jecyani Properties, land for sale Umuahia, affordable plots Asaba, gated estates Enugu">
@@ -15,7 +11,6 @@
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
     <meta name="revisit-after" content="7 days">
-
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Open Graph / Facebook -->
@@ -70,7 +65,6 @@
             padding: 0 32px;
         }
 
-        /* Animations */
         @keyframes gentleFloat {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-8px); }
@@ -228,22 +222,6 @@
             align-items: center;
             gap: 12px;
         }
-        .logo-placeholder {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1.3rem;
-            color: var(--dark);
-            transition: all 0.3s ease;
-        }
-        .logo-placeholder:hover {
-            transform: scale(1.08) rotate(3deg);
-        }
         .logo h1 {
             font-size: 1.7rem;
             font-weight: 800;
@@ -263,8 +241,6 @@
             }
         }
 
-
-        /* Desktop Navigation */
         .nav-links {
             display: flex;
             gap: 2rem;
@@ -295,7 +271,6 @@
             color: var(--primary);
         }
 
-        /* Hamburger Button */
         .hamburger {
             display: none;
             font-size: 1.8rem;
@@ -309,7 +284,6 @@
             color: var(--primary);
         }
 
-        /* Mobile Menu */
         .mobile-nav {
             position: fixed;
             top: 0;
@@ -429,7 +403,7 @@
             text-decoration: none;
         }
 
-        /* Hero Investment Section */
+        /* Investment Hero */
         .investment-hero {
             padding: 60px 0;
             background: var(--dark);
@@ -539,7 +513,7 @@
             border-color: var(--primary);
         }
         .opportunity-image {
-            height: 280px;
+            height: 240px;
             overflow: hidden;
             position: relative;
         }
@@ -562,18 +536,20 @@
             border-radius: 30px;
             font-size: 0.75rem;
             font-weight: 700;
+            z-index: 2;
         }
         .opportunity-header {
             padding: 24px 30px 0 30px;
         }
         .opportunity-header h3 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: white;
             margin-bottom: 8px;
         }
         .opportunity-header p {
             color: var(--primary);
             margin-bottom: 16px;
+            font-size: 0.9rem;
         }
         .opportunity-body {
             padding: 0 30px 30px 30px;
@@ -584,6 +560,7 @@
         .opportunity-details p {
             margin-bottom: 12px;
             color: #ccc;
+            font-size: 0.9rem;
         }
         .opportunity-details i {
             color: var(--primary);
@@ -606,10 +583,12 @@
         }
         .price-label {
             font-weight: 500;
+            font-size: 0.85rem;
         }
         .price-value {
             color: var(--primary);
             font-weight: 700;
+            font-size: 0.9rem;
         }
         .feature-tag {
             display: inline-block;
@@ -638,7 +617,7 @@
         .plan-card {
             background: var(--card-bg);
             border-radius: 24px;
-            padding: 32px;
+            padding: 32px 24px;
             text-align: center;
             border: 1px solid var(--light-gray);
             transition: all 0.3s;
@@ -663,6 +642,7 @@
             border-radius: 30px;
             font-size: 0.7rem;
             font-weight: 700;
+            white-space: nowrap;
         }
         .plan-card h4 {
             font-size: 1.5rem;
@@ -737,10 +717,57 @@
                 font-size: 1.8rem;
             }
             .opportunity-header h3 {
-                font-size: 1.4rem;
+                font-size: 1.3rem;
             }
             .desktop-book-btn {
                 display: none;
+            }
+            .opportunity-body {
+                gap: 20px;
+            }
+            .opportunity-header {
+                padding: 20px 20px 0 20px;
+            }
+            .opportunity-body {
+                padding: 0 20px 20px 20px;
+            }
+            .opportunity-image {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .investment-stats {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .stat-badge {
+                padding: 12px;
+            }
+            .stat-badge .number {
+                font-size: 1.5rem;
+            }
+            .benefits-grid {
+                gap: 20px;
+            }
+            .benefit-card {
+                padding: 24px 20px;
+            }
+            .plan-card {
+                padding: 24px 16px;
+            }
+            .plan-card h4 {
+                font-size: 1.2rem;
+            }
+            .opportunity-header h3 {
+                font-size: 1.2rem;
+            }
+            .price-label, .price-value {
+                font-size: 0.75rem;
+            }
+            .feature-tag {
+                font-size: 0.65rem;
+                padding: 3px 8px;
             }
         }
     </style>
@@ -759,8 +786,6 @@
             <img src="/static/logo.jpeg" alt="Jecyani Properties Logo" style="height: 50px; width: auto;">
             <h1>JECYANI <span style="color:#FFD700;">PROPERTIES</span></h1>
         </div>
-
-        <!-- Desktop Navigation -->
         <div class="nav-links">
             <a href="/">Home</a>
             <a href="/about">About</a>
@@ -769,18 +794,11 @@
             <a href="/investments" style="color: var(--primary);">Investment</a>
             <a href="/#contact-section">Contact</a>
         </div>
-
-        <!-- Desktop Book Inspection Button -->
         <a href="#" class="btn-primary desktop-book-btn" data-property="Jecyani Properties - Investment Page">📞 Book Inspection</a>
-
-        <!-- Hamburger Menu Button (Mobile) -->
-        <button class="hamburger" id="hamburgerBtn">
-            <i class="fas fa-bars"></i>
-        </button>
+        <button class="hamburger" id="hamburgerBtn"><i class="fas fa-bars"></i></button>
     </div>
 </nav>
 
-<!-- Mobile Navigation Menu -->
 <div class="overlay" id="mobileOverlay"></div>
 <div class="mobile-nav" id="mobileNav">
     <div class="close-menu" id="closeMenuBtn">&times;</div>
@@ -837,7 +855,7 @@
     </div>
 </section>
 
-<!-- Featured Investment Opportunities WITH IMAGES -->
+<!-- Featured Investment Opportunities WITH LOCAL IMAGES -->
 <section class="investment-opportunities">
     <div class="container">
         <h2 class="section-title" data-aos="fade-up">Featured Investment Opportunities</h2>
@@ -846,7 +864,7 @@
         <!-- Juniper Estate -->
         <div class="opportunity-card" data-aos="fade-up">
             <div class="opportunity-image">
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900" alt="Juniper Estate Aba">
+                <img src="/static/land2.jpeg" alt="Juniper Estate Aba">
                 <span class="opportunity-badge">🔥 HOT OFFER</span>
             </div>
             <div class="opportunity-header">
@@ -860,7 +878,6 @@
                     <p><i class="fas fa-check-circle"></i> Good Road Network</p>
                     <p><i class="fas fa-check-circle"></i> Perimeter Fencing</p>
                     <p><i class="fas fa-check-circle"></i> Registered Survey Plan</p>
-                    <p><i class="fas fa-check-circle"></i> Free Irrevocable Power of Attorney</p>
                     <div style="margin-top: 16px;">
                         <span class="feature-tag">Fast Appreciation</span>
                         <span class="feature-tag">Eco-friendly Layout</span>
@@ -879,7 +896,7 @@
         <!-- Oakwood City Estate -->
         <div class="opportunity-card" data-aos="fade-up" data-aos-delay="100">
             <div class="opportunity-image">
-                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=900" alt="Oakwood City Estate Umuahia">
+                <img src="/static/land5.jpeg" alt="Oakwood City Estate Umuahia">
                 <span class="opportunity-badge">🌳 PRIME LOCATION</span>
             </div>
             <div class="opportunity-header">
@@ -892,7 +909,6 @@
                     <p><i class="fas fa-check-circle"></i> Free Deed of Conveyance</p>
                     <p><i class="fas fa-check-circle"></i> Registered Survey Plan</p>
                     <p><i class="fas fa-check-circle"></i> Eco-friendly Estate Layout</p>
-                    <p><i class="fas fa-check-circle"></i> Modern Infrastructure</p>
                     <div style="margin-top: 16px;">
                         <span class="feature-tag">2 mins to Divinity College</span>
                         <span class="feature-tag">5 mins to FGGC Umuahia</span>
@@ -911,7 +927,7 @@
         <!-- Ivy Supreme Estate -->
         <div class="opportunity-card" data-aos="fade-up" data-aos-delay="200">
             <div class="opportunity-image">
-                <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=900" alt="Ivy Supreme Estate">
+                <img src="/static/land6.jpeg" alt="Ivy Supreme Estate">
                 <span class="opportunity-badge">✨ PREMIUM</span>
             </div>
             <div class="opportunity-header">
@@ -924,7 +940,6 @@
                     <p><i class="fas fa-check-circle"></i> Power of Attorney Title</p>
                     <p><i class="fas fa-check-circle"></i> Residential Land</p>
                     <p><i class="fas fa-check-circle"></i> Fast-growing Location</p>
-                    <p><i class="fas fa-check-circle"></i> High Appreciation Potential</p>
                     <div style="margin-top: 16px;">
                         <span class="feature-tag">Near Federal Ministry of Housing</span>
                         <span class="feature-tag">10 mins to Umuahia City Centre</span>
@@ -943,7 +958,7 @@
         <!-- Gold Town Estate Abuja -->
         <div class="opportunity-card" data-aos="fade-up" data-aos-delay="300">
             <div class="opportunity-image">
-                <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=900" alt="Gold Town Estate Abuja">
+                <img src="/static/land7.jpeg" alt="Gold Town Estate Abuja">
                 <span class="opportunity-badge">⭐ LUXURY</span>
             </div>
             <div class="opportunity-header">
@@ -956,7 +971,6 @@
                     <p><i class="fas fa-check-circle"></i> FCDA R of O Title</p>
                     <p><i class="fas fa-check-circle"></i> Free Deed of Assignment</p>
                     <p><i class="fas fa-check-circle"></i> Scenic Hills & Green Terrain</p>
-                    <p><i class="fas fa-check-circle"></i> Street Lights & Security</p>
                     <div style="margin-top: 16px;">
                         <span class="feature-tag">Proximity to Guzape Hills</span>
                         <span class="feature-tag">Near COZA & Guzape Mall</span>
@@ -973,7 +987,7 @@
         <!-- Crystal City Estate Asaba -->
         <div class="opportunity-card" data-aos="fade-up" data-aos-delay="400">
             <div class="opportunity-image">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900" alt="Crystal City Estate Asaba">
+                <img src="/static/land8.jpeg" alt="Crystal City Estate Asaba">
                 <span class="opportunity-badge">💎 FLASH SALE</span>
             </div>
             <div class="opportunity-header">
@@ -986,7 +1000,6 @@
                     <p><i class="fas fa-check-circle"></i> 🔥 12.5% FLASH SALE DISCOUNT</p>
                     <p><i class="fas fa-check-circle"></i> Free Deed of Conveyance</p>
                     <p><i class="fas fa-check-circle"></i> Registered Survey Plan</p>
-                    <p><i class="fas fa-check-circle"></i> Food Basket Gift at completion</p>
                     <div style="margin-top: 16px;">
                         <span class="feature-tag">Along Old Abuja Road</span>
                         <span class="feature-tag">Near Airport & Polytechnic</span>
@@ -1006,7 +1019,7 @@
         <!-- Newtown Estate Ibusa Asaba -->
         <div class="opportunity-card" data-aos="fade-up" data-aos-delay="500">
             <div class="opportunity-image">
-                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900" alt="Newtown Estate Asaba">
+                <img src="/static/land3.jpeg" alt="Newtown Estate Asaba">
                 <span class="opportunity-badge">🏆 PRE-CLEARANCE</span>
             </div>
             <div class="opportunity-header">
@@ -1045,7 +1058,7 @@
             <div class="plan-card" data-aos="flip-left" data-aos-delay="0">
                 <h4>Short Term</h4>
                 <div class="plan-deposit">30% Initial Deposit</div>
-                <div class="price-row" style="justify-content: center; gap: 20px; flex-direction: column; text-align: center;">
+                <div class="price-row" style="justify-content: center; gap: 20px; flex-direction: column; text-align: center; border: none;">
                     <div><span class="price-label">3 Months</span></div>
                     <div class="price-value">Full payment in 3 months</div>
                     <div class="price-value" style="font-size: 0.9rem;">Best for quick returns</div>
@@ -1055,7 +1068,7 @@
                 <div class="recommended-badge">🔥 MOST POPULAR</div>
                 <h4>Medium Term</h4>
                 <div class="plan-deposit">30% Initial Deposit</div>
-                <div class="price-row" style="justify-content: center; gap: 20px; flex-direction: column; text-align: center;">
+                <div class="price-row" style="justify-content: center; gap: 20px; flex-direction: column; text-align: center; border: none;">
                     <div><span class="price-label">6 Months Plan</span></div>
                     <div class="price-value">Spread over 6 months</div>
                     <div class="price-value" style="font-size: 0.9rem;">Balanced & flexible</div>
@@ -1064,7 +1077,7 @@
             <div class="plan-card" data-aos="flip-left" data-aos-delay="200">
                 <h4>Long Term</h4>
                 <div class="plan-deposit">30% Initial Deposit</div>
-                <div class="price-row" style="justify-content: center; gap: 20px; flex-direction: column; text-align: center;">
+                <div class="price-row" style="justify-content: center; gap: 20px; flex-direction: column; text-align: center; border: none;">
                     <div><span class="price-label">12 Months Plan</span></div>
                     <div class="price-value">Maximum flexibility</div>
                     <div class="price-value" style="font-size: 0.9rem;">Easiest entry point</div>
@@ -1079,7 +1092,7 @@
     <div class="container" data-aos="zoom-in">
         <h2 style="font-size: 2rem; color: white;">Ready to Start Your Investment Journey?</h2>
         <p style="margin: 20px auto; max-width: 600px; color: #ccc;">Join hundreds of smart investors who are building wealth through strategic land investment with Jecyani Properties.</p>
-        <div class="btn-group" style="display: flex; gap: 16px; justify-content: center; margin-top: 20px;">
+        <div class="btn-group" style="display: flex; gap: 16px; justify-content: center; margin-top: 20px; flex-wrap: wrap;">
             <a href="#" class="btn-primary book-inspect-btn" data-property="Jecyani Properties - Investment Advisor">📞 Talk to an Investment Advisor</a>
             <a href="/properties" class="btn-outline-light">View Available Properties</a>
         </div>
@@ -1102,7 +1115,7 @@
             <a href="/">Home</a><br>
             <a href="/about">About Us</a><br>
             <a href="/properties">Properties</a><br>
-            <a href="#">Services</a><br>
+            <a href="/services">Services</a><br>
             <a href="#">Contact</a>
         </div>
         <div>
@@ -1150,9 +1163,7 @@
         easing: 'ease-out-quad'
     });
 
-    // ============================================
-    // HAMBURGER MENU (MOBILE)
-    // ============================================
+    // Hamburger Menu
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const mobileNav = document.getElementById('mobileNav');
     const mobileOverlay = document.getElementById('mobileOverlay');
@@ -1170,110 +1181,41 @@
         document.body.style.overflow = '';
     }
 
-    if (hamburgerBtn) {
-        hamburgerBtn.addEventListener('click', openMobileMenu);
-    }
-    if (closeMenuBtn) {
-        closeMenuBtn.addEventListener('click', closeMobileMenu);
-    }
-    if (mobileOverlay) {
-        mobileOverlay.addEventListener('click', closeMobileMenu);
-    }
+    if (hamburgerBtn) hamburgerBtn.addEventListener('click', openMobileMenu);
+    if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMobileMenu);
+    if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
 
-    // ============================================
-    // MODAL FOR BOOK INSPECTION ONLY (Fixed)
-    // ============================================
+    // Booking Modal
     const modal = document.getElementById('inspectionModal');
     const modalPropertyName = document.getElementById('modalPropertyName');
     const callNowBtn = document.getElementById('callNowBtn');
     const whatsappBtn = document.getElementById('whatsappBtn');
     const closeModal = document.querySelector('.modal-close');
-
     const PHONE_NUMBER = '2348160087513';
     const PHONE_DISPLAY = '08160087513';
-    let currentProperty = 'Jecyani Properties';
 
     function openModal(propertyName) {
-        currentProperty = propertyName || 'Jecyani Properties';
-        modalPropertyName.innerHTML = `<i class="fas fa-home"></i> ${currentProperty}`;
+        modalPropertyName.innerHTML = `<i class="fas fa-home"></i> ${propertyName || 'Jecyani Properties'}`;
         modal.style.display = 'flex';
-
-        const message = `Hello Jecyani Properties,%0A%0AI'm interested in booking an inspection for:%0A📍 ${encodeURIComponent(currentProperty)}%0A%0APlease let me know available dates. Thank you!`;
+        const message = `Hello Jecyani Properties,%0A%0AI'm interested in booking an inspection for:%0A📍 ${encodeURIComponent(propertyName || 'Jecyani Properties')}`;
         whatsappBtn.href = `https://wa.me/${PHONE_NUMBER}?text=${message}`;
         callNowBtn.href = `tel:${PHONE_DISPLAY}`;
     }
 
-    function closeModalFunc() {
-        modal.style.display = 'none';
-    }
+    function closeModalFunc() { modal.style.display = 'none'; }
+    if (closeModal) closeModal.addEventListener('click', closeModalFunc);
+    window.addEventListener('click', (e) => { if (e.target === modal) closeModalFunc(); });
 
-    // ONLY target specific buttons that should open the modal
-    const bookInspectionSelectors = [
-        '.btn-primary.book-inspect-btn',
-        '.btn-outline-light.book-inspect-btn',
-        '.btn-inspect',
-        '.secure-plot-btn',
-        '.talk-advisor-btn',
-        '.desktop-book-btn',
-        '.mobile-book-btn',
-        '.btn-primary[data-property]',
-        '.btn-outline-light[data-property]'
-    ];
-
-    // Also catch buttons with text "Book Inspection" or "Secure This Plot" or "Talk to Advisor"
-    document.querySelectorAll('.btn-primary, .btn-outline-light, .btn-small').forEach(btn => {
+    document.querySelectorAll('.btn-primary, .btn-outline-light').forEach(btn => {
         const text = btn.innerText.toLowerCase();
-        if (text.includes('book inspection') ||
-            text.includes('secure this plot') ||
-            text.includes('talk to an advisor') ||
-            text.includes('contact us today') ||
-            btn.classList.contains('book-inspect-btn') ||
-            btn.classList.contains('secure-plot-btn') ||
-            btn.classList.contains('talk-advisor-btn')) {
-
-            // Remove old listener and add new one
+        if (text.includes('book inspection') || text.includes('talk to an investment advisor') || btn.classList.contains('book-inspect-btn')) {
             const newBtn = btn.cloneNode(true);
             btn.parentNode.replaceChild(newBtn, btn);
-
-            newBtn.addEventListener('click', function(e) {
+            newBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                let property = this.getAttribute('data-property');
-                if (!property) {
-                    const parentCard = this.closest('.property-card, .opportunity-card, .estate-grid, .featured');
-                    if (parentCard) {
-                        const titleElem = parentCard.querySelector('.property-title, .opportunity-header h3, .estate-grid h3');
-                        if (titleElem) property = titleElem.innerText.trim();
-                    }
-                }
-                if (!property) property = 'Jecyani Properties';
-                openModal(property);
+                openModal(newBtn.getAttribute('data-property') || 'Jecyani Properties - Investment');
             });
         }
-    });
-
-    // Also handle navbar button specifically
-    const navBookBtn = document.querySelector('.navbar .btn-primary:not(.mobile-book-btn)');
-    if (navBookBtn && !navBookBtn.hasAttribute('data-no-modal')) {
-        const newNavBtn = navBookBtn.cloneNode(true);
-        navBookBtn.parentNode.replaceChild(newNavBtn, navBookBtn);
-        newNavBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            openModal('Jecyani Properties - General Inquiry');
-        });
-    }
-
-    if (closeModal) {
-        closeModal.addEventListener('click', closeModalFunc);
-    }
-    window.addEventListener('click', function(e) {
-        if (e.target === modal) closeModalFunc();
-    });
-
-    if (closeModal) {
-        closeModal.addEventListener('click', closeModalFunc);
-    }
-    window.addEventListener('click', function(e) {
-        if (e.target === modal) closeModalFunc();
     });
 </script>
 </body>
