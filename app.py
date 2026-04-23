@@ -429,6 +429,10 @@ def send_message():
         }), 500
 
 
+@app.route("/static/video/<path:filename>")
+def videos(filename):
+    return send_from_directory("static/video", filename)
+
 @app.route('/')
 def home():
     return render_template('index.html')
