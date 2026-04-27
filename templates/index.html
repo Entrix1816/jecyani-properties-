@@ -2,1994 +2,2290 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Jecyani Properties | Luxury Real Estate & Investment</title>
-    <meta name="title" content="Jecyani Properties | Own Land. Build Wealth. Secure Your Future.">
-    <meta name="description" content="Jecyani Properties helps Nigerians buy, sell, and invest in prime real estate across Aba, Umuahia, Abuja, Asaba, and Enugu. Flexible payment plans available.">
-    <meta name="keywords" content="real estate Nigeria, buy land in Aba, property investment Abuja, Jecyani Properties, land for sale Umuahia, affordable plots Asaba, gated estates Enugu">
-    <meta name="author" content="Jecyani Properties">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <meta name="revisit-after" content="7 days">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jecyani Properties | Own Land. Build Wealth. Secure Your Future.</title>
+    <meta name="description" content="Jecyani Properties - Nigeria's trusted real estate partner. Premium land for sale in Aba, Umuahia, Abuja, Asaba, Enugu & Port Harcourt. Flexible payment plans available.">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourdomain.com/">
-    <meta property="og:title" content="Jecyani Properties | Luxury Real Estate & Investment">
-    <meta property="og:description" content="Own land in Nigeria's fastest-growing locations. Flexible payment plans starting at just 30% deposit.">
-    <meta property="og:image" content="https://yourdomain.com/static/og-image.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://yourdomain.com/">
-    <meta property="twitter:title" content="Jecyani Properties | Luxury Real Estate & Investment">
-    <meta property="twitter:description" content="Own land in Nigeria's fastest-growing locations. Flexible payment plans starting at just 30% deposit.">
-    <meta property="twitter:image" content="https://yourdomain.com/static/og-image.jpg">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://yourdomain.com/">
-
-    <!-- CSRF Token for AJAX -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="/static/logo.jpeg">
+    <link rel="apple-touch-icon" href="/static/logo.jpeg">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- AOS animation library -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <style>
+        :root {
+            --black: #0a0a0a;
+            --black-rich: #0d0d0d;
+            --black-soft: #1a1a1a;
+            --gold: #c9a84c;
+            --gold-bright: #d4af37;
+            --gold-light: #e8c95d;
+            --gold-pale: #f5e6c8;
+            --gold-dark: #9a7b2f;
+            --white: #ffffff;
+            --off-white: #faf8f5;
+            --cream: #f5f0e8;
+            --gray: #888888;
+            --gray-dark: #444444;
+            --gray-light: #e0dcd5;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--dark);
-            color: #e5e5e5;
+        html {
             scroll-behavior: smooth;
-            line-height: 1.5;
-            overflow-x: hidden;
+            scroll-padding-top: 80px;
         }
 
-        :root {
-            --primary: #FFD700;
-            --primary-dark: #e6c200;
-            --dark: #0a0a0a;
-            --gray: #1a1a1a;
-            --light-gray: #2a2a2a;
-            --card-bg: #111111;
-            --shadow-md: 0 20px 35px -12px rgba(0,0,0,0.5);
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--white);
+            color: var(--black);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, .serif {
+            font-family: 'Cormorant Garamond', serif;
         }
 
         .container {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 0 32px;
+            padding: 0 30px;
         }
 
-        /* Animations */
-        @keyframes gentleFloat {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-            100% { transform: translateY(0px); }
-        }
-
-        @keyframes shimmerText {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
-        }
-
-        .gentle-float {
-            animation: gentleFloat 4s ease-in-out infinite;
-        }
-
-        .shimmer-text {
-            background: linear-gradient(120deg, #fff 20%, var(--primary) 40%, #fff 60%);
-            background-size: 200% auto;
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent !important;
-            animation: shimmerText 3s linear infinite;
-        }
-
-        /* Booking Modal */
-        .booking-modal {
-            display: none;
+        /* ==================== PRELOADER ==================== */
+        .preloader {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(8px);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-        }
-        .booking-modal-content {
-            background: var(--card-bg);
-            border-radius: 32px;
-            max-width: 500px;
-            width: 90%;
-            padding: 32px;
-            border: 1px solid var(--primary);
-            position: relative;
-        }
-        .booking-modal-close {
-            position: absolute;
-            top: 20px;
-            right: 24px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #aaa;
-            transition: 0.2s;
-        }
-        .booking-modal-close:hover {
-            color: var(--primary);
-        }
-        .booking-modal h3 {
-            color: white;
-            font-size: 1.6rem;
-            margin-bottom: 8px;
-        }
-        .booking-modal-sub {
-            color: #aaa;
-            margin-bottom: 24px;
-            font-size: 0.9rem;
-        }
-        .booking-modal-buttons {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-        .booking-modal-btn {
-            flex: 1;
-            padding: 14px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            text-align: center;
-            text-decoration: none;
-            transition: all 0.3s;
+            background: var(--black);
+            z-index: 9999;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-        }
-        .booking-call-btn {
-            background: transparent;
-            border: 1.5px solid var(--primary);
-            color: var(--primary);
-        }
-        .booking-call-btn:hover {
-            background: var(--primary);
-            color: var(--dark);
-        }
-        .booking-wa-btn {
-            background: #25D366;
-            border: none;
-            color: white;
-        }
-        .booking-wa-btn:hover {
-            background: #128C7E;
-        }
-        .property-name-display {
-            background: var(--gray);
-            padding: 12px;
-            border-radius: 16px;
-            margin: 16px 0;
-            color: var(--primary);
-            font-weight: 500;
-            text-align: center;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
         }
 
-        /* Flyer Carousel Modal */
-        .flyer-modal {
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .preloader-logo {
+            width: 80px;
+            height: 80px;
+            animation: preloaderPulse 1.5s ease-in-out infinite;
+        }
+
+        .preloader-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+
+        @keyframes preloaderPulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+
+        /* ==================== CUSTOM CURSOR ==================== */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--gold-bright);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9998;
+            transition: transform 0.1s ease;
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--gold-bright);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9997;
+            transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* ==================== NAVIGATION ==================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.4);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 30px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            z-index: 1002;
+        }
+
+        .logo-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 2px solid var(--gold-bright);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover .logo-img {
+            border-color: var(--gold-light);
+            box-shadow: 0 0 25px rgba(201, 168, 76, 0.4);
+        }
+
+        .logo-text {
+            color: var(--white);
+            font-size: 1.3rem;
+            font-weight: 600;
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.65rem;
+            color: var(--gold-bright);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 18px;
+            right: 18px;
+            height: 1px;
+            background: var(--gold-bright);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-bright);
+        }
+
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .btn-nav {
+            background: var(--gold-bright) !important;
+            color: var(--black) !important;
+            font-weight: 600 !important;
+            padding: 12px 24px !important;
+            border-radius: 4px !important;
+            letter-spacing: 1px !important;
+            text-transform: uppercase;
+            font-size: 0.8rem !important;
+            transition: all 0.4s ease !important;
+        }
+
+        .btn-nav::after {
+            display: none !important;
+        }
+
+        .btn-nav:hover {
+            background: var(--gold-light) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.4);
+        }
+
+        .hamburger {
             display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            z-index: 1002;
+            padding: 10px;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 2px;
+            background: var(--gold-bright);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background: var(--black);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.45;
+            animation: heroZoom 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes heroZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                180deg,
+                rgba(10, 10, 10, 0.7) 0%,
+                rgba(10, 10, 10, 0.5) 40%,
+                rgba(10, 10, 10, 0.8) 100%
+            );
+        }
+
+        .hero-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--gold-bright);
+            border-radius: 50%;
+            animation: floatUp 8s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 40px 20px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(201, 168, 76, 0.1);
+            border: 1px solid rgba(201, 168, 76, 0.4);
+            color: var(--gold-bright);
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 35px;
+            backdrop-filter: blur(10px);
+            animation: fadeInDown 1s ease;
+        }
+
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 25px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 .gold-text {
+            color: var(--gold-bright);
+            display: inline-block;
+            position: relative;
+        }
+
+        .hero h1 .gold-text::after {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gold-bright);
+            opacity: 0.5;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.75);
+            max-width: 650px;
+            margin: 0 auto 45px;
+            line-height: 1.8;
+            font-weight: 300;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 38px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .btn-primary {
+            background: var(--gold-bright);
+            color: var(--black);
+            border-color: var(--gold-bright);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            border-color: var(--gold-light);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(201, 168, 76, 0.35);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--black);
+            border-color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(255, 255, 255, 0.2);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: bounceDown 2s ease-in-out infinite;
+        }
+
+        .scroll-indicator span {
+            display: block;
+            width: 30px;
+            height: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .scroll-indicator span::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 10px;
+            background: var(--gold-bright);
+            border-radius: 2px;
+            animation: scrollDot 2s ease-in-out infinite;
+        }
+
+        @keyframes bounceDown {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(15px); }
+        }
+
+        @keyframes scrollDot {
+            0%, 100% { top: 8px; opacity: 1; }
+            50% { top: 25px; opacity: 0.3; }
+        }
+
+        /* ==================== TRUST BAR ==================== */
+        .trust-bar {
+            background: var(--black-rich);
+            border-top: 2px solid rgba(201, 168, 76, 0.3);
+            border-bottom: 2px solid rgba(201, 168, 76, 0.3);
+            padding: 35px 0;
+        }
+
+        .trust-items {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .trust-item {
+            text-align: center;
+            color: var(--white);
+        }
+
+        .trust-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 12px;
+            background: rgba(201, 168, 76, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--gold-bright);
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .trust-item:hover .trust-icon {
+            background: rgba(201, 168, 76, 0.2);
+            border-color: var(--gold-bright);
+            transform: scale(1.1);
+        }
+
+        .trust-item h4 {
+            font-size: 2rem;
+            color: var(--gold-bright);
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+
+        .trust-item p {
+            font-size: 0.8rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* ==================== SECTION STYLES ==================== */
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-subtitle {
+            display: inline-block;
+            color: var(--gold-dark);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .section-header h2 {
+            font-size: 3.2rem;
+            color: var(--black);
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .gold-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .gold-divider .line {
+            width: 50px;
+            height: 1px;
+            background: var(--gold-bright);
+        }
+
+        .gold-divider .diamond {
+            width: 8px;
+            height: 8px;
+            background: var(--gold-bright);
+            transform: rotate(45deg);
+        }
+
+        .section-header p {
+            color: #777;
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .section-dark {
+            background: var(--black-rich);
+        }
+
+        .section-dark .section-header h2 {
+            color: var(--white);
+        }
+
+        .section-dark .section-header p {
+            color: #aaa;
+        }
+
+        .section-cream {
+            background: var(--off-white);
+        }
+
+        /* ==================== ESTATES SHOWCASE ==================== */
+        .estates-showcase {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        .estate-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .estate-row.reverse {
+            direction: rtl;
+        }
+
+        .estate-row.reverse .estate-details {
+            direction: ltr;
+        }
+
+        .estate-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+        }
+
+        .estate-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .estate-image-wrapper:hover img {
+            transform: scale(1.08);
+        }
+
+        .estate-image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .estate-badge-large {
+            background: var(--gold-bright);
+            color: var(--black);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .estate-details {
+            padding: 20px 0;
+        }
+
+        .estate-details .estate-location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gold-dark);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .estate-details h3 {
+            font-size: 2.2rem;
+            color: var(--black);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .section-dark .estate-details h3 {
+            color: var(--white);
+        }
+
+        .estate-details .price {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--gold-dark);
+            margin-bottom: 15px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .estate-details .description {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .section-dark .estate-details .description {
+            color: #aaa;
+        }
+
+        .estate-features {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .feature-tag {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(201, 168, 76, 0.08);
+            color: var(--gold-dark);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(201, 168, 76, 0.2);
+        }
+
+        .section-dark .feature-tag {
+            background: rgba(201, 168, 76, 0.1);
+            color: var(--gold-bright);
+        }
+
+        .btn-outline-gold {
+            background: transparent;
+            color: var(--gold-dark);
+            border-color: var(--gold-dark);
+            padding: 14px 30px;
+            font-size: 0.85rem;
+        }
+
+        .btn-outline-gold:hover {
+            background: var(--gold-dark);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(154, 123, 47, 0.3);
+        }
+
+        .section-dark .btn-outline-gold {
+            color: var(--gold-bright);
+            border-color: var(--gold-bright);
+        }
+
+        .section-dark .btn-outline-gold:hover {
+            background: var(--gold-bright);
+            color: var(--black);
+        }
+
+        /* ==================== ADVANTAGES GRID ==================== */
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .advantage-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(201, 168, 76, 0.15);
+            border-radius: 8px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .advantage-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold-bright), transparent);
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        .advantage-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .advantage-card:hover {
+            border-color: var(--gold-bright);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .advantage-icon-circle {
+            width: 80px;
+            height: 80px;
+            background: rgba(201, 168, 76, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(201, 168, 76, 0.2);
+        }
+
+        .advantage-card:hover .advantage-icon-circle {
+            background: var(--gold-bright);
+            transform: rotateY(180deg);
+            border-color: var(--gold-bright);
+        }
+
+        .advantage-card:hover .advantage-icon-circle i {
+            color: var(--black);
+            transform: rotateY(180deg);
+        }
+
+        .advantage-icon-circle i {
+            color: var(--gold-bright);
+            transition: all 0.4s ease;
+        }
+
+        .advantage-card h3 {
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .advantage-card p {
+            color: #999;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* ==================== PROCESS ==================== */
+        .process-timeline {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 45px;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-bright), transparent);
+            display: none;
+        }
+
+        @media (min-width: 992px) {
+            .process-timeline::before {
+                display: block;
+            }
+        }
+
+        .process-step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            position: relative;
+            padding: 20px 15px;
+        }
+
+        .step-number-circle {
+            width: 90px;
+            height: 90px;
+            background: var(--white);
+            border: 2px solid var(--gold-bright);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold-dark);
+            font-family: 'Cormorant Garamond', serif;
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-step:hover .step-number-circle {
+            background: var(--gold-bright);
+            color: var(--white);
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(201, 168, 76, 0.3);
+        }
+
+        .process-step h3 {
+            font-size: 1.2rem;
+            color: var(--black);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .process-step p {
+            color: #777;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        /* ==================== PROMOTIONAL FLYERS ==================== */
+        .flyers-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .flyer-card {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(201, 168, 76, 0.2);
+        }
+
+        .flyer-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+            border-color: var(--gold-bright);
+        }
+
+        .flyer-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .flyer-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .flyer-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.85));
+        }
+
+        .flyer-overlay span {
+            color: var(--gold-bright);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* ==================== TESTIMONIALS ==================== */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(201, 168, 76, 0.15);
+            border-radius: 8px;
+            padding: 35px;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            font-size: 5rem;
+            color: rgba(201, 168, 76, 0.15);
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1;
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--gold-bright);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .testimonial-stars {
+            color: var(--gold-bright);
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-card .quote {
+            color: #ccc;
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: rgba(201, 168, 76, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-bright);
+            font-size: 1.3rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            border: 2px solid var(--gold-bright);
+        }
+
+        .author-info h4 {
+            color: var(--white);
+            font-size: 0.95rem;
+            margin-bottom: 2px;
+        }
+
+        .author-info span {
+            color: var(--gold-bright);
+            font-size: 0.8rem;
+        }
+
+        /* ==================== PAST PROJECTS ==================== */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .project-card {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            cursor: pointer;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .project-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent 40%, rgba(0,0,0,0.9));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 25px;
+            transition: all 0.4s ease;
+        }
+
+        .project-overlay h4 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+
+        .project-overlay span {
+            color: var(--gold-bright);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project-card:hover .project-overlay {
+            background: linear-gradient(transparent 20%, rgba(0,0,0,0.95));
+        }
+
+        /* ==================== FOUNDER SECTION ==================== */
+        .founder-section {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .founder-image-wrapper {
+            flex: 0 0 380px;
+            position: relative;
+        }
+
+        .founder-image-wrapper img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 3px solid var(--gold-bright);
+            position: relative;
+            z-index: 2;
+        }
+
+        .founder-image-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: -15px;
+            bottom: -15px;
+            border: 2px solid var(--gold-bright);
+            border-radius: 8px;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .founder-content {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .founder-content .label {
+            color: var(--gold-dark);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .founder-content blockquote {
+            font-size: 1.3rem;
+            color: var(--black);
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 25px;
+            font-weight: 300;
+            position: relative;
+            padding-left: 30px;
+            border-left: 3px solid var(--gold-bright);
+        }
+
+        .founder-content .founder-name {
+            color: var(--black);
+            font-weight: 700;
+            font-size: 1.2rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .founder-content .founder-title {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .section-dark .founder-content blockquote {
+            color: #ccc;
+        }
+
+        .section-dark .founder-content .founder-name {
+            color: var(--white);
+        }
+
+        /* ==================== CITIES SECTION ==================== */
+        .cities-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .city-badge {
+            padding: 15px 30px;
+            background: rgba(201, 168, 76, 0.05);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            border-radius: 50px;
+            color: var(--gold-bright);
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .city-badge:hover {
+            background: var(--gold-bright);
+            color: var(--black);
+            border-color: var(--gold-bright);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
+        }
+
+        /* ==================== FINAL CTA ==================== */
+        .cta-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 50%, #1a1a1a 100%);
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at center, rgba(201,168,76,0.08) 0%, transparent 70%);
+            animation: ctaGlow 8s ease-in-out infinite;
+        }
+
+        @keyframes ctaGlow {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(180deg); }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 35px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-gold {
+            background: var(--gold-bright);
+            color: var(--black);
+            border-color: var(--gold-bright);
+        }
+
+        .btn-gold:hover {
+            background: var(--gold-light);
+            border-color: var(--gold-light);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(201, 168, 76, 0.4);
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--black);
+            border-color: var(--white);
+        }
+
+        .btn-white:hover {
+            background: #e0e0e0;
+            border-color: #e0e0e0;
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(255, 255, 255, 0.2);
+        }
+
+        /* ==================== FOOTER ==================== */
+        .footer {
+            background: var(--black);
+            padding: 70px 0 0;
+            color: var(--white);
+            border-top: 1px solid rgba(201, 168, 76, 0.2);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col .logo {
+            margin-bottom: 18px;
+        }
+
+        .footer-col .footer-desc {
+            color: #999;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .footer-col h4 {
+            color: var(--gold-bright);
+            margin-bottom: 22px;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #999;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--gold-bright);
+            padding-left: 8px;
+        }
+
+        .footer-col .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .footer-col .contact-item i {
+            color: var(--gold-bright);
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+
+        .footer-col .contact-item a {
+            color: #999;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col .contact-item a:hover {
+            color: var(--gold-bright);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(201, 168, 76, 0.15);
+            padding: 30px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-icons a {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-bright);
+            transition: all 0.4s ease;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .social-icons a:hover {
+            background: var(--gold-bright);
+            color: var(--black);
+            border-color: var(--gold-bright);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
+        }
+
+        .copyright {
+            color: #666;
+            font-size: 0.85rem;
+            font-weight: 300;
+        }
+
+        /* ==================== MOBILE RESPONSIVE ==================== */
+        @media (max-width: 1024px) {
+            .advantages-grid { grid-template-columns: repeat(2, 1fr); }
+            .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+            .projects-grid { grid-template-columns: repeat(2, 1fr); }
+            .flyers-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 85%;
+                max-width: 380px;
+                height: 100vh;
+                background: rgba(10, 10, 10, 0.98);
+                backdrop-filter: blur(30px);
+                flex-direction: column;
+                padding: 120px 35px 40px;
+                transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                border-left: 1px solid rgba(201, 168, 76, 0.3);
+                gap: 15px;
+            }
+
+            .nav-links.active { right: 0; }
+            .nav-links a { font-size: 1.1rem; padding: 14px 0; }
+
+            .hero h1 { font-size: 2.8rem; }
+            .section-header h2 { font-size: 2.2rem; }
+            .estate-row { grid-template-columns: 1fr; }
+            .advantages-grid { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .projects-grid { grid-template-columns: 1fr 1fr; }
+            .flyers-grid { grid-template-columns: 1fr 1fr; }
+            .process-timeline { flex-direction: column; }
+            .founder-section { flex-direction: column; text-align: center; }
+            .founder-image-wrapper { flex: 0 0 280px; max-width: 300px; margin: 0 auto; }
+            .founder-content blockquote { padding-left: 0; border-left: none; text-align: center; }
+            .cta-section h2 { font-size: 2rem; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .cursor-dot, .cursor-outline { display: none; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2.2rem; }
+            .btn { padding: 16px 28px; font-size: 0.8rem; width: 100%; justify-content: center; }
+            .hero-buttons, .cta-buttons { flex-direction: column; }
+            section { padding: 60px 0; }
+            .section-header h2 { font-size: 1.8rem; }
+            .estate-details h3 { font-size: 1.6rem; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .flyers-grid { grid-template-columns: 1fr; }
+        }
+        /* ==================== FLYER LIGHTBOX ==================== */
+        .lightbox {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 3000;
-            justify-content: center;
-            align-items: center;
-        }
-        .flyer-modal-content {
-            position: relative;
-            max-width: 600px;
-            width: 90%;
-            background: transparent;
-            border-radius: 24px;
-        }
-        .flyer-carousel-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 24px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-        }
-        .flyer-slides {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        .flyer-slide {
-            min-width: 100%;
-            position: relative;
-        }
-        .flyer-slide img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: contain;
-            max-height: 70vh;
-            border-radius: 24px;
-        }
-        .flyer-book-btn {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary);
-            color: var(--dark);
-            border: none;
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            z-index: 10;
-            white-space: nowrap;
-        }
-        .flyer-book-btn:hover {
-            background: var(--primary-dark);
-            transform: translateX(-50%) scale(1.05);
-        }
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0,0,0,0.6);
-            color: white;
-            border: none;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            font-size: 1.3rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            z-index: 20;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .carousel-btn:hover {
-            background: var(--primary);
-            color: var(--dark);
-        }
-        .carousel-prev {
-            left: 15px;
-        }
-        .carousel-next {
-            right: 15px;
-        }
-        .flyer-carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        .flyer-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #555;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .flyer-dot.active {
-            background: var(--primary);
-            width: 25px;
-            border-radius: 10px;
-        }
-        .close-flyer {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            font-size: 2rem;
-            color: white;
-            cursor: pointer;
-            transition: 0.3s;
-            background: rgba(0,0,0,0.5);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .close-flyer:hover {
-            color: var(--primary);
-            transform: rotate(90deg);
-        }
-
-        /* Announcement Bar - Mobile Optimized with Marquee */
-        .announcement-bar {
-            background-color: var(--primary);
-            color: var(--dark);
-            font-size: 0.85rem;
-            padding: 10px 0;
-            text-align: center;
-            font-weight: 600;
-            z-index: 1001;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            animation: softPulse 2s ease-in-out infinite;
-        }
-
-        .announcement-bar:hover {
-            background-color: var(--primary-dark);
-        }
-
-        .announcement-marquee {
-            display: inline-block;
-            white-space: nowrap;
-            animation: marqueeScroll 25s linear infinite;
-            padding-right: 50px;
-        }
-
-        .announcement-bar span {
-            display: inline-block;
-            animation: jumpText 0.6s ease-in-out infinite;
-            background-color: var(--dark);
-            color: var(--primary);
-            padding: 2px 10px;
-            border-radius: 30px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            margin-right: 8px;
-        }
-
-        @keyframes jumpText {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-2px); }
-        }
-
-        @keyframes bounceRight {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(5px); }
-        }
-
-        .announcement-bar i {
-            animation: bounceRight 0.8s ease-in-out infinite;
-            display: inline-block;
-            margin-left: 5px;
-        }
-
-        @keyframes softPulse {
-            0% { background-color: var(--primary); }
-            50% { background-color: var(--primary-dark); }
-            100% { background-color: var(--primary); }
-        }
-
-        @keyframes marqueeScroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        /* Mobile announcement bar - marquee effect */
-        @media (max-width: 768px) {
-            .announcement-bar {
-                padding: 10px 0;
-                font-size: 0.75rem;
-            }
-
-            .announcement-marquee {
-                white-space: nowrap;
-                display: inline-block;
-                animation: marqueeScroll 20s linear infinite;
-            }
-
-            .announcement-bar span {
-                font-size: 0.65rem;
-                padding: 2px 8px;
-                margin-right: 6px;
-            }
-
-            .announcement-bar i {
-                font-size: 0.7rem;
-            }
-        }
-
-        /* Navbar */
-        .navbar {
-            position: sticky;
-            top: 0;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(12px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--light-gray);
-        }
-        .nav-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 18px 32px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .logo-placeholder {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1.3rem;
-            color: var(--dark);
-            transition: all 0.3s ease;
-        }
-        .logo-placeholder:hover {
-            transform: scale(1.08) rotate(3deg);
-        }
-        .logo h1 {
-            font-size: 1.7rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #fff 30%, var(--primary) 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-        .logo img {
-            display: block;
-        }
-
-        @media (max-width: 900px) {
-            .logo img {
-                height: 35px;
-            }
-        }
-
-        /* Desktop Navigation */
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: #f0f0f0;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.3s ease;
-        }
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        /* Hamburger Button */
-        .hamburger {
+            z-index: 10000;
             display: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: white;
-            background: none;
-            border: none;
-            transition: 0.3s;
-        }
-        .hamburger:hover {
-            color: var(--primary);
-        }
-
-        /* Mobile Menu */
-        .mobile-nav {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 75%;
-            max-width: 320px;
-            height: 100vh;
-            background: var(--card-bg);
-            border-left: 2px solid var(--primary);
-            z-index: 1500;
-            transition: right 0.3s ease;
-            padding: 80px 30px 30px;
-            display: flex;
+            align-items: center;
+            justify-content: center;
             flex-direction: column;
-            gap: 20px;
+            animation: fadeIn 0.3s ease;
         }
-        .mobile-nav.active {
-            right: 0;
+
+        .lightbox.active {
+            display: flex;
         }
-        .mobile-nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 500;
-            padding: 12px 0;
-            border-bottom: 1px solid var(--light-gray);
-            transition: 0.2s;
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-        .mobile-nav a:hover {
-            color: var(--primary);
-            padding-left: 10px;
-        }
-        .mobile-nav .btn-primary {
-            text-align: center;
-            margin-top: 20px;
-            display: block;
-        }
-        .close-menu {
+
+        .lightbox-close {
             position: absolute;
-            top: 20px;
-            right: 25px;
-            font-size: 1.8rem;
+            top: 25px;
+            right: 30px;
+            color: var(--gold-bright);
+            font-size: 2.5rem;
             cursor: pointer;
-            color: white;
-        }
-        .close-menu:hover {
-            color: var(--primary);
-        }
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
-            z-index: 1400;
-            display: none;
-        }
-        .overlay.active {
-            display: block;
-        }
-
-        .btn-outline-light {
-            border: 1.5px solid var(--primary);
-            background: transparent;
-            padding: 8px 20px;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            cursor: pointer;
-            text-decoration: none;
-            color: var(--primary);
-            display: inline-block;
+            z-index: 10001;
             transition: all 0.3s ease;
-        }
-        .btn-outline-light:hover {
-            background: var(--primary);
-            color: var(--dark);
-            transform: translateY(-2px);
-        }
-        .btn-primary {
-            background: var(--primary);
-            border: none;
-            padding: 10px 28px;
-            border-radius: 40px;
-            font-weight: 700;
-            color: var(--dark);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-            display: inline-block;
-            text-decoration: none;
-        }
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        /* Hero - Full background image cover with centered text */
-        .hero {
-            position: relative;
-            min-height: 90vh;
+            width: 50px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.7)), url('/static/land3.jpeg') no-repeat center center/cover;
-            background-size: cover;
-            background-attachment: fixed;
-            padding: 100px 0;
-        }
-        .hero .container {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .hero-badge {
-            background: rgba(0,0,0,0.7);
-            display: inline-block;
-            padding: 6px 20px;
-            border-radius: 40px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 28px;
-            color: var(--primary);
-            border-left: 3px solid var(--primary);
-            backdrop-filter: blur(4px);
-        }
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 24px;
-            color: white;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        }
-        .hero p {
-            font-size: 1.25rem;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 36px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .hero .btn-group {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 42px;
-        }
-        .hero .trust-strip {
-            display: flex;
-            gap: 32px;
-            justify-content: center;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #f0f0f0;
-            background: rgba(0,0,0,0.5);
-            backdrop-filter: blur(8px);
-            padding: 12px 24px;
-            border-radius: 60px;
-            width: fit-content;
-            margin: 0 auto;
-        }
-        .hero .trust-strip i {
-            color: var(--primary);
-            margin-right: 8px;
-        }
-        .hero-image {
-            display: none;
-        }
-        @media (max-width: 768px) {
-            .hero { min-height: 85vh; background-attachment: scroll; padding: 80px 0; }
-            .hero h1 { font-size: 2.4rem; }
-            .hero p { font-size: 1rem; }
-            .hero .trust-strip { gap: 16px; flex-wrap: wrap; padding: 10px 18px; font-size: 0.75rem; }
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
         }
 
-        /* Stats */
-        .stats-section {
-            padding: 40px 0 70px;
-            background: var(--gray);
-        }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4,1fr);
-            gap: 28px;
-        }
-        .stat-card {
-            background: var(--card-bg);
-            border-radius: 24px;
-            padding: 28px 20px;
-            text-align: center;
-            border: 1px solid var(--light-gray);
-            transition: all 0.3s ease;
-        }
-        .stat-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-        }
-        .stat-card .number {
-            font-size: 2.3rem;
-            font-weight: 800;
-            color: var(--primary);
-        }
-        .stat-card .label {
-            font-size: 0.9rem;
-            color: #aaa;
-            margin-top: 8px;
-        }
-        .yellow-line {
-            width: 40px;
-            height: 3px;
-            background: var(--primary);
-            margin: 12px auto 0;
+        .lightbox-close:hover {
+            color: var(--white);
+            transform: rotate(90deg);
+            background: rgba(201, 168, 76, 0.3);
         }
 
-        /* Featured Estate - MODIFIED: Tabs with auto-rotate */
-        .featured {
-            padding: 80px 0;
-            background: var(--dark);
-        }
-        .section-title {
-            font-size: 2.6rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: white;
-        }
-        .section-sub {
-            font-size: 1.1rem;
-            color: #b0b0b0;
-            max-width: 700px;
-            margin-bottom: 48px;
-        }
-        .estate-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        .estate-img img {
-            width: 100%;
-            border-radius: 28px;
-            box-shadow: var(--shadow-md);
-            height: auto;
-            max-height: 420px;
-            object-fit: cover;
-            transition: all 0.4s ease;
-        }
-        .badge-gold {
-            background: var(--primary);
-            color: var(--dark);
-            font-weight: 700;
-            display: inline-block;
-            padding: 5px 18px;
-            border-radius: 40px;
-            font-size: 0.8rem;
-            margin-bottom: 24px;
-        }
-        /* Tab styles */
-        .price-tabs-container {
-            margin: 20px 0 24px;
-        }
-        .tab-buttons {
-            display: flex;
-            gap: 12px;
-            background: var(--gray);
-            padding: 8px;
-            border-radius: 60px;
-            margin-bottom: 28px;
-        }
-        .tab-btn {
-            flex: 1;
-            background: transparent;
-            border: none;
-            padding: 12px 16px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            color: #ccc;
-            font-family: 'Inter', sans-serif;
-        }
-        .tab-btn.active {
-            background: var(--primary);
-            color: var(--dark);
-            box-shadow: 0 4px 12px rgba(255,215,0,0.3);
-        }
-        .dynamic-price-card {
-            background: linear-gradient(135deg, #141414, #0a0a0a);
-            border-radius: 32px;
-            padding: 28px;
-            text-align: center;
-            border: 1px solid var(--primary);
-            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.6);
-            margin-bottom: 20px;
-        }
-        .price-save {
-            background: rgba(255,215,0,0.15);
-            color: var(--primary);
-            padding: 6px 14px;
-            border-radius: 40px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 16px;
-        }
-        .price-amount-dynamic {
-            font-size: 3.2rem;
-            font-weight: 800;
-            color: var(--primary);
-            letter-spacing: -1px;
-            margin: 10px 0;
-        }
-        .best-value-badge {
-            background: var(--primary);
-            color: var(--dark);
-            padding: 6px 18px;
-            border-radius: 40px;
-            font-size: 0.75rem;
-            font-weight: 800;
-            display: inline-block;
-            margin-top: 10px;
-        }
-        .monthly-breakdown {
-            font-size: 0.85rem;
-            color: #aaa;
-            margin-top: 12px;
-        }
-        .feature-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin: 24px 0;
-        }
-        .feature-list span {
-            background: var(--gray);
-            padding: 6px 14px;
-            border-radius: 40px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: #ccc;
-        }
-        @media (max-width: 900px) {
-            .estate-grid { grid-template-columns: 1fr; }
-            .stats-grid { grid-template-columns: 1fr 1fr; }
-            .section-title { font-size: 1.8rem; }
-            .price-amount-dynamic { font-size: 2.4rem; }
-            .estate-img img { max-height: 320px; }
-        }
-
-        /* Video Carousel Section - FIXED: Proper centering and sizing */
-        .video-carousel-section {
-            background: var(--gray);
-            padding: 80px 0;
-        }
-        .video-carousel-wrapper {
-            position: relative;
-            margin: 40px auto 30px;
-            max-width: 1000px;
-        }
-        .video-carousel-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 24px;
-            background: #000;
-        }
-        .video-carousel-track {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        .video-slide {
-            min-width: 100%;
-            flex-shrink: 0;
-        }
-        .video-card {
-            background: var(--card-bg);
-            border-radius: 24px;
-            overflow: hidden;
-            border: 1px solid var(--light-gray);
-            transition: all 0.3s ease;
-            width: 100%;
-        }
-        .video-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-        }
-        .video-preview {
-            position: relative;
-            aspect-ratio: 16 / 9;
-            background: #000;
-            cursor: pointer;
-            overflow: hidden;
-            width: 100%;
+        .lightbox-image-container {
+            max-width: 90vw;
+            max-height: 75vh;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        .video-thumbnail {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-        }
-        .video-player {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+
+        .lightbox-image-container img {
+            max-width: 100%;
+            max-height: 75vh;
             object-fit: contain;
-            background: #000;
-            z-index: 10;
-            display: none;
+            border-radius: 4px;
+            border: 2px solid rgba(201, 168, 76, 0.4);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
         }
-        .video-play-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            z-index: 5;
-        }
-        .play-button-large {
-            width: 70px;
-            height: 70px;
-            background: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--dark);
-            font-size: 1.8rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            z-index: 6;
-        }
-        .play-button-large:hover {
-            transform: scale(1.1);
-            background: var(--primary-dark);
-        }
-        .video-caption {
-            padding: 20px;
-        }
-        .video-caption h4 {
-            color: white;
-            font-size: 1.2rem;
-            margin-bottom: 6px;
-        }
-        .video-caption p {
-            color: #aaa;
-            font-size: 0.85rem;
-        }
-        .carousel-nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 45px;
-            height: 45px;
-            background: rgba(0,0,0,0.6);
-            border: none;
-            border-radius: 50%;
-            color: white;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .carousel-nav-btn:hover {
-            background: var(--primary);
-            color: var(--dark);
-        }
-        .prev-btn {
-            left: 15px;
-        }
-        .next-btn {
-            right: 15px;
-        }
-        .video-carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 25px;
-            flex-wrap: wrap;
-        }
-        .video-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #555;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .video-dot.active {
-            background: var(--primary);
-            width: 28px;
-            border-radius: 10px;
-        }
-        .video-dot:hover {
-            background: var(--primary);
-        }
-        .youtube-link-wrapper {
-            text-align: center;
-            margin-top: 30px;
-        }
-        .youtube-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--primary);
-            font-weight: 600;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 40px;
-            background: rgba(255,215,0,0.1);
-            transition: all 0.3s ease;
-        }
-        .youtube-link:hover {
-            background: rgba(255,215,0,0.2);
-            transform: translateX(5px);
-        }
-        .youtube-link i {
-            font-size: 1.3rem;
-        }
-        .video-stats {
+
+        .lightbox-actions {
             display: flex;
             gap: 15px;
-            margin-top: 10px;
+            margin-top: 25px;
             flex-wrap: wrap;
+            justify-content: center;
         }
-        .stat-badge {
+
+        .btn-lightbox {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            background: var(--gray);
-            padding: 5px 12px;
-            border-radius: 30px;
-            font-size: 0.75rem;
-            color: var(--primary);
-            font-weight: 500;
-        }
-
-        /* Mobile Specific Fixes for Video Carousel */
-        @media (max-width: 768px) {
-            .video-carousel-section {
-                padding: 60px 0;
-            }
-            .play-button-large {
-                width: 50px;
-                height: 50px;
-                font-size: 1.3rem;
-            }
-            .carousel-nav-btn {
-                width: 35px;
-                height: 35px;
-                font-size: 0.9rem;
-            }
-            .prev-btn {
-                left: 5px;
-            }
-            .next-btn {
-                right: 5px;
-            }
-            .video-caption h4 {
-                font-size: 1rem;
-            }
-            .video-caption p {
-                font-size: 0.75rem;
-            }
-            .video-carousel-container {
-                border-radius: 16px;
-            }
-            .video-preview {
-                aspect-ratio: 16 / 9;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .play-button-large {
-                width: 45px;
-                height: 45px;
-                font-size: 1.1rem;
-            }
-            .carousel-nav-btn {
-                width: 30px;
-                height: 30px;
-                font-size: 0.8rem;
-            }
-            .video-caption {
-                padding: 12px;
-            }
-        }
-
-        /* Services */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 32px;
-            margin-top: 40px;
-        }
-        .service-card {
-            background: var(--card-bg);
-            border-radius: 24px;
-            padding: 32px 24px;
-            transition: all 0.3s ease;
-            border: 1px solid var(--light-gray);
-        }
-        .service-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--primary);
-        }
-        .service-card i {
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-        .service-card:hover i {
-            transform: scale(1.1);
-        }
-        .service-card h3 {
-            color: white;
-            margin-bottom: 12px;
-        }
-
-        /* Why Choose */
-        .why-choose {
-            padding: 80px 0;
-            background: var(--dark);
-            border-top: 1px solid var(--light-gray);
-        }
-        .split-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 56px;
-            align-items: center;
-        }
-        .reason-list {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-        .reason-item {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-        .reason-item:hover {
-            transform: translateX(6px);
-            color: var(--primary);
-        }
-        .reason-item i {
-            color: var(--primary);
-            font-size: 1.5rem;
-        }
-
-        /* CEO */
-        .ceo-section {
-            padding: 80px 0;
-            background: var(--gray);
-        }
-        .ceo-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 48px;
-            align-items: center;
-        }
-        .ceo-img {
-            background: var(--light-gray);
-            border-radius: 32px;
-            overflow: hidden;
-            height: 420px;
-            background-image: url('/static/ceo-img.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            border: 1px solid var(--light-gray);
-        }
-        .quote-mark {
-            font-size: 4rem;
-            line-height: 1;
-            color: var(--primary);
-            opacity: 0.7;
-            margin-bottom: 10px;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            background: var(--dark);
-            padding: 70px 0;
-        }
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .testimonial-card {
-            background: var(--card-bg);
-            padding: 28px;
-            border-radius: 28px;
-            border: 1px solid var(--light-gray);
-        }
-
-        /* Final CTA */
-        .final-cta {
-            background: var(--gray);
-            padding: 70px 0;
-            text-align: center;
-            border-top: 1px solid var(--light-gray);
-        }
-
-        /* Contact */
-        .contact-section {
-            padding: 80px 0;
-            background: var(--dark);
-        }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.3fr;
-            gap: 56px;
-        }
-        .contact-details i {
-            color: var(--primary);
-            width: 28px;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 14px 18px;
-            border-radius: 16px;
-            border: 1px solid var(--light-gray);
-            background: var(--card-bg);
-            color: white;
-            font-family: 'Inter', sans-serif;
-        }
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        /* Footer */
-        .footer {
-            background: #050505;
-            color: #b0b0b0;
-            padding: 60px 0 30px;
-            border-top: 1px solid var(--light-gray);
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(4,1fr);
-            gap: 40px;
-        }
-        .footer a {
-            color: #ccc;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 4px;
             text-decoration: none;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-        .footer a:hover {
-            color: var(--primary);
-            transform: translateX(4px);
-        }
-        .copyright {
-            border-top: 1px solid var(--light-gray);
-            margin-top: 50px;
-            padding-top: 30px;
-            text-align: center;
-            font-size: 0.8rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 900px) {
-            .hero-grid, .estate-grid, .split-section, .ceo-grid, .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            .nav-links {
-                display: none;
-            }
-            .hamburger {
-                display: block;
-            }
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .testimonial-grid, .media-grid {
-                grid-template-columns: 1fr;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .container {
-                padding: 0 20px;
-            }
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            .section-title {
-                font-size: 1.8rem;
-            }
-            .desktop-book-btn {
-                display: none;
-            }
-            .flyer-book-btn {
-                padding: 8px 16px;
-                font-size: 0.8rem;
-                white-space: nowrap;
-                bottom: 15px;
-            }
-            .carousel-btn {
-                width: 35px;
-                height: 35px;
-                font-size: 1rem;
-            }
-            .btn-group {
-                gap: 12px;
-            }
-            .btn-primary, .btn-outline-light {
-                padding: 8px 20px;
-                font-size: 0.85rem;
-            }
-            .stat-card .number {
-                font-size: 1.8rem;
-            }
+        .btn-lightbox-whatsapp {
+            background: #25D366;
+            color: #fff;
+            border-color: #25D366;
         }
 
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 16px;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero-badge {
-                font-size: 0.7rem;
-            }
-            .trust-strip {
-                font-size: 0.75rem;
-            }
-            .btn-primary, .btn-outline-light {
-                width: 100%;
-                text-align: center;
-            }
-            .btn-group {
-                flex-direction: column;
-            }
-            .stat-card {
-                padding: 20px 12px;
-            }
-            .stat-card .number {
-                font-size: 1.5rem;
-            }
-            .section-title {
-                font-size: 1.6rem;
-            }
-            .service-card {
-                padding: 24px 18px;
-            }
-            .service-card h3 {
-                font-size: 1.2rem;
-            }
-            .testimonial-card {
-                padding: 20px;
-            }
-            .contact-grid {
-                gap: 30px;
-            }
-            input, select, textarea {
-                padding: 12px 14px;
-                font-size: 0.9rem;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-                text-align: center;
-            }
-            .footer .logo {
-                justify-content: center;
-            }
-            .reason-item {
-                font-size: 0.9rem;
-            }
-            .ceo-img {
-                height: 280px;
-            }
-            .quote-mark {
-                font-size: 2.5rem;
-            }
+        .btn-lightbox-whatsapp:hover {
+            background: #1ebe57;
+            border-color: #1ebe57;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
         }
+
+        .btn-lightbox-download {
+            background: var(--gold-bright);
+            color: var(--black);
+            border-color: var(--gold-bright);
+        }
+
+        .btn-lightbox-download:hover {
+            background: var(--gold-light);
+            border-color: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.4);
+        }
+
     </style>
 </head>
 <body>
 
-<!-- Clickable Announcement bar with Marquee Animation -->
-<div class="announcement-bar" id="announcementBar">
-    <div class="announcement-marquee">
-        <span>🔥 NOW SELLING</span>
-        📍 Multiple offers available at different locations &nbsp;|&nbsp;
-        💳 Flexible Payment Plan Available &nbsp;|&nbsp;
-        🏆 CHECK IT OUT NOW
-        <i class="fas fa-arrow-right"></i>
-        &nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp;
-        <span>🔥 NOW SELLING</span>
-        📍 Multiple offers available at different locations &nbsp;|&nbsp;
-        💳 Flexible Payment Plan Available &nbsp;|&nbsp;
-        🏆 CHECK IT OUT NOW
-        <i class="fas fa-arrow-right"></i>
-    </div>
-</div>
-
-<!-- Flyer Carousel Modal -->
-<div id="flyerModal" class="flyer-modal">
-    <div class="flyer-modal-content">
-        <div class="close-flyer" id="closeFlyerBtn">&times;</div>
-        <div class="flyer-carousel-container">
-            <div class="flyer-slides" id="flyerSlides">
-                <div class="flyer-slide"><img src="/static/fly.jpeg" alt="Juniper Estate"><button class="flyer-book-btn" data-property="Juniper Estate Special Offer">Book Now →</button></div>
-                <div class="flyer-slide"><img src="/static/flyer.jpeg" alt="Oakwood City"><button class="flyer-book-btn" data-property="Oakwood City Estate">Book Now →</button></div>
-                <div class="flyer-slide"><img src="/static/flyer1.jpeg" alt="Ivy Supreme"><button class="flyer-book-btn" data-property="Ivy Supreme Estate">Book Now →</button></div>
-                <div class="flyer-slide"><img src="/static/flyer2.jpeg" alt="Gold Town"><button class="flyer-book-btn" data-property="Gold Town Estate Abuja">Book Now →</button></div>
-                <div class="flyer-slide"><img src="/static/flyer3.jpeg" alt="Crystal City"><button class="flyer-book-btn" data-property="Crystal City Estate Asaba">Book Now →</button></div>
-                <div class="flyer-slide"><img src="/static/flyer4.jpeg" alt="Newtown"><button class="flyer-book-btn" data-property="Newtown Estate Ibusa">Book Now →</button></div>
-                <div class="flyer-slide"><img src="/static/flyer5.jpeg" alt="Cedar City"><button class="flyer-book-btn" data-property="Cedar City Estate Enugu">Book Now →</button></div>
-                <div class="flyer-slide"><img src="/static/flyer6.jpeg" alt="Nando City"><button class="flyer-book-btn" data-property="Nando City of Hope Abuja">Book Now →</button></div>
-                <div class="flyer-slide"><img src="/static/flyer7.jpeg" alt="Ivy Gold"><button class="flyer-book-btn" data-property="Ivy Gold Extension Abuja">Book Now →</button></div>
-            </div>
-            <button class="carousel-btn carousel-prev" id="flyerPrevBtn">❮</button>
-            <button class="carousel-btn carousel-next" id="flyerNextBtn">❯</button>
+    <!-- ==================== PRELOADER ==================== -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-logo">
+            <img src="/static/logo.jpeg" alt="Jecyani Properties" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=color:#D4AF37;font-size:3rem;font-family:Cormorant+Garamond,serif>JP</div>';">
         </div>
-        <div class="flyer-carousel-dots" id="flyerCarouselDots"></div>
     </div>
-</div>
 
-<!-- Navbar -->
-<nav class="navbar">
-    <div class="nav-container">
-        <div class="logo">
-            <img src="/static/logo.jpeg" alt="Jecyani Properties Logo" style="height: 50px; width: auto;">
-            <h1>JECYANI <span style="color:#FFD700;">PROPERTIES</span></h1>
-        </div>
+    <!-- ==================== CUSTOM CURSOR ==================== -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-outline" id="cursorOutline"></div>
 
-        <!-- Desktop Navigation -->
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="/about">About</a>
-            <a href="/properties">Properties</a>
-            <a href="/services">Services</a>
-            <a href="/investments">Investment</a>
-            <a href="#contact-section">Contact</a>
-        </div>
-
-        <!-- Desktop Book Inspection Button -->
-        <a href="#" class="btn-primary desktop-book-btn" data-property="Jecyani Properties - General">📞 Book Inspection</a>
-
-        <!-- Hamburger Menu Button (Mobile) -->
-        <button class="hamburger" id="hamburgerBtn">
-            <i class="fas fa-bars"></i>
-        </button>
-    </div>
-</nav>
-
-<!-- Mobile Navigation Menu -->
-<div class="overlay" id="mobileOverlay"></div>
-<div class="mobile-nav" id="mobileNav">
-    <div class="close-menu" id="closeMenuBtn">&times;</div>
-    <a href="#">🏠 Home</a>
-    <a href="/about">📖 About</a>
-    <a href="/properties">🏘️ Properties</a>
-    <a href="/services">🛠️ Services</a>
-    <a href="/investments">📈 Investment</a>
-    <a href="#contact-section">📞 Contact</a>
-    <a href="#" class="btn-primary mobile-book-btn" data-property="Jecyani Properties - General" style="text-align: center;">📞 Book Inspection</a>
-</div>
-
-<main>
-    <!-- Hero Section -->
-    <div class="hero">
-        <div class="container" data-aos="fade-up" data-aos-duration="800">
-            <div class="hero-badge">Trusted Real Estate & Investment Solutions</div>
-            <h1>Own Land. <span class="shimmer-text">Build Wealth.</span> Secure Your Future.</h1>
-            <p>Jecyani Properties helps buyers, sellers, and investors make confident real estate decisions through trusted opportunities, expert guidance, and flexible property solutions.</p>
-            <div class="btn-group">
-                <a href="/properties" class="btn-primary">View Properties →</a>
-                <a href="#" class="btn-outline-light talk-advisor-btn" data-property="Jecyani Properties - Consultation">Talk to an Advisor</a>
-            </div>
-            <div class="trust-strip">
-                <span><i class="fas fa-check-circle"></i> Trusted guidance</span>
-                <span><i class="fas fa-hand-holding-usd"></i> Flexible payment</span>
-                <span><i class="fas fa-map-marker-alt"></i> Strategic locations</span>
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="/static/logo.jpeg" alt="Jecyani Properties Logo" class="logo-img" onerror="this.style.display='none';">
+                <div class="logo-text">Jecyani <span>Properties</span></div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="/properties">Estates</a></li>
+                <li><a href="#flyers">Flyers</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="/invest" class="btn-nav">Invest Now</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <!-- Stats Row -->
-    <div class="stats-section">
-        <div class="container stats-grid">
-            <div class="stat-card" data-aos="zoom-in" data-aos-delay="0"><div class="number">2022</div><div class="label">Founded</div><div class="yellow-line"></div></div>
-            <div class="stat-card" data-aos="zoom-in" data-aos-delay="100"><div class="number">10+</div><div class="label">Estates Sold</div><div class="yellow-line"></div></div>
-            <div class="stat-card" data-aos="zoom-in" data-aos-delay="200"><div class="number">Flexible</div><div class="label">Payment Plans</div><div class="yellow-line"></div></div>
-            <div class="stat-card" data-aos="zoom-in" data-aos-delay="300"><div class="number">Trusted</div><div class="label">Real Estate Advisory</div><div class="yellow-line"></div></div>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="home">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=90" alt="Luxury Property" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-particles" id="heroParticles"></div>
+        <div class="hero-content">
+            <div class="hero-badge" data-aos="fade-down" data-aos-duration="800">✦ Nigeria's Most Trusted Real Estate Partner ✦</div>
+            <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                Own <span class="gold-text">Land.</span><br>
+                Build <span class="gold-text">Wealth.</span><br>
+                Secure Your <span class="gold-text">Future.</span>
+            </h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                Invest with absolute confidence through our meticulously verified properties, bespoke flexible payment plans, and a distinguished partner wholly dedicated to your generational wealth across Nigeria's most coveted locations.
+            </p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                <a href="#estates" class="btn btn-primary">✦ Explore Properties</a>
+                <a href="https://wa.me/2348160087513" target="_blank" class="btn btn-outline">📞 Private Consultation</a>
+            </div>
         </div>
-    </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
 
-    <!-- Featured Estate: Juniper -->
-    <div class="featured">
+    <!-- ==================== TRUST BAR ==================== -->
+    <div class="trust-bar">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Featured Investment Opportunity</h2>
-            <div class="section-sub" data-aos="fade-up" data-aos-delay="100">Secure a plot in one of Aba's fast-growing locations with flexible payment plans and a 30% initial deposit.</div>
-            <div class="estate-grid">
-                <div class="estate-img" data-aos="fade-right" data-aos-duration="700">
-                    <img src="/static/land2.jpeg" alt="Juniper Estate" class="gentle-float">
+            <div class="trust-items">
+                <div class="trust-item" data-aos="fade-up" data-aos-delay="0">
+                    <div class="trust-icon"><i class="fa-solid fa-crown"></i></div>
+                    <h4>10+</h4><p>Distinguished Investors</p>
                 </div>
-                <div data-aos="fade-left" data-aos-duration="700">
-                    <div class="badge-gold">🏷️ 30% Initial Deposit</div>
-
-                    <!-- Tab Buttons -->
-                    <div class="price-tabs-container">
-                        <div class="tab-buttons">
-                            <button class="tab-btn active" data-plan="3months">3 Months</button>
-                            <button class="tab-btn" data-plan="6months">6 Months</button>
-                            <button class="tab-btn" data-plan="12months">12 Months</button>
-                        </div>
-                        <div class="dynamic-price-card">
-                            <div class="price-save" id="saveBadge">✨ Save ₦1M vs 12-month plan</div>
-                            <div class="price-amount-dynamic" id="dynamicPrice">₦3.5M</div>
-                            <div id="bestValueBadge" class="best-value-badge">🔥 BEST VALUE</div>
-                            <div class="monthly-breakdown" id="monthlyText">One-time payment / Full ownership</div>
-                        </div>
-                    </div>
-
-                    <p style="margin: 10px 0;"><i class="fas fa-location-dot" style="color:var(--primary);"></i> <strong>Ogbor Hill, along Opobo-Azumini Road, Aba</strong></p>
-                    <div class="feature-list">
-                        <span>Gated environment</span><span>Good road access</span><span>Perimeter fencing</span><span>Eco-friendly layout</span><span>Registered Survey</span><span>Free Irrevocable PoA</span>
-                    </div>
-                    <div class="btn-group" style="margin-top: 10px;">
-                        <a href="#" class="btn-primary book-inspect-btn" data-property="Juniper Estate, Aba Phase 2">📸 Book Inspection</a>
-                        <a href="#" class="btn-outline-light secure-plot-btn" data-property="Juniper Estate, Aba Phase 2">Secure This Plot</a>
-                    </div>
+                <div class="trust-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="trust-icon"><i class="fa-solid fa-map-pin"></i></div>
+                    <h4>6+</h4><p>Prime Cities</p>
+                </div>
+                <div class="trust-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="trust-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h4>100%</h4><p>Verified & Secure</p>
+                </div>
+                <div class="trust-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="trust-icon"><i class="fa-solid fa-gem"></i></div>
+                    <h4>3-12</h4><p>Months Flexible Plan</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Video Carousel Section - FIXED -->
-    <div class="video-carousel-section">
+    <!-- ==================== PREMIUM ESTATES ==================== -->
+    <section id="estates">
         <div class="container">
-            <h2 class="section-title">Past Projects & Land Acquisitions</h2>
-            <div class="section-sub">
-                Take a look at our land acquisitions, ongoing developments, and completed estate projects.
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Curated Portfolio</span>
+                <h2>Our Premium Estates</h2>
+                <div class="gold-divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+                <p>Discover exceptional land investments in Nigeria's most prestigious and rapidly appreciating locations</p>
             </div>
-
-            <div class="video-carousel-wrapper">
-                <div class="video-carousel-container">
-                    <div class="video-carousel-track" id="videoTrack">
-                        <div class="video-slide">
-                            <div class="video-card">
-                                <div class="video-preview">
-                                    <img src="/static/land.jpeg" class="video-thumbnail" alt="Juniper Estate">
-                                    <div class="video-play-overlay">
-                                        <div class="play-button-large"><i class="fas fa-play"></i></div>
-                                    </div>
-                                    <video class="video-player" preload="metadata" playsinline controls>
-                                        <source src="static/video/vid1.mp4" type="video/mp4">
-                                    </video>
-                                </div>
-                                <div class="video-caption">
-                                    <h4>Juniper Estate Phase 2</h4>
-                                    <div class="video-stats"><span class="stat-badge">Plots Sold: 48</span><span class="stat-badge">90% Occupied</span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="video-slide">
-                            <div class="video-card">
-                                <div class="video-preview">
-                                    <img src="/static/land7.jpeg" class="video-thumbnail" alt="Oakwood City">
-                                    <div class="video-play-overlay">
-                                        <div class="play-button-large"><i class="fas fa-play"></i></div>
-                                    </div>
-                                    <video class="video-player" preload="metadata" playsinline controls>
-                                        <source src="static/video/vid2.mp4" type="video/mp4">
-                                    </video>
-                                </div>
-                                <div class="video-caption">
-                                    <h4>Oakwood City Estate</h4>
-                                    <div class="video-stats"><span class="stat-badge">Plots Sold: 62</span><span class="stat-badge">35 Units Built</span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="video-slide">
-                            <div class="video-card">
-                                <div class="video-preview">
-                                    <img src="/static/land2.jpeg" class="video-thumbnail" alt="Ivy Supreme">
-                                    <div class="video-play-overlay">
-                                        <div class="play-button-large"><i class="fas fa-play"></i></div>
-                                    </div>
-                                    <video class="video-player" preload="metadata" playsinline controls>
-                                        <source src="static/video/vid3.mp4" type="video/mp4">
-                                    </video>
-                                </div>
-                                <div class="video-caption">
-                                    <h4>Ivy Supreme Extension</h4>
-                                    <div class="video-stats"><span class="stat-badge">Plots Sold: 35</span><span class="stat-badge">Launching Soon</span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="video-slide">
-                            <div class="video-card">
-                                <div class="video-preview">
-                                    <img src="/static/land8.jpeg" class="video-thumbnail" alt="Gold Town">
-                                    <div class="video-play-overlay">
-                                        <div class="play-button-large"><i class="fas fa-play"></i></div>
-                                    </div>
-                                    <video class="video-player" preload="metadata" playsinline controls>
-                                        <source src="static/video/vid4.mp4" type="video/mp4">
-                                    </video>
-                                </div>
-                                <div class="video-caption">
-                                    <h4>Gold Town Estate</h4>
-                                    <div class="video-stats"><span class="stat-badge">Plots Sold: 52</span><span class="stat-badge">100% Sold Out</span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="video-slide">
-                            <div class="video-card">
-                                <div class="video-preview">
-                                    <img src="/static/land4.jpeg" class="video-thumbnail" alt="Crystal City">
-                                    <div class="video-play-overlay">
-                                        <div class="play-button-large"><i class="fas fa-play"></i></div>
-                                    </div>
-                                    <video class="video-player" preload="metadata" playsinline controls>
-                                        <source src="static/video/vid5.mp4" type="video/mp4">
-                                    </video>
-                                </div>
-                                <div class="video-caption">
-                                    <h4>Crystal City Asaba</h4>
-                                    <div class="video-stats"><span class="stat-badge">Plots Sold: 28</span><span class="stat-badge">Waterfront Plots</span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="video-slide">
-                            <div class="video-card">
-                                <div class="video-preview">
-                                    <img src="/static/land3.jpeg" class="video-thumbnail" alt="Cedar City">
-                                    <div class="video-play-overlay">
-                                        <div class="play-button-large"><i class="fas fa-play"></i></div>
-                                    </div>
-                                    <video class="video-player" preload="metadata" playsinline controls>
-                                        <source src="static/video/vid6.mp4" type="video/mp4">
-                                    </video>
-                                </div>
-                                <div class="video-caption">
-                                    <h4>Cedar City Enugu</h4>
-                                    <div class="video-stats"><span class="stat-badge">Plots Sold: 41</span><span class="stat-badge">Hillside Development</span></div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="estates-showcase">
+                <!-- Gold Town Estate -->
+                <div class="estate-row" data-aos="fade-up">
+                    <div class="estate-image-wrapper">
+                        <img src="/static/land.jpeg" alt="Gold Town Estate">
+                        <div class="estate-image-overlay"><span class="estate-badge-large">Flagship</span></div>
                     </div>
-                    <button class="carousel-nav-btn prev-btn" id="videoPrevBtn"><i class="fas fa-chevron-left"></i></button>
-                    <button class="carousel-nav-btn next-btn" id="videoNextBtn"><i class="fas fa-chevron-right"></i></button>
+                    <div class="estate-details">
+                        <div class="estate-location"><i class="fa-solid fa-location-dot"></i> Guzape Main, Abuja</div>
+                        <h3>Gold Town Estate</h3>
+                        <div class="price">From ₦180,000,000</div>
+                        <p class="description">An exclusive collection of premium plots in Abuja's most prestigious district. Gated, secure, and primed for exceptional capital appreciation.</p>
+                        <div class="estate-features">
+                            <span class="feature-tag"><i class="fa-solid fa-check"></i> Gated Community</span>
+                            <span class="feature-tag"><i class="fa-solid fa-check"></i> Dry Land</span>
+                            <span class="feature-tag"><i class="fa-solid fa-check"></i> Premium Location</span>
+                        </div>
+                        <a href="#" class="btn btn-outline-gold">View Full Details →</a>
+                    </div>
                 </div>
-                <div class="video-carousel-dots" id="videoCarouselDots"></div>
+                <!-- Newtown Estate Ibusa -->
+                <div class="estate-row reverse" data-aos="fade-up">
+                    <div class="estate-image-wrapper">
+                        <img src="/static/land2.jpeg" alt="Newtown Estate">
+                        <div class="estate-image-overlay"><span class="estate-badge-large">New Release</span></div>
+                    </div>
+                    <div class="estate-details">
+                        <div class="estate-location"><i class="fa-solid fa-location-dot"></i> Opposite Admiralty University, Asaba</div>
+                        <h3>Newtown Estate Ibusa</h3>
+                        <div class="price">₦18,000,000 – ₦22,000,000</div>
+                        <p class="description">Strategically positioned near Admiralty University, this estate offers an unparalleled investment opportunity with strong rental demand and rapid value growth.</p>
+                        <div class="estate-features">
+                            <span class="feature-tag"><i class="fa-solid fa-check"></i> Gated Community</span>
+                            <span class="feature-tag"><i class="fa-solid fa-check"></i> Near University</span>
+                            <span class="feature-tag"><i class="fa-solid fa-check"></i> High Appreciation</span>
+                        </div>
+                        <a href="#" class="btn btn-outline-gold">View Full Details →</a>
+                    </div>
+                </div>
+                <!-- Juniper Estate Phase 2 -->
+                <div class="estate-row" data-aos="fade-up">
+                    <div class="estate-image-wrapper">
+                        <img src="/static/land3.jpeg" alt="Juniper Estate">
+                        <div class="estate-image-overlay"><span class="estate-badge-large">Best Value</span></div>
+                    </div>
+                    <div class="estate-details">
+                        <div class="estate-location"><i class="fa-solid fa-location-dot"></i> Ogbor Hill, Aba</div>
+                        <h3>Juniper Estate Phase 2</h3>
+                        <div class="price">₦3,500,000 – ₦4,500,000</div>
+                        <p class="description">Affordable luxury in the heart of Aba. A meticulously planned gated community offering exceptional value with all essential documentation included.</p>
+                        <div class="estate-features">
+                            <span class="feature-tag"><i class="fa-solid fa-check"></i> Gated Community</span>
+                            <span class="feature-tag"><i class="fa-solid fa-check"></i> Affordable Entry</span>
+                            <span class="feature-tag"><i class="fa-solid fa-check"></i> Full Documentation</span>
+                        </div>
+                        <a href="#" class="btn btn-outline-gold">View Full Details →</a>
+                    </div>
+                </div>
             </div>
-            <div class="youtube-link-wrapper">
-                <a href="https://www.youtube.com/@jecyanimult-resourcesltd" target="_blank" class="youtube-link">
-                    <i class="fab fa-youtube"></i> Watch More on YouTube →
+        </div>
+    </section>
+
+    <!-- ==================== THE JECYANI ADVANTAGE ==================== -->
+    <section class="section-dark">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Why Choose Us</span>
+                <h2>The Jecyani Advantage</h2>
+                <div class="gold-divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+                <p>We've redefined real estate investment with an unwavering commitment to trust, transparency, and timeless value</p>
+            </div>
+            <div class="advantages-grid">
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="advantage-icon-circle"><i class="fa-solid fa-scroll"></i></div>
+                    <h3>Hassle-Free Ownership</h3>
+                    <p>Complimentary Deed of Conveyance, Registered Survey Plan & Irrevocable Power of Attorney — all meticulously handled.</p>
+                </div>
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="advantage-icon-circle"><i class="fa-solid fa-wallet"></i></div>
+                    <h3>Pay Your Way</h3>
+                    <p>Begin with just 30% deposit. Spread the balance across 3, 6, or 12 months with absolute zero hidden charges.</p>
+                </div>
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="advantage-icon-circle"><i class="fa-solid fa-building-shield"></i></div>
+                    <h3>100% Verified & Safe</h3>
+                    <p>Every plot thoroughly vetted, gated, and secured with excellent road networks. Complete peace of mind guaranteed.</p>
+                </div>
+                <div class="advantage-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="advantage-icon-circle"><i class="fa-solid fa-handshake-angle"></i></div>
+                    <h3>White-Glove Support</h3>
+                    <p>From initial inquiry to final documentation, our expert team provides unparalleled guidance at every step.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== THE PROCESS ==================== -->
+    <section class="section-cream">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">How It Works</span>
+                <h2>Your Journey to Ownership</h2>
+                <div class="gold-divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+                <p>A refined four-step process designed for your absolute convenience and confidence</p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step" data-aos="fade-up" data-aos-delay="0">
+                    <div class="step-number-circle">I</div>
+                    <h3>Browse & Select</h3>
+                    <p>Explore our curated collection and identify the property that resonates with your vision.</p>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="150">
+                    <div class="step-number-circle">II</div>
+                    <h3>Secure With 30%</h3>
+                    <p>Lock in your chosen plot with a straightforward initial deposit and select your preferred plan.</p>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number-circle">III</div>
+                    <h3>We Handle Everything</h3>
+                    <p>Our legal team processes all documentation — Deed, Survey & Power of Attorney — at no extra cost.</p>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="450">
+                    <div class="step-number-circle">IV</div>
+                    <h3>You Own & Build</h3>
+                    <p>Receive your complete documents and commence building generational wealth on your secure land.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROMOTIONAL FLYERS ==================== -->
+    <section class="section-dark" id="flyers">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Promotional Materials</span>
+                <h2>Our Flyers</h2>
+                <div class="gold-divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+                <p>Click any flyer to view full size and share directly on WhatsApp</p>
+            </div>
+            <div class="flyers-grid" id="flyersGrid">
+                <!-- Flyer cards will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FLYER LIGHTBOX ==================== -->
+    <div class="lightbox" id="flyerLightbox">
+        <div class="lightbox-close" id="lightboxClose">&times;</div>
+        <div class="lightbox-image-container">
+            <img src="" alt="Flyer" id="lightboxImage">
+        </div>
+        <div class="lightbox-actions">
+            <a href="#" class="btn btn-lightbox btn-lightbox-whatsapp" id="lightboxWhatsApp" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+            </a>
+            <a href="#" class="btn btn-lightbox btn-lightbox-download" id="lightboxDownload" download>
+                <i class="fa-solid fa-download"></i> Download Flyer
+            </a>
+        </div>
+    </div>
+
+    <!-- ==================== PAST PROJECTS ==================== -->
+    <section class="section-dark" id="projects">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Our Legacy</span>
+                <h2>Past Projects</h2>
+                <div class="gold-divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+                <p>A testament to our commitment — beautifully executed estates that have transformed landscapes and enriched investors</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="0">
+                    <img src="/static/land4.jpeg" alt="Oakwood Heights">
+                    <div class="project-overlay"><h4>Oakwood Heights</h4><span>Umuahia • Completed 2023</span></div>
+                </div>
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="/static/land5.jpeg" alt="Crystal Gardens">
+                    <div class="project-overlay"><h4>Crystal Gardens</h4><span>Asaba</span></div>
+                </div>
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="/static/land6.jpeg" alt="Ivy Supreme Court">
+                    <div class="project-overlay"><h4>Ivy Supreme Court</h4><span>Abia</span></div>
+                </div>
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="/static/land7.jpeg" alt="Cedar Grove">
+                    <div class="project-overlay"><h4>Cedar Grove</h4><span>Enugu</span></div>
+                </div>
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="0">
+                    <img src="/static/land8.jpeg" alt="Nando Heights">
+                    <div class="project-overlay"><h4>Nando Heights</h4><span>Abuja</span></div>
+                </div>
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="/static/land.jpeg" alt="Juniper Phase 1">
+                    <div class="project-overlay"><h4>Juniper Phase 1</h4><span>Aba</span></div>
+                </div>
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="/static/land2.jpeg" alt="Gold Coast Villas">
+                    <div class="project-overlay"><h4>Gold Coast Villas</h4><span>Port Harcourt</span></div>
+                </div>
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="/static/land3.jpeg" alt="Emerald Park">
+                    <div class="project-overlay"><h4>Emerald Park</h4><span>Umuahia</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section class="section-dark">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Client Voices</span>
+                <h2>Words of Distinction</h2>
+                <div class="gold-divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+                <p>Hear from the distinguished individuals who have entrusted us with their legacy</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="quote">"I was initially hesitant about remote land acquisition, but Jecyani's process was impeccably transparent. Every document arrived precisely as promised."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">O</div>
+                        <div class="author-info"><h4>Mr. Okafor C.</h4><span>Juniper Estate, Aba</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="quote">"The flexible payment structure was transformative. Starting with just 30% made the entire process accessible. Unwavering professionalism throughout."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info"><h4>Mrs. Adebayo T.</h4><span>Newtown Estate, Asaba</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="quote">"Jane and her team treated me like family. They provided strategic guidance that maximized my investment. My Abuja property has appreciated remarkably."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">E</div>
+                        <div class="author-info"><h4>Mr. Emeka N.</h4><span>Gold Town Estate, Abuja</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOUNDER SECTION ==================== -->
+    <section id="about" class="section-cream">
+        <div class="container">
+            <div class="founder-section">
+                <div class="founder-image-wrapper" data-aos="fade-right">
+                    <img src="/static/ceo-img2.png" alt="Jane Nwakanma - Founder & CEO">
+                </div>
+                <div class="founder-content" data-aos="fade-left">
+                    <span class="label">A Message From Our Founder</span>
+                    <blockquote>
+                        "At Jecyani Properties, our philosophy is elegantly simple: real estate must be built upon an unshakeable foundation of trust, absolute clarity, and enduring long-term value. I personally ensure every single client is embraced as family — because your investment represents the very cornerstone of your generational wealth."
+                    </blockquote>
+                    <p class="founder-name">Jane Nwakanma</p>
+                    <p class="founder-title">Founder & Chief Executive Officer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CITIES WE SERVE ==================== -->
+    <section class="section-dark">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Our Reach</span>
+                <h2>Cities We Serve</h2>
+                <div class="gold-divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+            </div>
+            <div class="cities-grid" data-aos="fade-up">
+                <span class="city-badge">Aba</span>
+                <span class="city-badge">Umuahia</span>
+                <span class="city-badge">Abuja</span>
+                <span class="city-badge">Asaba</span>
+                <span class="city-badge">Enugu</span>
+                <span class="city-badge">Port Harcourt</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FINAL CTA ==================== -->
+    <section class="cta-section" id="contact">
+        <div class="cta-content">
+            <h2 data-aos="fade-up">Begin Your Legacy Today</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Schedule a private consultation with our expert team. We'll guide you to the perfect investment — with zero pressure, only insight.</p>
+            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://wa.me/2348160087513" target="_blank" class="btn btn-gold">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp Consultation
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&to=jayny57@gmail.com&su=Property Inquiry&body=Hello Jecyani Properties,"  target="_blank" class="btn btn-white">
+                    <i class="fa-solid fa-envelope"></i> Send an Email
                 </a>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Services Section -->
-    <div class="container" style="padding: 80px 0;">
-        <h2 class="section-title" data-aos="fade-up">Our Real Estate Services</h2>
-        <div class="section-sub" data-aos="fade-up" data-aos-delay="100">End-to-end solutions for buyers, sellers, investors, and property owners.</div>
-        <div class="services-grid">
-            <div class="service-card" data-aos="fade-up" data-aos-delay="0"><i class="fas fa-home"></i><h3>Buying of Properties</h3><p>Find secure and strategic property opportunities.</p></div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="50"><i class="fas fa-chart-line"></i><h3>Selling of Properties</h3><p>Sell with confidence and better market visibility.</p></div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-building"></i><h3>Property Management</h3><p>Reliable oversight for income-generating assets.</p></div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="150"><i class="fas fa-tools"></i><h3>Facility Management</h3><p>Professional maintenance and operational support.</p></div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-calculator"></i><h3>Property Valuation</h3><p>Accurate insight for smarter property decisions.</p></div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="250"><i class="fas fa-hand-holding-usd"></i><h3>Buy Back Investment</h3><p>Flexible opportunities built around long-term value.</p></div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="300"><i class="fas fa-handshake"></i><h3>Agency</h3><p>Trusted representation and property transaction support.</p></div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="350"><i class="fas fa-drafting-compass"></i><h3>Property Construction</h3><p>Support for planned development and building projects.</p></div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="400"><i class="fas fa-chalkboard-user"></i><h3>Investment Consultancy</h3><p>Expert guidance for real estate growth decisions.</p></div>
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="margin-bottom: 15px;">
+                        <img src="/static/logo.jpeg" alt="Jecyani Properties" class="logo-img" onerror="this.style.display='none';">
+                        <div class="logo-text">Jecyani <span>Properties</span></div>
+                    </a>
+                    <p class="footer-desc">Own Land. Build Wealth. Secure Your Future. — Nigeria's distinguished real estate partner for generational wealth through strategic property ownership.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/properties">Our Estates</a></li>
+                        <li><a href="#flyers">Promotional Flyers</a></li>
+                        <li><a href="#projects">Past Projects</a></li>
+                        <li><a href="/about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Property Acquisition</a></li>
+                        <li><a href="#">Property Sales</a></li>
+                        <li><a href="#">Property Management</a></li>
+                        <li><a href="#">Facility Management</a></li>
+                        <li><a href="#">Valuation Services</a></li>
+                        <li><a href="#">Investment Advisory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <div class="contact-item"><i class="fa-solid fa-location-dot"></i> <span>GGCG+638, Ikot Ekpene - Umuahia Rd, Umuahia 440236, Abia State</span></div>
+                    <div class="contact-item"><i class="fa-solid fa-phone"></i> <a href="tel:+2348160087513">08160087513</a></div>
+                    <div class="contact-item"><i class="fa-solid fa-envelope"></i> <a href="mailto:jayny57@gmail.com">jayny57@gmail.com</a></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-icons">
+                    <a href="https://instagram.com/jecyani_properties" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://youtube.com/@jecyanimult-resourcesltd" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://facebook.com/jane.nwangoro.7" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://linkedin.com/in/jane-nwakanma-2a178820a" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <p class="copyright">© 2024 Jecyani Properties. All rights reserved. Crafted with distinction.</p>
+            </div>
         </div>
-    </div>
+    </footer>
 
-    <!-- Why Choose -->
-    <div class="why-choose">
-        <div class="container split-section">
-            <div data-aos="fade-right"><img src="/static/shake.png" style="border-radius:28px; width:100%; border:1px solid var(--light-gray);" class="gentle-float" alt="trust"></div>
-            <div data-aos="fade-left"><h2 style="font-size:2rem; color:white;">Why Clients Choose Jecyani Properties</h2><div class="reason-list"><div class="reason-item"><i class="fas fa-check-circle"></i> Trusted guidance and transparent process</div><div class="reason-item"><i class="fas fa-chart-simple"></i> Strategic property and investment opportunities</div><div class="reason-item"><i class="fas fa-calendar-alt"></i> Flexible payment structures</div><div class="reason-item"><i class="fas fa-headset"></i> Support from inquiry to acquisition</div><div class="reason-item"><i class="fas fa-leaf"></i> Growing locations with long-term value</div><div class="reason-item"><i class="fas fa-briefcase"></i> Professional real estate advisory</div></div></div>
-        </div>
-    </div>
-
-    <!-- CEO Message -->
-    <div class="ceo-section">
-        <div class="container ceo-grid">
-            <div class="ceo-img" data-aos="flip-left" data-aos-duration="700"></div>
-            <div data-aos="fade-up"><div class="quote-mark">“</div><p style="font-size:1.2rem; line-height:1.5;">At Jecyani Properties, we believe real estate should be built on trust, clarity, and long-term value. Our goal is to help clients make confident property decisions while creating opportunities that support growth, ownership, and financial security.</p><p style="margin-top:24px;"><strong>— Jane Nwakanma</strong><br>Founder & CEO</p><a href="#" style="display:inline-flex; gap:8px; margin-top:12px; color:var(--primary);"><i class="fab fa-linkedin"></i> Connect on LinkedIn</a></div>
-        </div>
-    </div>
-
-    <!-- Testimonials -->
-    <div class="testimonials">
-        <div class="container"><h2 class="section-title" data-aos="fade-up">What Our Clients Say</h2><div class="testimonial-grid"><div class="testimonial-card" data-aos="zoom-in" data-aos-delay="0"><i class="fas fa-quote-left" style="font-size:1.6rem;"></i><p style="margin:15px 0;">Seamless process and excellent guidance. Jecyani made my first land purchase stress-free.</p><h4>— Chidi O.</h4><span>Investor</span></div><div class="testimonial-card" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-quote-left" style="font-size:1.6rem;"></i><p style="margin:15px 0;">Professional team, transparent documentation. Highly recommend Juniper Estate.</p><h4>— Ngozi A.</h4><span>Property Buyer</span></div><div class="testimonial-card" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-quote-left" style="font-size:1.6rem;"></i><p style="margin:15px 0;">Their property management services are top-tier. My rental income has never been better.</p><h4>— Emeka K.</h4><span>Landlord</span></div></div></div>
-    </div>
-
-    <!-- Final CTA Banner -->
-    <div class="final-cta">
-        <div class="container" data-aos="zoom-in" data-aos-duration="700"><h2 style="font-size:2rem; color:white;">Ready to Secure Property or Speak With an Expert?</h2><p style="margin:20px auto; max-width:600px; color:#ccc;">Whether you're buying, selling, investing, or exploring opportunities, our team is ready to guide you.</p><div class="btn-group" style="justify-content:center;"><a href="#" class="btn-primary book-inspect-btn" data-property="Jecyani Properties">📞 Book Inspection</a><a href="#" class="btn-outline-light talk-advisor-btn" data-property="Jecyani Properties">Talk to an Advisor</a></div></div>
-    </div>
-
-    <!-- Contact Form Section -->
-    <div class="contact-section container" id="contact-section">
-        <div class="contact-grid">
-            <div data-aos="fade-right"><h3 style="color:white; font-size:1.8rem;">Let's Help You Find the Right Property Opportunity</h3><p style="margin:15px 0 25px;">Send us a message and our team will get back to you as soon as possible.</p><div style="margin: 30px 0; line-height:2;"><i class="fas fa-map-pin"></i> GGCG+638, Ikot Ekpene - Umuahia Rd, Umuahia 440236, Abia<br><i class="fas fa-phone-alt"></i> +234 816 008 7513<br><i class="fab fa-whatsapp"></i> 08160087513<br><i class="fas fa-envelope"></i> jayny57@gmail.com</div><div style="font-size:1.4rem; display:flex; gap:20px;"><i class="fab fa-linkedin"></i> <i class="fab fa-instagram"></i> <i class="fab fa-facebook"></i></div></div>
-            <div data-aos="fade-left"><form id="contactForm"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><div class="form-group"><input type="text" id="contactName" placeholder="Full Name" required></div><div class="form-group"><input type="tel" id="contactPhone" placeholder="Phone Number"></div><div class="form-group"><input type="email" id="contactEmail" placeholder="Email Address" required></div><div class="form-group"><select id="contactService"><option>Buying Property</option><option>Selling Property</option><option>Property Management</option><option>Facility Management</option><option>Investment Opportunity</option></select></div><div class="form-group"><textarea id="contactMessage" rows="3" placeholder="Message" required></textarea></div><button class="btn-primary" type="button" id="sendEnquiryBtn">Send Enquiry →</button><p style="font-size:0.7rem; margin-top:12px;">We respect your privacy and will only use your details to respond to your enquiry.</p></form></div>
-        </div>
-    </div>
-</main>
-
-<!-- Footer -->
-<footer class="footer">
-    <div class="container footer-grid">
-        <div><div class="logo" style="margin-bottom:12px;"><img src="/static/logo.jpeg" alt="Jecyani Properties Logo" style="height: 40px; width: auto;"><h3 style="color:white; margin-top:8px;">JECYANI PROPERTIES</h3></div><p>Nigeria trusted real estate agency helping buyers, sellers, and investors navigate the property market with confidence.</p></div>
-        <div><h4>Quick Links</h4><a href="#">Home</a><br><a href="/about">About</a><br><a href="/properties">Properties</a><br><a href="#">Services</a><br><a href="/investments">Investment</a><br><a href="#">Contact</a></div>
-        <div><h4>Services</h4><a href="#">Buying</a><br><a href="#">Selling</a><br><a href="#">Investment</a><br><a href="#">Valuation</a><br><a href="#">Construction</a></div>
-        <div><h4>Contact</h4><address>GGCG+638, Ikot Ekpene - Umuahia Rd, Umuahia 440236, Abia</address>📞 08160087513<br>✉️ jayny57@gmail.com</div>
-    </div>
-    <div class="copyright container">© 2026 Jecyani Properties — All rights reserved. | Privacy Policy | Terms of Service</div>
-</footer>
-
-<!-- Booking Modal -->
-<div id="bookingModal" class="booking-modal">
-    <div class="booking-modal-content">
-        <span class="booking-modal-close">&times;</span>
-        <h3>📞 Book an Inspection</h3>
-        <div class="booking-modal-sub">Choose how you'd like to connect with us</div>
-        <div id="bookingPropertyName" class="property-name-display"></div>
-        <div class="booking-modal-buttons">
-            <a href="#" id="callNowBtn" class="booking-modal-btn booking-call-btn"><i class="fas fa-phone-alt"></i> Call Now</a>
-            <a href="#" id="whatsappBtn" class="booking-modal-btn booking-wa-btn"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
-        </div>
-        <p style="text-align: center; margin-top: 20px; font-size: 0.75rem; color: #666;">Clicking will open your phone dialer or WhatsApp</p>
-    </div>
-</div>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init({ duration: 800, once: true, offset: 100, easing: 'ease-out-quad' });
-
-    // Hamburger Menu
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    const mobileOverlay = document.getElementById('mobileOverlay');
-    const closeMenuBtn = document.getElementById('closeMenuBtn');
-    function openMobileMenu() { mobileNav.classList.add('active'); mobileOverlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
-    function closeMobileMenu() { mobileNav.classList.remove('active'); mobileOverlay.classList.remove('active'); document.body.style.overflow = ''; }
-    if (hamburgerBtn) hamburgerBtn.addEventListener('click', openMobileMenu);
-    if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMobileMenu);
-    if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
-
-    // Flyer Carousel
-    const flyerModal = document.getElementById('flyerModal');
-    const announcementBar = document.getElementById('announcementBar');
-    const closeFlyerBtn = document.getElementById('closeFlyerBtn');
-    const flyerSlides = document.getElementById('flyerSlides');
-    const flyerTotalSlides = document.querySelectorAll('.flyer-slide').length;
-    const flyerDotsContainer = document.getElementById('flyerCarouselDots');
-    const flyerPrevBtn = document.getElementById('flyerPrevBtn');
-    const flyerNextBtn = document.getElementById('flyerNextBtn');
-    let flyerCurrentIndex = 0, flyerAutoSlideInterval;
-    for (let i = 0; i < flyerTotalSlides; i++) {
-        const dot = document.createElement('div');
-        dot.classList.add('flyer-dot');
-        if (i === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => { flyerCurrentIndex = i; updateFlyerCarousel(); resetFlyerAutoSlide(); });
-        flyerDotsContainer.appendChild(dot);
-    }
-    function updateFlyerCarousel() { flyerSlides.style.transform = `translateX(-${flyerCurrentIndex * 100}%)`; document.querySelectorAll('.flyer-dot').forEach((dot, i) => dot.classList.toggle('active', i === flyerCurrentIndex)); }
-    function nextFlyerSlide() { flyerCurrentIndex = (flyerCurrentIndex + 1) % flyerTotalSlides; updateFlyerCarousel(); resetFlyerAutoSlide(); }
-    function prevFlyerSlide() { flyerCurrentIndex = (flyerCurrentIndex - 1 + flyerTotalSlides) % flyerTotalSlides; updateFlyerCarousel(); resetFlyerAutoSlide(); }
-    function resetFlyerAutoSlide() { clearInterval(flyerAutoSlideInterval); flyerAutoSlideInterval = setInterval(nextFlyerSlide, 5000); }
-    if (announcementBar) announcementBar.addEventListener('click', () => { flyerModal.style.display = 'flex'; resetFlyerAutoSlide(); });
-    if (closeFlyerBtn) closeFlyerBtn.addEventListener('click', () => { flyerModal.style.display = 'none'; clearInterval(flyerAutoSlideInterval); });
-    if (flyerModal) flyerModal.addEventListener('click', (e) => { if (e.target === flyerModal) { flyerModal.style.display = 'none'; clearInterval(flyerAutoSlideInterval); } });
-    if (flyerPrevBtn) flyerPrevBtn.addEventListener('click', prevFlyerSlide);
-    if (flyerNextBtn) flyerNextBtn.addEventListener('click', nextFlyerSlide);
-    updateFlyerCarousel(); resetFlyerAutoSlide();
-
-    // Video Carousel - Fixed centering and auto-rotate stops on play
-    const videoTrack = document.getElementById('videoTrack');
-    const videoSlides = document.querySelectorAll('.video-slide');
-    const videoPrevBtn = document.getElementById('videoPrevBtn');
-    const videoNextBtn = document.getElementById('videoNextBtn');
-    const videoDotsContainer = document.getElementById('videoCarouselDots');
-    let videoCurrentIndex = 0, videoAutoRotateInterval, isVideoPlaying = false, currentPlayingVideo = null, currentPlayingCard = null;
-    const videoSlideCount = videoSlides.length;
-
-    function createVideoDots() {
-        if (!videoDotsContainer) return;
-        videoDotsContainer.innerHTML = '';
-        for (let i = 0; i < videoSlideCount; i++) {
-            const dot = document.createElement('div');
-            dot.classList.add('video-dot');
-            if (i === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => { if (isVideoPlaying) stopCurrentVideo(); goToVideoSlide(i); resetVideoAutoRotate(); });
-            videoDotsContainer.appendChild(dot);
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS (with safe fallback)
+        if (typeof AOS !== 'undefined') {
+            AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 50 });
         }
-    }
-    function updateVideoDots() { document.querySelectorAll('.video-dot').forEach((dot, i) => dot.classList.toggle('active', i === videoCurrentIndex)); }
-    function goToVideoSlide(index) { if (isVideoPlaying) return; videoCurrentIndex = (index + videoSlideCount) % videoSlideCount; videoTrack.style.transform = `translateX(-${videoCurrentIndex * 100}%)`; updateVideoDots(); }
-    function nextVideoSlide() { if (!isVideoPlaying) goToVideoSlide(videoCurrentIndex + 1); }
-    function prevVideoSlide() { if (!isVideoPlaying) goToVideoSlide(videoCurrentIndex - 1); }
-    function startVideoAutoRotate() { stopVideoAutoRotate(); if (!isVideoPlaying) videoAutoRotateInterval = setInterval(() => { if (!isVideoPlaying) nextVideoSlide(); }, 5000); }
-    function stopVideoAutoRotate() { if (videoAutoRotateInterval) { clearInterval(videoAutoRotateInterval); videoAutoRotateInterval = null; } }
-    function resetVideoAutoRotate() { stopVideoAutoRotate(); startVideoAutoRotate(); }
-    function stopCurrentVideo() {
-        if (!currentPlayingVideo) return;
-        currentPlayingVideo.pause();
-        currentPlayingVideo.currentTime = 0;
-        currentPlayingVideo.style.display = 'none';
-        if (currentPlayingCard) {
-            const thumb = currentPlayingCard.querySelector('.video-thumbnail');
-            const overlay = currentPlayingCard.querySelector('.video-play-overlay');
-            if (thumb) thumb.style.display = 'block';
-            if (overlay) overlay.style.display = 'flex';
+
+        // Force-hide preloader after 2 seconds
+        setTimeout(function() {
+            var preloader = document.getElementById('preloader');
+            if (preloader) { preloader.classList.add('hidden'); }
+        }, 2000);
+
+        // Backup on load
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var preloader = document.getElementById('preloader');
+                if (preloader) { preloader.classList.add('hidden'); }
+            }, 500);
+        });
+
+        // Mobile Menu
+        var hamburger = document.getElementById('hamburger');
+        var navLinks = document.getElementById('navLinks');
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+            document.querySelectorAll('.nav-links a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
         }
-        currentPlayingVideo = null; currentPlayingCard = null; isVideoPlaying = false;
-        startVideoAutoRotate();
-    }
-    function setupVideoPlayers() {
-        document.querySelectorAll('.video-card').forEach(card => {
-            const preview = card.querySelector('.video-preview');
-            const thumbnail = card.querySelector('.video-thumbnail');
-            const overlay = card.querySelector('.video-play-overlay');
-            const video = card.querySelector('.video-player');
-            const playBtn = card.querySelector('.play-button-large');
-            if (!video || !preview) return;
-            video.style.display = 'none';
-            if (thumbnail) thumbnail.style.display = 'block';
-            if (overlay) overlay.style.display = 'flex';
-            video.controls = true;
-            function playVideo(e) {
-                e.stopPropagation();
-                if (isVideoPlaying) { stopCurrentVideo(); setTimeout(() => playThisVideo(), 50); } else { playThisVideo(); }
-                function playThisVideo() {
-                    if (thumbnail) thumbnail.style.display = 'none';
-                    if (overlay) overlay.style.display = 'none';
-                    video.style.display = 'block';
-                    video.currentTime = 0;
-                    video.play().then(() => {
-                        isVideoPlaying = true;
-                        currentPlayingVideo = video;
-                        currentPlayingCard = card;
-                        stopVideoAutoRotate();
-                        video.onended = () => {
-                            video.style.display = 'none';
-                            if (thumbnail) thumbnail.style.display = 'block';
-                            if (overlay) overlay.style.display = 'flex';
-                            isVideoPlaying = false;
-                            currentPlayingVideo = null;
-                            currentPlayingCard = null;
-                            startVideoAutoRotate();
-                        };
-                        video.onpause = () => {
-                            if (video.ended) return;
-                            video.style.display = 'none';
-                            if (thumbnail) thumbnail.style.display = 'block';
-                            if (overlay) overlay.style.display = 'flex';
-                            isVideoPlaying = false;
-                            currentPlayingVideo = null;
-                            currentPlayingCard = null;
-                            startVideoAutoRotate();
-                        };
-                    }).catch(err => { console.log('Play error:', err); video.style.display = 'none'; if (thumbnail) thumbnail.style.display = 'block'; if (overlay) overlay.style.display = 'flex'; isVideoPlaying = false; });
-                }
+
+        // Navbar scroll
+        window.addEventListener('scroll', function() {
+            var navbar = document.getElementById('navbar');
+            if (navbar) { navbar.classList.toggle('scrolled', window.scrollY > 50); }
+        });
+
+        // Custom cursor
+        var cursorDot = document.getElementById('cursorDot');
+        var cursorOutline = document.getElementById('cursorOutline');
+        if (cursorDot && cursorOutline && window.innerWidth > 768) {
+            document.addEventListener('mousemove', function(e) {
+                cursorDot.style.left = e.clientX + 'px';
+                cursorDot.style.top = e.clientY + 'px';
+                setTimeout(function() {
+                    cursorOutline.style.left = (e.clientX - 20) + 'px';
+                    cursorOutline.style.top = (e.clientY - 20) + 'px';
+                }, 80);
+            });
+            document.querySelectorAll('a, button, .btn, .estate-image-wrapper, .project-card, .flyer-card').forEach(function(el) {
+                el.addEventListener('mouseenter', function() {
+                    cursorOutline.style.width = '60px';
+                    cursorOutline.style.height = '60px';
+                    cursorOutline.style.borderColor = 'rgba(212,175,55,0.8)';
+                });
+                el.addEventListener('mouseleave', function() {
+                    cursorOutline.style.width = '40px';
+                    cursorOutline.style.height = '40px';
+                    cursorOutline.style.borderColor = '#d4af37';
+                });
+            });
+        }
+
+        // Hero particles
+        var particlesContainer = document.getElementById('heroParticles');
+        if (particlesContainer) {
+            for (var i = 0; i < 30; i++) {
+                var particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (6 + Math.random() * 10) + 's';
+                particlesContainer.appendChild(particle);
             }
-            preview.addEventListener('click', playVideo);
-            if (playBtn) playBtn.addEventListener('click', (e) => { e.stopPropagation(); playVideo(e); });
+        }
+
+        // ==================== FLYER DATA & LIGHTBOX ====================
+        var flyerFiles = [
+            'flyer.jpeg', 'flyer1.jpeg', 'flyer2.jpeg', 'flyer3.jpeg',
+            'flyer4.jpeg', 'flyer5.jpeg', 'flyer6.jpeg', 'flyer7.jpeg'
+        ];
+
+        var flyersGrid = document.getElementById('flyersGrid');
+        var lightbox = document.getElementById('flyerLightbox');
+        var lightboxImage = document.getElementById('lightboxImage');
+        var lightboxClose = document.getElementById('lightboxClose');
+        var lightboxWhatsApp = document.getElementById('lightboxWhatsApp');
+        var lightboxDownload = document.getElementById('lightboxDownload');
+
+        // WhatsApp pre-filled message
+        var whatsappNumber = '2348160087513';
+        var preFilledMessage = encodeURIComponent(
+            'Hello Jecyani Properties! 👋\n\n' +
+            'I saw your promotional flyer and I\'m interested in learning more about your properties and investment opportunities.\n\n' +
+            'Please send me more details. Thank you!'
+        );
+
+        // Build flyer cards dynamically
+        if (flyersGrid) {
+            flyerFiles.forEach(function(file, index) {
+                var card = document.createElement('div');
+                card.className = 'flyer-card';
+                card.setAttribute('data-aos', 'zoom-in');
+                card.setAttribute('data-aos-delay', (index % 4) * 100);
+
+                var img = document.createElement('img');
+                img.src = '/static/' + file;
+                img.alt = 'Promotional Flyer ' + (index + 1);
+                img.loading = 'lazy';
+
+                var overlay = document.createElement('div');
+                overlay.className = 'flyer-overlay';
+                overlay.innerHTML = '<span>✦ Click to View</span>';
+
+                card.appendChild(img);
+                card.appendChild(overlay);
+
+                // Click to open lightbox
+                card.addEventListener('click', function() {
+                    var imgSrc = '/static/' + file;
+                    lightboxImage.src = imgSrc;
+                    lightboxDownload.href = imgSrc;
+                    lightboxDownload.setAttribute('download', 'Jecyani-Flyer-' + (index + 1) + '.jpeg');
+                    lightboxWhatsApp.href = 'https://wa.me/' + whatsappNumber + '?text=' + preFilledMessage;
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+
+                flyersGrid.appendChild(card);
+            });
+        }
+
+        // Close lightbox
+        if (lightboxClose) {
+            lightboxClose.addEventListener('click', function() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
+
+        // Close lightbox when clicking outside image
+        if (lightbox) {
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && lightbox && lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         });
-    }
-    if (videoPrevBtn) { const newBtn = videoPrevBtn.cloneNode(true); videoPrevBtn.parentNode.replaceChild(newBtn, videoPrevBtn); newBtn.addEventListener('click', (e) => { e.stopPropagation(); if (!isVideoPlaying) { prevVideoSlide(); resetVideoAutoRotate(); } }); }
-    if (videoNextBtn) { const newBtn = videoNextBtn.cloneNode(true); videoNextBtn.parentNode.replaceChild(newBtn, videoNextBtn); newBtn.addEventListener('click', (e) => { e.stopPropagation(); if (!isVideoPlaying) { nextVideoSlide(); resetVideoAutoRotate(); } }); }
-    const container = document.querySelector('.video-carousel-container');
-    if (container) { container.addEventListener('mouseenter', () => { if (!isVideoPlaying) stopVideoAutoRotate(); }); container.addEventListener('mouseleave', () => { if (!isVideoPlaying) startVideoAutoRotate(); }); }
-    createVideoDots(); setupVideoPlayers(); startVideoAutoRotate();
 
-    // Booking Modal
-    const bookingModal = document.getElementById('bookingModal');
-    const bookingPropertyDisplay = document.getElementById('bookingPropertyName');
-    const callNowBtn = document.getElementById('callNowBtn');
-    const whatsappBtn = document.getElementById('whatsappBtn');
-    const closeBookingModal = document.querySelector('.booking-modal-close');
-    const PHONE_NUMBER = '2348160087513';
-    const PHONE_DISPLAY = '08160087513';
-    let currentProperty = 'Jecyani Properties';
-    function openBookingModal(propertyName) {
-        currentProperty = propertyName || 'Jecyani Properties';
-        if (bookingPropertyDisplay) bookingPropertyDisplay.innerHTML = `<i class="fas fa-home"></i> ${currentProperty}`;
-        if (bookingModal) bookingModal.style.display = 'flex';
-        const message = `Hello Jecyani Properties,%0A%0AI'm interested in booking an inspection for:%0A📍 ${encodeURIComponent(currentProperty)}%0A%0APlease let me know available dates. Thank you!`;
-        if (whatsappBtn) whatsappBtn.href = `https://wa.me/${PHONE_NUMBER}?text=${message}`;
-        if (callNowBtn) callNowBtn.href = `tel:${PHONE_DISPLAY}`;
-    }
-    function closeBookingModalFunc() { if (bookingModal) bookingModal.style.display = 'none'; }
-    if (closeBookingModal) closeBookingModal.addEventListener('click', closeBookingModalFunc);
-    if (bookingModal) bookingModal.addEventListener('click', (e) => { if (e.target === bookingModal) closeBookingModalFunc(); });
-    document.querySelectorAll('.book-inspect-btn, .secure-plot-btn, .talk-advisor-btn, .desktop-book-btn, .mobile-book-btn, .flyer-book-btn').forEach(btn => {
-        const newBtn = btn.cloneNode(true);
-        btn.parentNode.replaceChild(newBtn, btn);
-        newBtn.addEventListener('click', function(e) { e.preventDefault(); let prop = this.getAttribute('data-property'); if (!prop) prop = 'Jecyani Properties'; openBookingModal(prop); });
-    });
-
-    // Contact Form
-    const sendEnquiryBtn = document.getElementById('sendEnquiryBtn');
-    if (sendEnquiryBtn) {
-        sendEnquiryBtn.addEventListener('click', async function(e) {
-            e.preventDefault();
-            const name = document.getElementById('contactName')?.value;
-            const phone = document.getElementById('contactPhone')?.value;
-            const email = document.getElementById('contactEmail')?.value;
-            const service = document.getElementById('contactService')?.value;
-            const message = document.getElementById('contactMessage')?.value;
-            if (!name || !email || !message) { alert('Please fill in all required fields (Name, Email, and Message)'); return; }
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) { alert('Please enter a valid email address'); return; }
-            const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-            const originalText = sendEnquiryBtn.innerText;
-            sendEnquiryBtn.innerText = 'Sending...'; sendEnquiryBtn.disabled = true;
-            try {
-                const response = await fetch('/send-message', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrfToken }, body: JSON.stringify({ name, email, phone: phone || '', service: service || 'General Inquiry', message }) });
-                const result = await response.json();
-                if (result.status === 'success') { alert(result.message); document.querySelectorAll('#contactForm input, #contactForm select, #contactForm textarea').forEach(f => { if (f.tagName === 'SELECT') f.selectedIndex = 0; else f.value = ''; }); }
-                else alert(result.message || 'Something went wrong. Please try again.');
-            } catch (error) { console.error('Error:', error); alert('Network error. Please check your connection or call us directly at 08160087513'); }
-            finally { sendEnquiryBtn.innerText = originalText; sendEnquiryBtn.disabled = false; }
+        // ==================== FIX EMAIL BUTTON ====================
+        // Ensure all mailto links work properly
+        document.querySelectorAll('a[href^="mailto:"]').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                // Let the default behavior work
+                // This is here as a fallback
+                var email = this.getAttribute('href').replace('mailto:', '');
+                console.log('Opening email to: ' + email);
+            });
         });
-    }
-
-    // Featured Investment Tabs Auto-rotate
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const dynamicPrice = document.getElementById('dynamicPrice');
-    const saveBadge = document.getElementById('saveBadge');
-    const bestBadge = document.getElementById('bestValueBadge');
-    const monthlyTextEl = document.getElementById('monthlyText');
-    const planData = { '3months': { price: '₦3.5M', save: '✨ Save ₦1M vs 12-month plan', best: '🔥 BEST VALUE', monthly: 'One-time payment / Full ownership' }, '6months': { price: '₦4M', save: '💰 Save ₦500k vs 12-month plan', best: '⭐ MOST POPULAR', monthly: '~₦667k/month • 0% interest' }, '12months': { price: '₦4.5M', save: '📆 Lowest monthly commitment', best: '🕒 Extended Plan', monthly: '~₦375k/month • Flexible terms' } };
-    let currentPlanIndex = 0, tabAutoRotateInterval;
-    const planKeys = ['3months', '6months', '12months'];
-    function activatePlan(planId) { const data = planData[planId]; if (data) { dynamicPrice.innerText = data.price; saveBadge.innerText = data.save; bestBadge.innerText = data.best; monthlyTextEl.innerText = data.monthly; } tabBtns.forEach(btn => { if (btn.getAttribute('data-plan') === planId) { btn.classList.add('active'); btn.style.background = 'var(--primary)'; btn.style.color = 'var(--dark)'; btn.style.boxShadow = '0 4px 12px rgba(255,215,0,0.3)'; } else { btn.classList.remove('active'); btn.style.background = 'transparent'; btn.style.color = '#ccc'; btn.style.boxShadow = 'none'; } }); }
-    function rotateToNextPlan() { currentPlanIndex = (currentPlanIndex + 1) % planKeys.length; activatePlan(planKeys[currentPlanIndex]); }
-    function startTabAutoRotate() { if (tabAutoRotateInterval) clearInterval(tabAutoRotateInterval); tabAutoRotateInterval = setInterval(rotateToNextPlan, 4000); }
-    function stopTabAutoRotate() { if (tabAutoRotateInterval) clearInterval(tabAutoRotateInterval); }
-    tabBtns.forEach(btn => { btn.addEventListener('click', (e) => { stopTabAutoRotate(); const plan = btn.getAttribute('data-plan'); currentPlanIndex = planKeys.indexOf(plan); activatePlan(plan); startTabAutoRotate(); }); });
-    startTabAutoRotate();
-</script>
+    </script>
 </body>
 </html>

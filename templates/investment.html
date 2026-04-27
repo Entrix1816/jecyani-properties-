@@ -2,1275 +2,1439 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Investment | Jecyani Properties - Smart Real Estate Investment in Nigeria</title>
-    <meta name="title" content="Jecyani Properties | Own Land. Build Wealth. Secure Your Future.">
-    <meta name="description" content="Jecyani Properties helps Nigerians buy, sell, and invest in prime real estate across Aba, Umuahia, Abuja, Asaba, and Enugu. Flexible payment plans available.">
-    <meta name="keywords" content="real estate Nigeria, buy land in Aba, property investment Abuja, Jecyani Properties, land for sale Umuahia, affordable plots Asaba, gated estates Enugu">
-    <meta name="author" content="Jecyani Properties">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <meta name="revisit-after" content="7 days">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invest Now | Jecyani Properties</title>
+    <meta name="description" content="Start your land investment journey with Jecyani Properties. Flexible payment plans, verified properties, and complete documentation. Invest from 30% down payment.">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourdomain.com/">
-    <meta property="og:title" content="Jecyani Properties | Luxury Real Estate & Investment">
-    <meta property="og:description" content="Own land in Nigeria's fastest-growing locations. Flexible payment plans starting at just 30% deposit.">
-    <meta property="og:image" content="https://yourdomain.com/static/og-image.jpg">
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="/static/logo.jpeg">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://yourdomain.com/">
-    <meta property="twitter:title" content="Jecyani Properties | Luxury Real Estate & Investment">
-    <meta property="twitter:description" content="Own land in Nigeria's fastest-growing locations. Flexible payment plans starting at just 30% deposit.">
-    <meta property="twitter:image" content="https://yourdomain.com/static/og-image.jpg">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://yourdomain.com/investments">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <style>
+        :root {
+            --black: #0a0a0a;
+            --black-rich: #0d0d0d;
+            --black-soft: #1a1a1a;
+            --gold: #c9a84c;
+            --gold-bright: #d4af37;
+            --gold-light: #e8c95d;
+            --gold-dark: #9a7b2f;
+            --white: #ffffff;
+            --off-white: #faf8f5;
+            --cream: #f5f0e8;
+            --gray: #888888;
+            --green: #25D366;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--dark);
-            color: #e5e5e5;
+        html {
             scroll-behavior: smooth;
-            line-height: 1.5;
-            overflow-x: hidden;
+            scroll-padding-top: 80px;
         }
 
-        :root {
-            --primary: #FFD700;
-            --primary-dark: #e6c200;
-            --dark: #0a0a0a;
-            --gray: #1a1a1a;
-            --light-gray: #2a2a2a;
-            --card-bg: #111111;
-            --shadow-md: 0 20px 35px -12px rgba(0,0,0,0.5);
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--white);
+            color: var(--black);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
         }
 
         .container {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 0 32px;
+            padding: 0 30px;
         }
 
-        @keyframes gentleFloat {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-            100% { transform: translateY(0px); }
-        }
-
-        @keyframes shimmerText {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
-        }
-
-        .gentle-float {
-            animation: gentleFloat 4s ease-in-out infinite;
-        }
-
-        .shimmer-text {
-            background: linear-gradient(120deg, #fff 20%, var(--primary) 40%, #fff 60%);
-            background-size: 200% auto;
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent !important;
-            animation: shimmerText 3s linear infinite;
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
+        /* ==================== NAVIGATION ==================== */
+        .navbar {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(8px);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-        }
-        .modal-content {
-            background: var(--card-bg);
-            border-radius: 32px;
-            max-width: 500px;
-            width: 90%;
-            padding: 32px;
-            border: 1px solid var(--primary);
-            position: relative;
-        }
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 24px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #aaa;
-            transition: 0.2s;
-        }
-        .modal-close:hover {
-            color: var(--primary);
-        }
-        .modal h3 {
-            color: white;
-            font-size: 1.6rem;
-            margin-bottom: 8px;
-        }
-        .modal-sub {
-            color: #aaa;
-            margin-bottom: 24px;
-            font-size: 0.9rem;
-        }
-        .modal-buttons {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-        .modal-btn {
-            flex: 1;
-            padding: 14px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            text-align: center;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        .modal-btn-call {
-            background: transparent;
-            border: 1.5px solid var(--primary);
-            color: var(--primary);
-        }
-        .modal-btn-call:hover {
-            background: var(--primary);
-            color: var(--dark);
-        }
-        .modal-btn-wa {
-            background: #25D366;
-            border: none;
-            color: white;
-        }
-        .modal-btn-wa:hover {
-            background: #128C7E;
-        }
-        .property-name-display {
-            background: var(--gray);
-            padding: 12px;
-            border-radius: 16px;
-            margin: 16px 0;
-            color: var(--primary);
-            font-weight: 500;
-            text-align: center;
-        }
-
-        /* Announcement Bar with Marquee Animation */
-        .announcement-bar {
-            background-color: var(--primary);
-            color: var(--dark);
-            font-size: 0.85rem;
-            padding: 10px 0;
-            text-align: center;
-            font-weight: 600;
-            z-index: 1001;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .announcement-marquee {
-            display: inline-block;
-            white-space: nowrap;
-            animation: marqueeScroll 25s linear infinite;
-            padding-right: 50px;
-        }
-
-        .announcement-bar span {
-            background-color: var(--dark);
-            color: var(--primary);
-            padding: 2px 10px;
-            border-radius: 30px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            margin-right: 8px;
-            display: inline-block;
-        }
-
-        .announcement-bar i {
-            display: inline-block;
-            margin-left: 5px;
-        }
-
-        @keyframes marqueeScroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        /* Mobile responsive */
-        @media (max-width: 768px) {
-            .announcement-bar {
-                padding: 10px 0;
-                font-size: 0.75rem;
-            }
-            .announcement-marquee {
-                animation: marqueeScroll 20s linear infinite;
-            }
-            .announcement-bar span {
-                font-size: 0.65rem;
-                padding: 2px 8px;
-                margin-right: 6px;
-            }
-            .announcement-bar i {
-                font-size: 0.7rem;
-            }
-        }
-
-        /* Navbar */
-        .navbar {
-            position: sticky;
-            top: 0;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(12px);
+            right: 0;
             z-index: 1000;
-            border-bottom: 1px solid var(--light-gray);
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+            transition: all 0.4s ease;
         }
+
+        .navbar.scrolled {
+            background: rgba(10, 10, 10, 0.98);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.4);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+        }
+
         .nav-container {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            padding: 18px 32px;
-            max-width: 1400px;
+            align-items: center;
+            padding: 16px 30px;
+            max-width: 1280px;
             margin: 0 auto;
         }
+
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
-        }
-        .logo h1 {
-            font-size: 1.7rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #fff 30%, var(--primary) 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-        .logo img {
-            display: block;
+            gap: 10px;
+            text-decoration: none;
         }
 
-        @media (max-width: 900px) {
-            .logo img {
-                height: 35px;
-            }
+        .logo-img {
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 2px solid var(--gold-bright);
+        }
+
+        .logo-text {
+            color: var(--white);
+            font-size: 1.2rem;
+            font-weight: 600;
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1.1;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.6rem;
+            color: var(--gold-bright);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            list-style: none;
+            gap: 6px;
             align-items: center;
         }
+
         .nav-links a {
+            color: var(--white);
             text-decoration: none;
-            color: #f0f0f0;
-            font-weight: 500;
-            font-size: 0.95rem;
+            padding: 10px 16px;
+            border-radius: 4px;
             transition: all 0.3s ease;
-            position: relative;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
         }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.3s ease;
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--gold-bright);
         }
-        .nav-links a:hover::after {
-            width: 100%;
+
+        .nav-links a.active {
+            border-bottom: 2px solid var(--gold-bright);
         }
-        .nav-links a:hover {
-            color: var(--primary);
+
+        .btn-nav {
+            background: var(--gold-bright) !important;
+            color: var(--black) !important;
+            font-weight: 600 !important;
+            padding: 12px 22px !important;
+            border-radius: 4px !important;
+            letter-spacing: 1px !important;
+            text-transform: uppercase;
+            font-size: 0.78rem !important;
+            border-bottom: none !important;
+        }
+
+        .btn-nav:hover {
+            background: var(--gold-light) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(201, 168, 76, 0.35);
+            color: var(--black) !important;
         }
 
         .hamburger {
             display: none;
-            font-size: 1.8rem;
+            flex-direction: column;
             cursor: pointer;
-            color: white;
-            background: none;
-            border: none;
-            transition: 0.3s;
-        }
-        .hamburger:hover {
-            color: var(--primary);
+            gap: 6px;
+            padding: 8px;
         }
 
-        .mobile-nav {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 75%;
-            max-width: 320px;
-            height: 100vh;
-            background: var(--card-bg);
-            border-left: 2px solid var(--primary);
-            z-index: 1500;
-            transition: right 0.3s ease;
-            padding: 80px 30px 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        .hamburger span {
+            width: 26px;
+            height: 2px;
+            background: var(--gold-bright);
+            transition: all 0.4s ease;
+            border-radius: 2px;
         }
-        .mobile-nav.active {
-            right: 0;
-        }
-        .mobile-nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 500;
-            padding: 12px 0;
-            border-bottom: 1px solid var(--light-gray);
-            transition: 0.2s;
-        }
-        .mobile-nav a:hover {
-            color: var(--primary);
-            padding-left: 10px;
-        }
-        .mobile-nav .btn-primary {
+
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+        /* ==================== PAGE HERO ==================== */
+        .page-hero {
+            background: var(--black-rich);
+            padding: 170px 0 90px;
             text-align: center;
-            margin-top: 20px;
-            display: block;
+            position: relative;
+            overflow: hidden;
         }
-        .close-menu {
+
+        .page-hero::before {
+            content: '';
             position: absolute;
-            top: 20px;
-            right: 25px;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: white;
-        }
-        .close-menu:hover {
-            color: var(--primary);
-        }
-        .overlay {
-            position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
-            z-index: 1400;
-            display: none;
-        }
-        .overlay.active {
-            display: block;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(201,168,76,0.06) 0%, transparent 70%);
         }
 
-        .btn-outline-light {
-            border: 1.5px solid var(--primary);
-            background: transparent;
-            padding: 8px 20px;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            color: var(--primary);
-            display: inline-block;
-        }
-        .btn-outline-light:hover {
-            background: var(--primary);
-            color: var(--dark);
-            transform: translateY(-2px);
-        }
-        .btn-primary {
-            background: var(--primary);
-            border: none;
-            padding: 10px 28px;
-            border-radius: 40px;
-            font-weight: 700;
-            color: var(--dark);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-            display: inline-block;
-            text-decoration: none;
-        }
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        /* Page Header */
-        .page-header {
-            background: linear-gradient(135deg, var(--dark) 0%, var(--gray) 100%);
-            padding: 60px 0 50px;
-            border-bottom: 1px solid var(--light-gray);
-        }
-        .page-header h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            color: white;
-            margin-bottom: 16px;
-        }
-        .page-header .breadcrumb {
-            color: #aaa;
-            font-size: 0.9rem;
-        }
-        .page-header .breadcrumb a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        /* Investment Hero */
-        .investment-hero {
-            padding: 60px 0;
-            background: var(--dark);
-        }
-        .investment-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        .investment-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 30px;
-        }
-        .stat-badge {
-            background: var(--card-bg);
-            border-radius: 20px;
-            padding: 20px;
-            text-align: center;
-            border: 1px solid var(--light-gray);
-            transition: all 0.3s;
-        }
-        .stat-badge:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-        }
-        .stat-badge .number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary);
-        }
-        .investment-image img {
-            width: 100%;
-            border-radius: 28px;
-            border: 1px solid var(--light-gray);
-            transition: all 0.3s;
-        }
-        .investment-image img:hover {
-            transform: scale(1.01);
-            border-color: var(--primary);
-        }
-
-        /* Why Invest Section */
-        .why-invest {
-            padding: 80px 0;
-            background: var(--gray);
-        }
-        .section-title {
-            font-size: 2.4rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 16px;
-            text-align: center;
-        }
-        .section-sub {
-            font-size: 1.1rem;
-            color: #b0b0b0;
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 50px;
-        }
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        .benefit-card {
-            background: var(--card-bg);
-            border-radius: 24px;
-            padding: 32px;
-            text-align: center;
-            border: 1px solid var(--light-gray);
-            transition: all 0.3s ease;
-        }
-        .benefit-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary);
-        }
-        .benefit-card i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        .benefit-card h4 {
-            color: white;
-            font-size: 1.2rem;
-            margin-bottom: 12px;
-        }
-
-        /* Investment Opportunities */
-        .investment-opportunities {
-            padding: 80px 0;
-            background: var(--dark);
-        }
-        .opportunity-card {
-            background: var(--card-bg);
-            border-radius: 28px;
-            overflow: hidden;
-            border: 1px solid var(--light-gray);
-            margin-bottom: 40px;
-            transition: all 0.3s ease;
-        }
-        .opportunity-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-        }
-        .opportunity-image {
-            height: 240px;
-            overflow: hidden;
+        .page-hero-content {
             position: relative;
-        }
-        .opportunity-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        .opportunity-card:hover .opportunity-image img {
-            transform: scale(1.05);
-        }
-        .opportunity-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: var(--primary);
-            color: var(--dark);
-            padding: 6px 16px;
-            border-radius: 30px;
-            font-size: 0.75rem;
-            font-weight: 700;
             z-index: 2;
         }
-        .opportunity-header {
-            padding: 24px 30px 0 30px;
-        }
-        .opportunity-header h3 {
-            font-size: 1.6rem;
-            color: white;
-            margin-bottom: 8px;
-        }
-        .opportunity-header p {
-            color: var(--primary);
-            margin-bottom: 16px;
-            font-size: 0.9rem;
-        }
-        .opportunity-body {
-            padding: 0 30px 30px 30px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-        .opportunity-details p {
-            margin-bottom: 12px;
-            color: #ccc;
-            font-size: 0.9rem;
-        }
-        .opportunity-details i {
-            color: var(--primary);
-            width: 24px;
-            margin-right: 8px;
-        }
-        .price-table {
-            background: var(--gray);
-            border-radius: 20px;
-            padding: 20px;
-        }
-        .price-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid var(--light-gray);
-        }
-        .price-row:last-child {
-            border-bottom: none;
-        }
-        .price-label {
-            font-weight: 500;
-            font-size: 0.85rem;
-        }
-        .price-value {
-            color: var(--primary);
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-        .feature-tag {
+
+        .page-hero .subtitle {
             display: inline-block;
-            background: var(--gray);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            margin: 4px;
-            transition: all 0.2s;
-        }
-        .feature-tag:hover {
-            background: var(--primary);
-            color: var(--dark);
+            color: var(--gold-bright);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-bottom: 15px;
         }
 
-        /* Payment Plans Section */
-        .payment-plans {
-            padding: 80px 0;
-            background: var(--gray);
+        .page-hero h1 {
+            font-size: 4.5rem;
+            color: var(--white);
+            margin-bottom: 15px;
+            font-weight: 700;
         }
+
+        .page-hero p {
+            color: #aaa;
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .gold-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .gold-divider .line { width: 45px; height: 1px; background: var(--gold-bright); }
+        .gold-divider .diamond { width: 7px; height: 7px; background: var(--gold-bright); transform: rotate(45deg); }
+
+        /* ==================== SECTIONS ==================== */
+        section { padding: 90px 0; }
+        .section-dark { background: var(--black-rich); }
+        .section-cream { background: var(--off-white); }
+        .section-white { background: var(--white); }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-subtitle {
+            display: inline-block;
+            color: var(--gold-dark);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--black);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .section-dark .section-header h2 { color: var(--white); }
+        .section-header p { color: #777; font-size: 1rem; max-width: 550px; margin: 0 auto; font-weight: 300; }
+        .section-dark .section-header p { color: #aaa; }
+
+        /* ==================== WHY INVEST ==================== */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            border: 1px solid #e8e8e8;
+            border-radius: 8px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        .benefit-card:hover {
+            border-color: var(--gold-bright);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        .benefit-icon {
+            width: 65px;
+            height: 65px;
+            background: rgba(201, 168, 76, 0.06);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            font-size: 1.6rem;
+            color: var(--gold-bright);
+            border: 1px solid rgba(201, 168, 76, 0.15);
+        }
+
+        .benefit-card h3 { font-size: 1.2rem; color: var(--black); margin-bottom: 10px; font-weight: 600; }
+        .benefit-card p { color: #777; font-size: 0.9rem; font-weight: 300; line-height: 1.7; }
+
+        /* ==================== PAYMENT PLANS ==================== */
         .plans-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
         }
+
         .plan-card {
-            background: var(--card-bg);
-            border-radius: 24px;
-            padding: 32px 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(201, 168, 76, 0.15);
+            border-radius: 8px;
+            padding: 45px 30px;
             text-align: center;
-            border: 1px solid var(--light-gray);
-            transition: all 0.3s;
+            transition: all 0.5s ease;
             position: relative;
+            overflow: hidden;
         }
-        .plan-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary);
+
+        .plan-card.featured {
+            border-color: var(--gold-bright);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
         }
-        .plan-card.recommended {
-            border-color: var(--primary);
-            transform: scale(1.02);
-        }
-        .recommended-badge {
+
+        .plan-card.featured::before {
+            content: 'Most Popular';
             position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary);
-            color: var(--dark);
-            padding: 4px 16px;
-            border-radius: 30px;
+            top: 20px;
+            right: -30px;
+            background: var(--gold-bright);
+            color: var(--black);
+            padding: 6px 40px;
             font-size: 0.7rem;
             font-weight: 700;
-            white-space: nowrap;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transform: rotate(45deg);
         }
-        .plan-card h4 {
+
+        .plan-card:hover {
+            border-color: var(--gold-bright);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .plan-icon {
+            font-size: 2.5rem;
+            color: var(--gold-bright);
+            margin-bottom: 15px;
+        }
+
+        .plan-card h3 {
+            color: var(--white);
             font-size: 1.5rem;
-            color: white;
-            margin-bottom: 16px;
+            margin-bottom: 8px;
+            font-weight: 700;
         }
-        .plan-deposit {
+
+        .plan-duration {
+            color: var(--gold-bright);
             font-size: 0.9rem;
-            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .plan-deposit {
+            font-size: 3rem;
+            color: var(--gold-bright);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .plan-deposit-label {
+            color: #aaa;
+            font-size: 0.85rem;
             margin-bottom: 20px;
+            font-weight: 300;
         }
 
-        /* CTA Section */
-        .cta-section {
-            padding: 70px 0;
-            background: var(--dark);
-            text-align: center;
-            border-top: 1px solid var(--light-gray);
+        .plan-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 25px;
         }
 
-        /* Footer */
-        .footer {
-            background: #050505;
-            color: #b0b0b0;
-            padding: 60px 0 30px;
-            border-top: 1px solid var(--light-gray);
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(4,1fr);
-            gap: 40px;
-        }
-        .footer a {
+        .plan-features li {
             color: #ccc;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            font-weight: 300;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .plan-features li i {
+            color: var(--gold-bright);
+            font-size: 0.7rem;
+        }
+
+        .btn-plan {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 30px;
+            border-radius: 4px;
             text-decoration: none;
-            transition: all 0.3s;
-            display: inline-block;
+            font-weight: 600;
+            font-size: 0.82rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            border: 2px solid var(--gold-bright);
+            background: transparent;
+            color: var(--gold-bright);
         }
-        .footer a:hover {
-            color: var(--primary);
-            transform: translateX(4px);
+
+        .btn-plan:hover {
+            background: var(--gold-bright);
+            color: var(--black);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
         }
-        .copyright {
-            border-top: 1px solid var(--light-gray);
-            margin-top: 50px;
-            padding-top: 30px;
+
+        .plan-card.featured .btn-plan {
+            background: var(--gold-bright);
+            color: var(--black);
+        }
+
+        .plan-card.featured .btn-plan:hover {
+            background: var(--gold-light);
+            border-color: var(--gold-light);
+        }
+
+        /* ==================== DOCUMENTATION ==================== */
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .doc-card {
+            background: var(--white);
+            border: 1px solid #e8e8e8;
+            border-radius: 8px;
+            padding: 35px 25px;
             text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        .doc-card:hover {
+            border-color: var(--gold-bright);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
+
+        .doc-icon {
+            font-size: 2.5rem;
+            color: var(--gold-bright);
+            margin-bottom: 15px;
+        }
+
+        .doc-card h3 { font-size: 1.2rem; color: var(--black); margin-bottom: 8px; font-weight: 600; }
+        .doc-card p { color: #777; font-size: 0.9rem; font-weight: 300; line-height: 1.6; }
+        .doc-card .doc-badge {
+            display: inline-block;
+            background: rgba(37, 211, 102, 0.1);
+            color: var(--green);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        /* ==================== PROCESS TIMELINE ==================== */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 29px;
+            width: 2px;
+            height: 100%;
+            background: var(--gold-bright);
+            opacity: 0.3;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        .timeline-number {
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            border: 2px solid var(--gold-bright);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold-dark);
+            font-family: 'Cormorant Garamond', serif;
+            flex-shrink: 0;
+            z-index: 2;
+            transition: all 0.4s ease;
+        }
+
+        .timeline-item:hover .timeline-number {
+            background: var(--gold-bright);
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
+        }
+
+        .timeline-content {
+            padding-top: 10px;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.3rem;
+            color: var(--black);
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .timeline-content p {
+            color: #777;
+            font-size: 0.9rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        /* ==================== FAQ ==================== */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border: 1px solid #e8e8e8;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--gold-bright);
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--black);
+            transition: all 0.3s ease;
+        }
+
+        .faq-question i {
+            color: var(--gold-bright);
+            transition: transform 0.3s ease;
             font-size: 0.8rem;
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 900px) {
-            .investment-grid, .opportunity-body, .plans-grid {
-                grid-template-columns: 1fr;
-            }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-answer-inner {
+            padding: 0 25px 20px;
+            color: #777;
+            font-size: 0.9rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        /* ==================== INQUIRY FORM ==================== */
+        .form-section {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-card {
+            background: var(--white);
+            border: 1px solid #e8e8e8;
+            border-radius: 8px;
+            padding: 45px 35px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.04);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: var(--black);
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            background: var(--off-white);
+            color: var(--black);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold-bright);
+            box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+            background: var(--white);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 16px;
+            background: var(--gold-bright);
+            color: var(--black);
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn-submit:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
+        }
+
+        .form-note {
+            text-align: center;
+            margin-top: 15px;
+            color: #999;
+            font-size: 0.82rem;
+            font-weight: 300;
+        }
+
+        /* ==================== CTA BANNER ==================== */
+        .cta-banner {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            text-align: center;
+            padding: 70px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at center, rgba(201,168,76,0.06) 0%, transparent 70%);
+            animation: ctaGlow 8s ease-in-out infinite;
+        }
+
+        @keyframes ctaGlow {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(180deg); }
+        }
+
+        .cta-banner-content { position: relative; z-index: 2; }
+
+        .cta-banner h2 { color: var(--white); font-size: 2.8rem; margin-bottom: 12px; }
+        .cta-banner p { color: rgba(255,255,255,0.7); max-width: 500px; margin: 0 auto 30px; font-weight: 300; }
+
+        .btn-gold {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 34px;
+            background: var(--gold-bright);
+            color: var(--black);
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.88rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+        }
+
+        .btn-gold:hover {
+            background: var(--gold-light);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(201, 168, 76, 0.35);
+        }
+
+        /* ==================== FOOTER ==================== */
+        .footer {
+            background: var(--black);
+            padding: 50px 0 0;
+            color: var(--white);
+            border-top: 1px solid rgba(201, 168, 76, 0.15);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col .footer-desc { color: #999; font-size: 0.88rem; line-height: 1.6; font-weight: 300; margin-top: 12px; }
+        .footer-col h4 { color: var(--gold-bright); margin-bottom: 18px; font-size: 0.9rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 10px; }
+
+        .footer-col ul li a {
+            color: #999;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 300;
+            transition: all 0.3s ease;
+        }
+
+        .footer-col ul li a:hover { color: var(--gold-bright); padding-left: 6px; }
+
+        .footer-col .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            color: #999;
+            font-size: 0.88rem;
+            margin-bottom: 12px;
+            font-weight: 300;
+        }
+
+        .footer-col .contact-item i { color: var(--gold-bright); margin-top: 4px; flex-shrink: 0; }
+        .footer-col .contact-item a { color: #999; text-decoration: none; }
+        .footer-col .contact-item a:hover { color: var(--gold-bright); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(201, 168, 76, 0.12);
+            padding: 25px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .social-icons { display: flex; gap: 10px; }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(201, 168, 76, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-bright);
+            transition: all 0.4s ease;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .social-icons a:hover {
+            background: var(--gold-bright);
+            color: var(--black);
+            border-color: var(--gold-bright);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(201, 168, 76, 0.3);
+        }
+
+        .copyright { color: #666; font-size: 0.82rem; font-weight: 300; }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 1024px) {
+            .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+            .plans-grid { grid-template-columns: repeat(2, 1fr); }
+            .docs-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .page-hero h1 { font-size: 3.2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+
             .nav-links {
-                display: none;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 85%;
+                max-width: 350px;
+                height: 100vh;
+                background: rgba(10, 10, 10, 0.98);
+                backdrop-filter: blur(30px);
+                flex-direction: column;
+                padding: 110px 30px 40px;
+                transition: right 0.45s ease;
+                border-left: 1px solid rgba(201, 168, 76, 0.25);
+                gap: 10px;
             }
-            .hamburger {
-                display: block;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .container {
-                padding: 0 20px;
-            }
-            .page-header h1 {
-                font-size: 2.2rem;
-            }
-            .section-title {
-                font-size: 1.8rem;
-            }
-            .opportunity-header h3 {
-                font-size: 1.3rem;
-            }
-            .desktop-book-btn {
-                display: none;
-            }
-            .opportunity-body {
-                gap: 20px;
-            }
-            .opportunity-header {
-                padding: 20px 20px 0 20px;
-            }
-            .opportunity-body {
-                padding: 0 20px 20px 20px;
-            }
-            .opportunity-image {
-                height: 200px;
-            }
+
+            .nav-links.active { right: 0; }
+            .nav-links a { font-size: 1.05rem; padding: 12px 0; }
+
+            .benefits-grid { grid-template-columns: 1fr; }
+            .plans-grid { grid-template-columns: 1fr; }
+            .docs-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .page-hero h1 { font-size: 2.4rem; }
+            .section-header h2 { font-size: 2rem; }
+            .cta-banner h2 { font-size: 2rem; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .timeline::before { left: 19px; }
+            .timeline-number { width: 40px; height: 40px; font-size: 1.1rem; }
+            .timeline-item { gap: 15px; }
         }
 
         @media (max-width: 480px) {
-            .investment-stats {
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
-            }
-            .stat-badge {
-                padding: 12px;
-            }
-            .stat-badge .number {
-                font-size: 1.5rem;
-            }
-            .benefits-grid {
-                gap: 20px;
-            }
-            .benefit-card {
-                padding: 24px 20px;
-            }
-            .plan-card {
-                padding: 24px 16px;
-            }
-            .plan-card h4 {
-                font-size: 1.2rem;
-            }
-            .opportunity-header h3 {
-                font-size: 1.2rem;
-            }
-            .price-label, .price-value {
-                font-size: 0.75rem;
-            }
-            .feature-tag {
-                font-size: 0.65rem;
-                padding: 3px 8px;
-            }
+            .page-hero h1 { font-size: 1.9rem; }
+            .section-header h2 { font-size: 1.6rem; }
+            .plan-deposit { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
 
-<!-- Announcement bar with Marquee Animation -->
-<div class="announcement-bar">
-    <div class="announcement-marquee">
-        <span>📈 INVESTMENT ALERT</span>
-        Start with just 30% deposit &nbsp;|&nbsp;
-        💳 Flexible payment plans &nbsp;|&nbsp;
-        📍 High ROI locations &nbsp;|&nbsp;
-        🏆 Secure your future today
-        <i class="fas fa-arrow-right"></i>
-        &nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp;
-        <span>📈 INVESTMENT ALERT</span>
-        Start with just 30% deposit &nbsp;|&nbsp;
-        💳 Flexible payment plans &nbsp;|&nbsp;
-        📍 High ROI locations &nbsp;|&nbsp;
-        🏆 Secure your future today
-        <i class="fas fa-arrow-right"></i>
-    </div>
-</div>
-
-<!-- Navbar -->
-<nav class="navbar">
-    <div class="nav-container">
-        <div class="logo">
-            <img src="/static/logo.jpeg" alt="Jecyani Properties Logo" style="height: 50px; width: auto;">
-            <h1>JECYANI <span style="color:#FFD700;">PROPERTIES</span></h1>
-        </div>
-        <div class="nav-links">
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/properties">Properties</a>
-            <a href="/services">Services</a>
-            <a href="/investments" style="color: var(--primary);">Investment</a>
-            <a href="/#contact-section">Contact</a>
-        </div>
-        <a href="#" class="btn-primary desktop-book-btn" data-property="Jecyani Properties - Investment Page">📞 Book Inspection</a>
-        <button class="hamburger" id="hamburgerBtn"><i class="fas fa-bars"></i></button>
-    </div>
-</nav>
-
-<div class="overlay" id="mobileOverlay"></div>
-<div class="mobile-nav" id="mobileNav">
-    <div class="close-menu" id="closeMenuBtn">&times;</div>
-    <a href="/">🏠 Home</a>
-    <a href="/about">📖 About</a>
-    <a href="/properties">🏘️ Properties</a>
-    <a href="/services">🛠️ Services</a>
-    <a href="/investments" style="color: var(--primary);">📈 Investment</a>
-    <a href="/#contact-section">📞 Contact</a>
-    <a href="#" class="btn-primary mobile-book-btn" style="text-align: center;" data-property="Jecyani Properties - Investment Page">📞 Book Inspection</a>
-</div>
-
-<!-- Page Header -->
-<section class="page-header">
-    <div class="container">
-        <div class="breadcrumb"><a href="/">Home</a> / Investment</div>
-        <h1 data-aos="fade-up">Invest in <span class="shimmer-text">Nigerian Real Estate</span></h1>
-        <p data-aos="fade-up" data-aos-delay="100" style="font-size: 1.1rem; color: #aaa; max-width: 600px;">Build generational wealth through strategic land investment. Flexible plans, prime locations, guaranteed value appreciation.</p>
-    </div>
-</section>
-
-<!-- Investment Hero -->
-<section class="investment-hero">
-    <div class="container investment-grid">
-        <div data-aos="fade-right">
-            <h2 style="font-size: 2rem; margin-bottom: 20px;">Why Smart Investors Choose <span style="color: var(--primary);">Jecyani Properties</span></h2>
-            <p style="color: #bbb; line-height: 1.6; margin-bottom: 24px;">We provide strategic real estate investment opportunities in Nigeria's fastest-growing corridors. From Aba to Abuja, Asaba to Enugu — our properties are carefully selected for maximum ROI and long-term value.</p>
-            <div class="investment-stats">
-                <div class="stat-badge"><div class="number">30%</div><div>Initial Deposit</div></div>
-                <div class="stat-badge"><div class="number">12+</div><div>Estates Nationwide</div></div>
-                <div class="stat-badge"><div class="number">500+</div><div>Happy Investors</div></div>
-                <div class="stat-badge"><div class="number">40-60%</div><div>Projected Appreciation</div></div>
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="/static/logo.jpeg" alt="Jecyani" class="logo-img" onerror="this.style.display='none';">
+                <div class="logo-text">Jecyani <span>Properties</span></div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Home</a></li>
+                <li><a href="/properties">Estates</a></li>
+                <li><a href="/#flyers">Flyers</a></li>
+                <li><a href="/#projects">Projects</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/invest" class="active btn-nav">Invest Now</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
             </div>
         </div>
-        <div class="investment-image" data-aos="fade-left">
-            <img src="/static/investors.jpg" alt="Investment" class="gentle-float">
-        </div>
-    </div>
-</section>
+    </nav>
 
-<!-- Why Invest Section -->
-<section class="why-invest">
-    <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Why Invest With Us?</h2>
-        <div class="section-sub" data-aos="fade-up" data-aos-delay="100">We make real estate investment simple, secure, and profitable</div>
-        <div class="benefits-grid">
-            <div class="benefit-card" data-aos="zoom-in" data-aos-delay="0"><i class="fas fa-chart-line"></i><h4>High ROI Locations</h4><p>Properties in rapidly developing corridors with proven appreciation potential</p></div>
-            <div class="benefit-card" data-aos="zoom-in" data-aos-delay="50"><i class="fas fa-hand-holding-usd"></i><h4>Flexible Payment Plans</h4><p>3, 6, and 12-month plans with just 30% initial deposit to start</p></div>
-            <div class="benefit-card" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-file-alt"></i><h4>Authentic Documentation</h4><p>Free Deed of Conveyance, Registered Survey Plan, and Power of Attorney</p></div>
-            <div class="benefit-card" data-aos="zoom-in" data-aos-delay="150"><i class="fas fa-shield-alt"></i><h4>Secure & Gated</h4><p>All estates feature perimeter fencing, security, and proper infrastructure</p></div>
-            <div class="benefit-card" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-city"></i><h4>Prime Locations</h4><p>Close to major landmarks, expressways, schools, and hospitals</p></div>
-            <div class="benefit-card" data-aos="zoom-in" data-aos-delay="250"><i class="fas fa-headset"></i><h4>Expert Guidance</h4><p>Dedicated investment advisors to guide you from inquiry to ownership</p></div>
-        </div>
-    </div>
-</section>
-
-<!-- Featured Investment Opportunities WITH LOCAL IMAGES -->
-<section class="investment-opportunities">
-    <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Featured Investment Opportunities</h2>
-        <div class="section-sub" data-aos="fade-up" data-aos-delay="100">Carefully selected estates with high growth potential</div>
-
-        <!-- Juniper Estate -->
-        <div class="opportunity-card" data-aos="fade-up">
-            <div class="opportunity-image">
-                <img src="/static/land2.jpeg" alt="Juniper Estate Aba">
-                <span class="opportunity-badge">🔥 HOT OFFER</span>
+    <!-- ==================== PAGE HERO ==================== -->
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <span class="subtitle" data-aos="fade-down">Start Your Journey</span>
+            <h1 data-aos="fade-up" data-aos-delay="100">Invest With Confidence</h1>
+            <div class="gold-divider" data-aos="fade-up" data-aos-delay="200">
+                <span class="line"></span><span class="diamond"></span><span class="line"></span>
             </div>
-            <div class="opportunity-header">
-                <h3>🏘️ Juniper Estate, Aba Phase 2</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Ogbor Hill, along Opobo–Azumini Road, Aba</p>
+            <p data-aos="fade-up" data-aos-delay="300">Flexible payment plans, verified properties, and complete documentation — everything you need to build generational wealth through land ownership</p>
+        </div>
+    </section>
+
+    <!-- ==================== WHY INVEST IN LAND ==================== -->
+    <section class="section-cream">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">The Case for Land</span>
+                <h2>Why Invest in Real Estate?</h2>
+                <div class="gold-divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+                <p>Land remains one of the most secure and appreciating asset classes in Nigeria</p>
             </div>
-            <div class="opportunity-body">
-                <div class="opportunity-details">
-                    <p><i class="fas fa-check-circle"></i> 30% Initial Deposit</p>
-                    <p><i class="fas fa-check-circle"></i> Gated & Secure Environment</p>
-                    <p><i class="fas fa-check-circle"></i> Good Road Network</p>
-                    <p><i class="fas fa-check-circle"></i> Perimeter Fencing</p>
-                    <p><i class="fas fa-check-circle"></i> Registered Survey Plan</p>
-                    <div style="margin-top: 16px;">
-                        <span class="feature-tag">Fast Appreciation</span>
-                        <span class="feature-tag">Eco-friendly Layout</span>
-                        <span class="feature-tag">Strategic Location</span>
+            <div class="benefits-grid">
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="benefit-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>Capital Appreciation</h3>
+                    <p>Land values in prime Nigerian locations have consistently appreciated year-over-year, making it a reliable wealth-building vehicle.</p>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="benefit-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Hedge Against Inflation</h3>
+                    <p>Unlike cash which loses value to inflation, land preserves and grows your wealth over time as a tangible, finite asset.</p>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="benefit-icon"><i class="fa-solid fa-house-chimney"></i></div>
+                    <h3>Build Your Dream Home</h3>
+                    <p>Secure a plot today and build at your own pace. No pressure, no rush — your land waits for when you're ready.</p>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="benefit-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                    <h3>Passive Income</h3>
+                    <p>Lease your land for farming, events, or commercial use. Generate steady income while your asset appreciates.</p>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="benefit-icon"><i class="fa-solid fa-file-shield"></i></div>
+                    <h3>100% Yours Forever</h3>
+                    <p>Land is one of the few assets that cannot be duplicated, stolen, or destroyed. Once it's yours, it's yours permanently.</p>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="benefit-icon"><i class="fa-solid fa-gift"></i></div>
+                    <h3>Generational Legacy</h3>
+                    <p>Pass down wealth to your children and grandchildren. Land is the ultimate inheritance that never depreciates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PAYMENT PLANS ==================== -->
+    <section class="section-dark">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Flexible Options</span>
+                <h2>Our Payment Plans</h2>
+                <div class="gold-divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+                <p>Choose the plan that works best for your budget. All plans require only 30% initial deposit</p>
+            </div>
+            <div class="plans-grid">
+                <!-- Short Term -->
+                <div class="plan-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="plan-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Short Term</h3>
+                    <div class="plan-duration">3 Months</div>
+                    <div class="plan-deposit">30%</div>
+                    <div class="plan-deposit-label">Initial Deposit</div>
+                    <ul class="plan-features">
+                        <li><i class="fa-solid fa-check"></i> 30% down payment</li>
+                        <li><i class="fa-solid fa-check"></i> Balance over 3 months</li>
+                        <li><i class="fa-solid fa-check"></i> Fastest ownership transfer</li>
+                        <li><i class="fa-solid fa-check"></i> Free Deed of Conveyance</li>
+                        <li><i class="fa-solid fa-check"></i> Free Survey Plan</li>
+                        <li><i class="fa-solid fa-check"></i> Free Power of Attorney</li>
+                    </ul>
+                    <a href="https://wa.me/2348160087513?text=Hello! I'm interested in the Short Term (3-month) payment plan. Please send me details." target="_blank" class="btn-plan">Get Started →</a>
+                </div>
+
+                <!-- Medium Term (Featured) -->
+                <div class="plan-card featured" data-aos="fade-up" data-aos-delay="150">
+                    <div class="plan-icon"><i class="fa-solid fa-gem"></i></div>
+                    <h3>Medium Term</h3>
+                    <div class="plan-duration">6 Months</div>
+                    <div class="plan-deposit">30%</div>
+                    <div class="plan-deposit-label">Initial Deposit</div>
+                    <ul class="plan-features">
+                        <li><i class="fa-solid fa-check"></i> 30% down payment</li>
+                        <li><i class="fa-solid fa-check"></i> Balance over 6 months</li>
+                        <li><i class="fa-solid fa-check"></i> Balanced monthly payments</li>
+                        <li><i class="fa-solid fa-check"></i> Free Deed of Conveyance</li>
+                        <li><i class="fa-solid fa-check"></i> Free Survey Plan</li>
+                        <li><i class="fa-solid fa-check"></i> Free Power of Attorney</li>
+                    </ul>
+                    <a href="https://wa.me/2348160087513?text=Hello! I'm interested in the Medium Term (6-month) payment plan — your most popular option. Please send me details." target="_blank" class="btn-plan">Get Started →</a>
+                </div>
+
+                <!-- Long Term -->
+                <div class="plan-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="plan-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                    <h3>Long Term</h3>
+                    <div class="plan-duration">12 Months</div>
+                    <div class="plan-deposit">30%</div>
+                    <div class="plan-deposit-label">Initial Deposit</div>
+                    <ul class="plan-features">
+                        <li><i class="fa-solid fa-check"></i> 30% down payment</li>
+                        <li><i class="fa-solid fa-check"></i> Balance over 12 months</li>
+                        <li><i class="fa-solid fa-check"></i> Lowest monthly commitment</li>
+                        <li><i class="fa-solid fa-check"></i> Free Deed of Conveyance</li>
+                        <li><i class="fa-solid fa-check"></i> Free Survey Plan</li>
+                        <li><i class="fa-solid fa-check"></i> Free Power of Attorney</li>
+                    </ul>
+                    <a href="https://wa.me/2348160087513?text=Hello! I'm interested in the Long Term (12-month) payment plan. Please send me details." target="_blank" class="btn-plan">Get Started →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== INVESTMENT PROCESS ==================== -->
+    <section class="section-cream">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">How It Works</span>
+                <h2>The Investment Process</h2>
+                <div class="gold-divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+                <p>From selection to ownership — a seamless journey designed for your peace of mind</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="0">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-content">
+                        <h3>Browse & Select Your Property</h3>
+                        <p>Explore our curated portfolio of verified estates. Choose the location, plot size, and price point that aligns with your investment goals.</p>
                     </div>
                 </div>
-                <div class="price-table">
-                    <h4 style="margin-bottom: 16px; color: var(--primary);">💰 Investment Plans</h4>
-                    <div class="price-row"><span class="price-label">Outright / 3 Months</span><span class="price-value">₦3.5M</span></div>
-                    <div class="price-row"><span class="price-label">6 Months Plan</span><span class="price-value">₦4M</span></div>
-                    <div class="price-row"><span class="price-label">12 Months Plan</span><span class="price-value">₦4.5M</span></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Oakwood City Estate -->
-        <div class="opportunity-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="opportunity-image">
-                <img src="/static/land5.jpeg" alt="Oakwood City Estate Umuahia">
-                <span class="opportunity-badge">🌳 PRIME LOCATION</span>
-            </div>
-            <div class="opportunity-header">
-                <h3>🌳 Oakwood City Estate</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Nsukwe Old, Umuahia, Abia State</p>
-            </div>
-            <div class="opportunity-body">
-                <div class="opportunity-details">
-                    <p><i class="fas fa-check-circle"></i> 300–465 SQM Plots</p>
-                    <p><i class="fas fa-check-circle"></i> Free Deed of Conveyance</p>
-                    <p><i class="fas fa-check-circle"></i> Registered Survey Plan</p>
-                    <p><i class="fas fa-check-circle"></i> Eco-friendly Estate Layout</p>
-                    <div style="margin-top: 16px;">
-                        <span class="feature-tag">2 mins to Divinity College</span>
-                        <span class="feature-tag">5 mins to FGGC Umuahia</span>
-                        <span class="feature-tag">10 mins to FMC Umuahia</span>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-content">
+                        <h3>Choose Your Payment Plan</h3>
+                        <p>Select from our flexible 3-month, 6-month, or 12-month plans. Pay only 30% upfront and spread the balance comfortably.</p>
                     </div>
                 </div>
-                <div class="price-table">
-                    <h4 style="margin-bottom: 16px; color: var(--primary);">💰 Investment Plans</h4>
-                    <div class="price-row"><span class="price-label">3 Months</span><span class="price-value">₦2.5M – ₦3.5M</span></div>
-                    <div class="price-row"><span class="price-label">6 Months</span><span class="price-value">₦3M – ₦4M</span></div>
-                    <div class="price-row"><span class="price-label">12 Months</span><span class="price-value">₦3.5M – ₦4.5M</span></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Ivy Supreme Estate -->
-        <div class="opportunity-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="opportunity-image">
-                <img src="/static/land6.jpeg" alt="Ivy Supreme Estate">
-                <span class="opportunity-badge">✨ PREMIUM</span>
-            </div>
-            <div class="opportunity-header">
-                <h3>✨ Ivy Supreme Estate</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Erote/Ajata, Abia State</p>
-            </div>
-            <div class="opportunity-body">
-                <div class="opportunity-details">
-                    <p><i class="fas fa-check-circle"></i> 465 SQM Plots</p>
-                    <p><i class="fas fa-check-circle"></i> Power of Attorney Title</p>
-                    <p><i class="fas fa-check-circle"></i> Residential Land</p>
-                    <p><i class="fas fa-check-circle"></i> Fast-growing Location</p>
-                    <div style="margin-top: 16px;">
-                        <span class="feature-tag">Near Federal Ministry of Housing</span>
-                        <span class="feature-tag">10 mins to Umuahia City Centre</span>
-                        <span class="feature-tag">Walking distance to Stadium</span>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-content">
+                        <h3>Complete Documentation</h3>
+                        <p>Our legal team processes all paperwork — Deed of Conveyance, Registered Survey Plan, and Irrevocable Power of Attorney — at no extra cost to you.</p>
                     </div>
                 </div>
-                <div class="price-table">
-                    <h4 style="margin-bottom: 16px; color: var(--primary);">💰 Investment Plans</h4>
-                    <div class="price-row"><span class="price-label">3 Months</span><span class="price-value">₦3.5M</span></div>
-                    <div class="price-row"><span class="price-label">6 Months</span><span class="price-value">₦4M</span></div>
-                    <div class="price-row"><span class="price-label">12 Months</span><span class="price-value">₦4.5M</span></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Gold Town Estate Abuja -->
-        <div class="opportunity-card" data-aos="fade-up" data-aos-delay="300">
-            <div class="opportunity-image">
-                <img src="/static/land7.jpeg" alt="Gold Town Estate Abuja">
-                <span class="opportunity-badge">⭐ LUXURY</span>
-            </div>
-            <div class="opportunity-header">
-                <h3>⭐ Gold Town Estate</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Guzape Main, Abuja</p>
-            </div>
-            <div class="opportunity-body">
-                <div class="opportunity-details">
-                    <p><i class="fas fa-check-circle"></i> 500 SQM Plots</p>
-                    <p><i class="fas fa-check-circle"></i> FCDA R of O Title</p>
-                    <p><i class="fas fa-check-circle"></i> Free Deed of Assignment</p>
-                    <p><i class="fas fa-check-circle"></i> Scenic Hills & Green Terrain</p>
-                    <div style="margin-top: 16px;">
-                        <span class="feature-tag">Proximity to Guzape Hills</span>
-                        <span class="feature-tag">Near COZA & Guzape Mall</span>
-                        <span class="feature-tag">Premium Location</span>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-number">4</div>
+                    <div class="timeline-content">
+                        <h3>Physical Inspection & Handover</h3>
+                        <p>Visit your land, verify the coordinates, and receive your complete documentation package. The land is now legally and indisputably yours.</p>
                     </div>
                 </div>
-                <div class="price-table">
-                    <h4 style="margin-bottom: 16px; color: var(--primary);">💰 Investment Plan</h4>
-                    <div class="price-row"><span class="price-label">3 Months Outright</span><span class="price-value">₦180M</span></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Crystal City Estate Asaba -->
-        <div class="opportunity-card" data-aos="fade-up" data-aos-delay="400">
-            <div class="opportunity-image">
-                <img src="/static/land8.jpeg" alt="Crystal City Estate Asaba">
-                <span class="opportunity-badge">💎 FLASH SALE</span>
-            </div>
-            <div class="opportunity-header">
-                <h3>💎 Crystal City Estate</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Issele-Azagba, Asaba</p>
-            </div>
-            <div class="opportunity-body">
-                <div class="opportunity-details">
-                    <p><i class="fas fa-check-circle"></i> 465 SQM Plots</p>
-                    <p><i class="fas fa-check-circle"></i> 🔥 12.5% FLASH SALE DISCOUNT</p>
-                    <p><i class="fas fa-check-circle"></i> Free Deed of Conveyance</p>
-                    <p><i class="fas fa-check-circle"></i> Registered Survey Plan</p>
-                    <div style="margin-top: 16px;">
-                        <span class="feature-tag">Along Old Abuja Road</span>
-                        <span class="feature-tag">Near Airport & Polytechnic</span>
-                        <span class="feature-tag">Infrastructure in Progress</span>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="timeline-number">5</div>
+                    <div class="timeline-content">
+                        <h3>Build & Grow Your Wealth</h3>
+                        <p>Develop at your own pace — build your dream home, hold for appreciation, or lease for income. Your generational wealth journey begins.</p>
                     </div>
                 </div>
-                <div class="price-table">
-                    <h4 style="margin-bottom: 16px; color: var(--primary);">💰 Investment Plans</h4>
-                    <div class="price-row"><span class="price-label">Outright</span><span class="price-value">₦7M</span></div>
-                    <div class="price-row"><span class="price-label">3 Months</span><span class="price-value">₦8M</span></div>
-                    <div class="price-row"><span class="price-label">6 Months</span><span class="price-value">₦8.5M</span></div>
-                    <div class="price-row"><span class="price-label">12 Months</span><span class="price-value">₦9M</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== DOCUMENTATION ==================== -->
+    <section class="section-white">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">What You Receive</span>
+                <h2>Complete Documentation</h2>
+                <div class="gold-divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+                <p>Every investment includes these essential documents — processed and delivered at no additional cost</p>
+            </div>
+            <div class="docs-grid">
+                <div class="doc-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="doc-icon"><i class="fa-solid fa-file-contract"></i></div>
+                    <h3>Deed of Conveyance</h3>
+                    <p>The primary legal document that transfers ownership from the seller to you. Registered and legally binding.</p>
+                    <span class="doc-badge">✦ Included Free</span>
+                </div>
+                <div class="doc-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="doc-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                    <h3>Registered Survey Plan</h3>
+                    <p>A detailed, government-approved map showing the exact coordinates, boundaries, and dimensions of your land.</p>
+                    <span class="doc-badge">✦ Included Free</span>
+                </div>
+                <div class="doc-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="doc-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <h3>Irrevocable Power of Attorney</h3>
+                    <p>Grants you full legal authority over the property. Irrevocable — cannot be challenged or withdrawn once executed.</p>
+                    <span class="doc-badge">✦ Included Free</span>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Newtown Estate Ibusa Asaba -->
-        <div class="opportunity-card" data-aos="fade-up" data-aos-delay="500">
-            <div class="opportunity-image">
-                <img src="/static/land3.jpeg" alt="Newtown Estate Asaba">
-                <span class="opportunity-badge">🏆 PRE-CLEARANCE</span>
+    <!-- ==================== FAQ ==================== -->
+    <section class="section-cream">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Common Questions</span>
+                <h2>Frequently Asked Questions</h2>
+                <div class="gold-divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
             </div>
-            <div class="opportunity-header">
-                <h3>🏡 Newtown Estate Ibusa</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Opposite Admiralty University, Ibusa, Asaba</p>
-            </div>
-            <div class="opportunity-body">
-                <div class="opportunity-details">
-                    <p><i class="fas fa-check-circle"></i> 465 SQM Plots</p>
-                    <p><i class="fas fa-check-circle"></i> Pre-clearance Special Pricing</p>
-                    <p><i class="fas fa-check-circle"></i> Free Deed of Conveyance</p>
-                    <p><i class="fas fa-check-circle"></i> 30% Initial Deposit</p>
-                    <div style="margin-top: 16px;">
-                        <span class="feature-tag">Opposite Admiralty University</span>
-                        <span class="feature-tag">10 mins to Koka Junction</span>
-                        <span class="feature-tag">5 mins to Immigration Service</span>
+            <div class="faq-list">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="0">
+                    <div class="faq-question">
+                        <span>Is the land free from government acquisition?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Yes. All our properties are thoroughly vetted and verified to be free from government acquisition, encumbrances, and disputes. We conduct comprehensive due diligence before listing any estate.</div>
                     </div>
                 </div>
-                <div class="price-table">
-                    <h4 style="margin-bottom: 16px; color: var(--primary);">💰 Investment Plans</h4>
-                    <div class="price-row"><span class="price-label">Pre-clearance</span><span class="price-value">₦18M</span></div>
-                    <div class="price-row"><span class="price-label">3 Months</span><span class="price-value">₦20M</span></div>
-                    <div class="price-row"><span class="price-label">6 Months</span><span class="price-value">₦22M</span></div>
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="50">
+                    <div class="faq-question">
+                        <span>Can I inspect the property before paying?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Absolutely. We encourage all prospective buyers to visit and inspect any property of interest. Contact us to schedule a guided physical inspection at your convenience.</div>
+                    </div>
+                </div>
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="faq-question">
+                        <span>What happens after I complete payment?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Upon full payment, we immediately process your Deed of Conveyance, Registered Survey Plan, and Irrevocable Power of Attorney. You'll receive all original documents, and the land becomes legally yours.</div>
+                    </div>
+                </div>
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+                    <div class="faq-question">
+                        <span>Are there any hidden charges?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">No. Transparency is one of our core values. The price you see is the price you pay. Documentation processing, survey plans, and legal fees are all included. There are zero hidden charges.</div>
+                    </div>
+                </div>
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="faq-question">
+                        <span>Can I resell my land later?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Yes. Once you own the land with complete documentation, you are free to resell at any time. Many of our clients have realized significant returns by holding and selling as values appreciate.</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Flexible Payment Plans -->
-<section class="payment-plans">
-    <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Flexible Payment Plans</h2>
-        <div class="section-sub" data-aos="fade-up" data-aos-delay="100">Choose a plan that works for your budget</div>
-        <div class="plans-grid">
-            <div class="plan-card" data-aos="flip-left" data-aos-delay="0">
-                <h4>Short Term</h4>
-                <div class="plan-deposit">30% Initial Deposit</div>
-                <div class="price-row" style="justify-content: center; gap: 20px; flex-direction: column; text-align: center; border: none;">
-                    <div><span class="price-label">3 Months</span></div>
-                    <div class="price-value">Full payment in 3 months</div>
-                    <div class="price-value" style="font-size: 0.9rem;">Best for quick returns</div>
+    <!-- ==================== INQUIRY FORM ==================== -->
+    <section class="section-white">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Take Action</span>
+                <h2>Start Your Investment</h2>
+                <div class="gold-divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+                <p>Fill the form below and our team will contact you within 24 hours with personalized guidance</p>
+            </div>
+            <div class="form-section" data-aos="fade-up" data-aos-delay="100">
+                <div class="form-card">
+                    <form id="investmentForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Full Name *</label>
+                                <input type="text" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number *</label>
+                                <input type="tel" placeholder="e.g. 08012345678" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" placeholder="Enter your email address">
+                            </div>
+                            <div class="form-group">
+                                <label>Preferred Location *</label>
+                                <select required>
+                                    <option value="">Select a location</option>
+                                    <option value="abuja">Abuja</option>
+                                    <option value="aba">Aba</option>
+                                    <option value="umuahia">Umuahia</option>
+                                    <option value="asaba">Asaba</option>
+                                    <option value="enugu">Enugu</option>
+                                    <option value="ph">Port Harcourt</option>
+                                    <option value="any">Any Location</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Preferred Payment Plan</label>
+                            <select>
+                                <option value="">Select a plan</option>
+                                <option value="short">Short Term (3 Months)</option>
+                                <option value="medium">Medium Term (6 Months) — Most Popular</option>
+                                <option value="long">Long Term (12 Months)</option>
+                                <option value="undecided">I'm Undecided — Guide Me</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Budget Range</label>
+                            <select>
+                                <option value="">Select range</option>
+                                <option value="under5m">Under ₦5 Million</option>
+                                <option value="5m-10m">₦5M – ₦10 Million</option>
+                                <option value="10m-25m">₦10M – ₦25 Million</option>
+                                <option value="25m-50m">₦25M – ₦50 Million</option>
+                                <option value="above50m">Above ₦50 Million</option>
+                                <option value="exploring">Just Exploring</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Message (Optional)</label>
+                            <textarea placeholder="Tell us about your investment goals or any specific questions you have..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <i class="fa-solid fa-paper-plane"></i> Submit Investment Inquiry
+                        </button>
+                    </form>
+                    <p class="form-note">✧ Our team typically responds within 24 hours ✧</p>
                 </div>
             </div>
-            <div class="plan-card recommended" data-aos="flip-left" data-aos-delay="100">
-                <div class="recommended-badge">🔥 MOST POPULAR</div>
-                <h4>Medium Term</h4>
-                <div class="plan-deposit">30% Initial Deposit</div>
-                <div class="price-row" style="justify-content: center; gap: 20px; flex-direction: column; text-align: center; border: none;">
-                    <div><span class="price-label">6 Months Plan</span></div>
-                    <div class="price-value">Spread over 6 months</div>
-                    <div class="price-value" style="font-size: 0.9rem;">Balanced & flexible</div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA BANNER ==================== -->
+    <section class="cta-banner">
+        <div class="cta-banner-content">
+            <h2 data-aos="fade-up">Prefer to Talk Now?</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Chat with our investment advisor directly on WhatsApp. No pressure — just honest guidance.</p>
+            <a href="https://wa.me/2348160087513?text=Hello Jecyani Properties! I'm ready to start my land investment journey. Please guide me through the process." target="_blank" class="btn-gold" data-aos="fade-up" data-aos-delay="200">
+                <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp Now
+            </a>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo">
+                        <img src="/static/logo.jpeg" alt="Jecyani" class="logo-img" onerror="this.style.display='none';">
+                        <div class="logo-text">Jecyani <span>Properties</span></div>
+                    </a>
+                    <p class="footer-desc">Own Land. Build Wealth. Secure Your Future. — Nigeria's distinguished real estate partner.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="estates.html">Our Estates</a></li>
+                        <li><a href="invest.html">Invest Now</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Property Acquisition</a></li>
+                        <li><a href="#">Property Sales</a></li>
+                        <li><a href="#">Property Management</a></li>
+                        <li><a href="#">Investment Advisory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <div class="contact-item"><i class="fa-solid fa-location-dot"></i> <span>GGCG+638, Ikot Ekpene - Umuahia Rd, Umuahia 440236, Abia State</span></div>
+                    <div class="contact-item"><i class="fa-solid fa-phone"></i> <a href="tel:+2348160087513">08160087513</a></div>
+                    <div class="contact-item"><i class="fa-solid fa-envelope"></i> <a href="mailto:jayny57@gmail.com">jayny57@gmail.com</a></div>
                 </div>
             </div>
-            <div class="plan-card" data-aos="flip-left" data-aos-delay="200">
-                <h4>Long Term</h4>
-                <div class="plan-deposit">30% Initial Deposit</div>
-                <div class="price-row" style="justify-content: center; gap: 20px; flex-direction: column; text-align: center; border: none;">
-                    <div><span class="price-label">12 Months Plan</span></div>
-                    <div class="price-value">Maximum flexibility</div>
-                    <div class="price-value" style="font-size: 0.9rem;">Easiest entry point</div>
+            <div class="footer-bottom">
+                <div class="social-icons">
+                    <a href="https://instagram.com/jecyani_properties" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://youtube.com/@jecyanimult-resourcesltd" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://facebook.com/jane.nwangoro.7" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://linkedin.com/in/jane-nwakanma-2a178820a" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
+                <p class="copyright">© 2024 Jecyani Properties. All rights reserved. Crafted with distinction.</p>
             </div>
         </div>
-    </div>
-</section>
+    </footer>
 
-<!-- CTA Section -->
-<section class="cta-section">
-    <div class="container" data-aos="zoom-in">
-        <h2 style="font-size: 2rem; color: white;">Ready to Start Your Investment Journey?</h2>
-        <p style="margin: 20px auto; max-width: 600px; color: #ccc;">Join hundreds of smart investors who are building wealth through strategic land investment with Jecyani Properties.</p>
-        <div class="btn-group" style="display: flex; gap: 16px; justify-content: center; margin-top: 20px; flex-wrap: wrap;">
-            <a href="#" class="btn-primary book-inspect-btn" data-property="Jecyani Properties - Investment Advisor">📞 Talk to an Investment Advisor</a>
-            <a href="/properties" class="btn-outline-light">View Available Properties</a>
-        </div>
-        <p style="margin-top: 30px; font-size: 0.85rem; color: #888;"><i class="fas fa-shield-alt"></i> All investments come with proper documentation: Deed of Conveyance, Registered Survey, or Power of Attorney</p>
-    </div>
-</section>
+    <!-- ==================== SCRIPTS ==================== -->
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        if (typeof AOS !== 'undefined') {
+            AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 50 });
+        }
 
-<!-- Footer -->
-<footer class="footer">
-    <div class="container footer-grid">
-        <div>
-            <div class="logo" style="margin-bottom:12px;">
-                <img src="/static/logo.jpeg" alt="Jecyani Properties Logo" style="height: 40px; width: auto;">
-                <h3 style="color:white; margin-top:8px;">JECYANI PROPERTIES</h3>
-            </div>
-            <p>Nigeria's trusted real estate agency helping buyers, sellers, and investors navigate the property market with confidence.</p>
-        </div>
-        <div>
-            <h4>Quick Links</h4>
-            <a href="/">Home</a><br>
-            <a href="/about">About Us</a><br>
-            <a href="/properties">Properties</a><br>
-            <a href="/services">Services</a><br>
-            <a href="#">Contact</a>
-        </div>
-        <div>
-            <h4>Investment</h4>
-            <a href="#">Why Invest</a><br>
-            <a href="#">Available Estates</a><br>
-            <a href="#">Payment Plans</a><br>
-            <a href="#">ROI Calculator</a><br>
-            <a href="#">Investment Guide</a>
-        </div>
-        <div>
-            <h4>Contact Info</h4>
-            <p><i class="fas fa-phone"></i> 08160087513</p>
-            <p><i class="fab fa-whatsapp"></i> 08160087513</p>
-            <p><i class="fas fa-envelope"></i> jayny57@gmail.com</p>
-            <p><i class="fas fa-map-pin"></i> GGCG+638, Ikot Ekpene - Umuahia Rd, Abia</p>
-        </div>
-    </div>
-    <div class="copyright container">
-        © 2026 Jecyani Properties — All rights reserved. | Built with <i class="fas fa-heart" style="color: var(--primary);"></i> for Nigerian investors
-    </div>
-</footer>
-
-<!-- Modal -->
-<div id="inspectionModal" class="modal">
-    <div class="modal-content">
-        <span class="modal-close">&times;</span>
-        <h3>📞 Book an Inspection</h3>
-        <div class="modal-sub">Choose how you'd like to connect with us</div>
-        <div id="modalPropertyName" class="property-name-display"></div>
-        <div class="modal-buttons">
-            <a href="#" id="callNowBtn" class="modal-btn modal-btn-call"><i class="fas fa-phone-alt"></i> Call Now</a>
-            <a href="#" id="whatsappBtn" class="modal-btn modal-btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
-        </div>
-        <p style="text-align: center; margin-top: 20px; font-size: 0.75rem; color: #666;">Clicking will open your phone dialer or WhatsApp</p>
-    </div>
-</div>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100,
-        easing: 'ease-out-quad'
-    });
-
-    // Hamburger Menu
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    const mobileOverlay = document.getElementById('mobileOverlay');
-    const closeMenuBtn = document.getElementById('closeMenuBtn');
-
-    function openMobileMenu() {
-        mobileNav.classList.add('active');
-        mobileOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeMobileMenu() {
-        mobileNav.classList.remove('active');
-        mobileOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-
-    if (hamburgerBtn) hamburgerBtn.addEventListener('click', openMobileMenu);
-    if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMobileMenu);
-    if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenu);
-
-    // Booking Modal
-    const modal = document.getElementById('inspectionModal');
-    const modalPropertyName = document.getElementById('modalPropertyName');
-    const callNowBtn = document.getElementById('callNowBtn');
-    const whatsappBtn = document.getElementById('whatsappBtn');
-    const closeModal = document.querySelector('.modal-close');
-    const PHONE_NUMBER = '2348160087513';
-    const PHONE_DISPLAY = '08160087513';
-
-    function openModal(propertyName) {
-        modalPropertyName.innerHTML = `<i class="fas fa-home"></i> ${propertyName || 'Jecyani Properties'}`;
-        modal.style.display = 'flex';
-        const message = `Hello Jecyani Properties,%0A%0AI'm interested in booking an inspection for:%0A📍 ${encodeURIComponent(propertyName || 'Jecyani Properties')}`;
-        whatsappBtn.href = `https://wa.me/${PHONE_NUMBER}?text=${message}`;
-        callNowBtn.href = `tel:${PHONE_DISPLAY}`;
-    }
-
-    function closeModalFunc() { modal.style.display = 'none'; }
-    if (closeModal) closeModal.addEventListener('click', closeModalFunc);
-    window.addEventListener('click', (e) => { if (e.target === modal) closeModalFunc(); });
-
-    document.querySelectorAll('.btn-primary, .btn-outline-light').forEach(btn => {
-        const text = btn.innerText.toLowerCase();
-        if (text.includes('book inspection') || text.includes('talk to an investment advisor') || btn.classList.contains('book-inspect-btn')) {
-            const newBtn = btn.cloneNode(true);
-            btn.parentNode.replaceChild(newBtn, btn);
-            newBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                openModal(newBtn.getAttribute('data-property') || 'Jecyani Properties - Investment');
+        // Mobile Menu
+        var hamburger = document.getElementById('hamburger');
+        var navLinks = document.getElementById('navLinks');
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+            document.querySelectorAll('.nav-links a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
             });
         }
-    });
-</script>
+
+        // Navbar scroll
+        window.addEventListener('scroll', function() {
+            var navbar = document.getElementById('navbar');
+            if (navbar) { navbar.classList.toggle('scrolled', window.scrollY > 50); }
+        });
+
+        // FAQ Accordion
+        var faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(function(item) {
+            var question = item.querySelector('.faq-question');
+            question.addEventListener('click', function() {
+                var isActive = item.classList.contains('active');
+                // Close all
+                faqItems.forEach(function(fi) { fi.classList.remove('active'); });
+                // Open clicked (if wasn't already open)
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // ==================== FORM SUBMISSION → WHATSAPP ====================
+        var form = document.getElementById('investmentForm');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Collect all form data
+                var fullName = form.querySelector('input[type="text"]').value.trim();
+                var phone = form.querySelector('input[type="tel"]').value.trim();
+                var email = form.querySelector('input[type="email"]').value.trim();
+                var locationSelect = form.querySelectorAll('select')[0];
+                var planSelect = form.querySelectorAll('select')[1];
+                var budgetSelect = form.querySelectorAll('select')[2];
+                var message = form.querySelector('textarea').value.trim();
+
+                var location = locationSelect.options[locationSelect.selectedIndex].text;
+                var plan = planSelect.options[planSelect.selectedIndex].text;
+                var budget = budgetSelect.options[budgetSelect.selectedIndex].text;
+
+                // Build professional WhatsApp message
+                var waMessage = '';
+                waMessage += '🏠 *NEW INVESTMENT INQUIRY* 🏠\n\n';
+                waMessage += 'Hello Jecyani Properties! 👋\n\n';
+                waMessage += 'I would like to start my land investment journey. Here are my details:\n\n';
+                waMessage += '━━━━━━━━━━━━━━━━━━\n\n';
+                waMessage += '👤 *Full Name:* ' + fullName + '\n';
+                waMessage += '📞 *Phone:* ' + phone + '\n';
+                if (email) waMessage += '📧 *Email:* ' + email + '\n';
+                waMessage += '\n━━━━━━━━━━━━━━━━━━\n\n';
+                waMessage += '📍 *Preferred Location:* ' + (location !== 'Select a location' ? location : 'Not specified') + '\n';
+                waMessage += '💳 *Payment Plan:* ' + (plan !== 'Select a plan' ? plan : 'Not decided yet') + '\n';
+                waMessage += '💰 *Budget Range:* ' + (budget !== 'Select range' ? budget : 'Exploring options') + '\n';
+                if (message) {
+                    waMessage += '\n📝 *Additional Message:*\n' + message + '\n';
+                }
+                waMessage += '\n━━━━━━━━━━━━━━━━━━\n\n';
+                waMessage += 'Please guide me through the next steps. I\'m ready to invest! 🚀';
+
+                // Open WhatsApp with the pre-filled message
+                var waNumber = '2348160087513';
+                var waLink = 'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(waMessage);
+                window.open(waLink, '_blank');
+
+                // Reset the form
+                form.reset();
+
+                // Optional: Show a subtle confirmation
+                // If you want, you can add a success message here
+                var submitBtn = form.querySelector('.btn-submit');
+                var originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> Redirecting to WhatsApp...';
+                submitBtn.style.background = '#25D366';
+                submitBtn.style.color = '#fff';
+
+                setTimeout(function() {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.style.color = '';
+                }, 3000);
+            });
+        }
+    </script>
 </body>
 </html>
